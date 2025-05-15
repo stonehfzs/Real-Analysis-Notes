@@ -1,0 +1,184 @@
+% \documentclass[lang=cn,newtx,10pt,scheme=chinese]{elegantbook}
+\documentclass[theorem=false,mathfont=none,openany,sub3section]{easybook}
+
+\usepackage[lang=cn]{eb-elegantbook}
+\usepackage{lmodern}
+\usepackage{codehigh}
+\lstset{moreemph={nofont,thmenv}}
+
+\renewcommand{\rmdefault}{lmr}
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\ttdefault}{lmtt}
+
+\title{Real Analysis}
+\subtitle{Lecture Notes}
+\author{Stone Sun}
+%\institute{Ocean University of China}
+\date{\today}
+%\version{}
+\bioinfo{联系方式}{hefengzhishui@outlook.com}
+
+%\extrainfo{注意：Elegant系列模板自 2023 年 1 月 1 日开始，不再更新和维护！}
+
+\setcounter{tocdepth}{3}
+
+\logo{logo-blue.png}
+\cover{cover.jpg}
+
+% 本文档命令
+% \usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+
+% 修改标题页的橙色带
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+% \usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % 参考文献，不要删除
+
+% 定义\btocgroup和\etocgroup命令把目录风格限制在组内，使其局部生效
+\newcommand{\btocgroup}[1][toc]{\addtocontents{#1}{\string\begingroup}}
+\newcommand{\etocgroup}[1][toc]{\addtocontents{#1}{\string\endgroup}}
+%\SetTocStyle{chapter}{emph}{tocformat+ = \color{black}}
+\let\ls\lstinline
+\ebhdrset{footnotetype=flush}
+\ctexset{
+  paragraph/numbering=false,
+  paragraph/beforeskip=1explus.2ex
+  }
+\SetTocStyle{subsubsection}{sub2}{
+  tocindent=3.8em,
+  tocformat+=\color{blue}
+  }
+\UseTocStyle{subsubsection}{sub2}{toc}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+谨以此篇, 献给热爱分析的你.\par
+\end{center}
+\frontmatter
+
+\begingroup
+\renewcommand{\familydefault}{\rmdefault}
+\tableofcontents
+\endgroup
+
+\newpage
+\begin{center}
+\Large
+\textbf{前言}\par
+\end{center}
+
+\hspace{2em}
+这是一份关于实分析(又名实变函数)的讲义, 主要涵盖了$\mathbb{R}^n$上的集合论与测度论, 同时讨论了Lebesgue可测、Lebesgue积分的基本概念和定理. 这份讲义是基于中国海洋大学的实变函数课程的讲义和笔记而写成的, 也参考了其他一些教材和讲义.\par
+值得注意的是, 这门课程在不同开课学院的所占学分和所需学时是不同的. 所以这份讲义可能更适合每周3学时的同学学习参考.\par
+这份讲义的描述角度是一位数学专业的学生, 因此我可能会采用一些更易于理解, 但不严格符合课程结构的叙述方式和顺序. 这些特性决定了这份讲义不会有太广泛的适用性.\par
+笔者曾经试图撰写过常微分方程、微积分、线性代数等课程的讲义, 但由于时间和精力的限制, 这些讲义都没有完成. 这份讲义是笔者在2025年春季学期和暑期复习这门课程时完成的, 从某种程度上来讲这既是对此前未完成的讲义的一种补偿, 也是对自己本科二年级学习生活的一份总结. 我希望在这份讲义里更多地去体现我对Lebesgue测度的理解和我对分析学的认知. 尽管这些认知可能都是浅显的, 但我仍希望这些想法能够落到具体实际, 以作纪念和方便回顾.\par
+除了上述这些想法之外, 我还希望基于此回忆一些学习时的一些有趣的理解, 作为一名可能对分析方向不太感兴趣的学生, 我的这份讲义可能不会带来任何有益的帮助, 反倒可能对基础分析概念的理解产生许多误解, 因此我更希望读者将这份讲义看作漫谈, 而非一份严谨的参考讲义, 同时我也很期待任何同学能够帮助我修正其中的任何错误.\par
+\begin{flushright}
+\text{Stone Sun}\\
+\text{\today}
+\end{flushright}
+
+\mainmatter
+
+\btocgroup
+\UseTocStyle{chapter}{emph}{toc}
+\chapter{集合与映射}
+\etocgroup
+
+\section{集合的运算}
+
+\begin{definition}
+  设$A,B$是集合, 则有如下集合间运算和关系的定义:\par
+  \begin{itemize}
+    \item
+      $A\bigcup B=\{x|x\in A\text{或}x\in B\}$, 称为$A$和$B$的并集.
+    \item
+      $A\bigcap B=\{x|x\in A\text{且}x\in B\}$, 称为$A$和$B$的交集.
+    \item
+      $A\backslash B=\{x|x\in A\text{且}x\notin B\}$, 称为$A$和$B$的差集.
+    \item
+      $A\subseteq B$表示$A$是$B$的子集, 即$\forall x\in A, x\in B$.
+    \item
+      $A=B$表示$A$和$B$相等, 即$\forall x, x\in A\Leftrightarrow x\in B$.
+    \item 
+      若$A\subset S, B=S\backslash A$, 则称$A$是$B$的补集, 记作$A^{c}$.
+  \end{itemize}
+
+\end{definition}
+针对抽象的集合, 我们有如下定义:\par
+\begin{definition}
+  设$\varLambda $是一集合, 则称$\{A_{\lambda}\}$是一集族, 其中$\lambda\in\varLambda$.\par
+  特别的, 若$\varLambda=\{1,2,\cdots,n\}$, 则称$\{A_{1},A_{2},\cdots,A_{n}\}$是一集列.\par
+\end{definition}
+
+集合的运算满足下面的定律:\par
+\begin{theorem}
+  设$A,B,C$是集合, 则下列命题成立:\par
+  \begin{itemize}
+    \item $A\cup (B\cup C)=(A\cup B)\cup C$.
+    \item $A\cap (B\cap C)=(A\cap B)\cap C$.
+    \item $A\bigcap (\bigcup_{\lambda \in \varLambda}B_{\lambda})=\bigcup_{\lambda \in \varLambda}(A\bigcap B_{\lambda})$.
+    \item $A\bigcup (\bigcap_{\lambda \in \varLambda}B_{\lambda})=\bigcap_{\lambda \in \varLambda}(A\bigcup B_{\lambda})$.
+    \item $(\bigcap_{\lambda \in \varLambda}A_{\lambda})^{c}=\bigcup_{\lambda \in \varLambda}A_{\lambda}^{c}$.
+    \item $(\bigcup_{\lambda \in \varLambda}A_{\lambda})^{c}=\bigcap_{\lambda \in \varLambda}A_{\lambda}^{c}$.
+  \end{itemize}
+\end{theorem}
+
+\begin{proof}
+  证明略.
+\end{proof}
+
+基于上面给出的集合间运算的性质, 我们作下面的特殊定义, 这些定义将会在未来某些测度论的定理中用到.\par
+\begin{definition}
+  设$\{A_n\}$是一集列, 则称集合$\underset{N=1}{\overset{\infty}{\bigcap}}\underset{n=N}{\overset{\infty}{\bigcup}}A_n$为集列$\{A_n\}$的上限集, 记作$\limsup_{n \to \infty}A_n$.\par
+  设$\{A_n\}$是一集列, 则称集合$\underset{N=1}{\overset{\infty}{\bigcup}}\underset{n=N}{\overset{\infty}{\bigcap}}A_n$为集列$\{A_n\}$的下限集, 记作$\liminf_{n \to \infty}A_n$.\par
+\end{definition}
+
+针对上限集和下限集, 我们有如下等价定义:\par
+\begin{theorem}
+  设$\{A_n\}$是一集列, 则有如下等价定义:\par
+  \begin{itemize}
+    \item $x\in \limsup_{n \to \infty}A_n\Leftrightarrow \forall N, \exists n_0\geqslant N, x\in A_{n_0}$.
+    \item $x\in \liminf_{n \to \infty}A_n\Leftrightarrow \exists N, \forall n\geqslant N, x\in A_{n}$.
+  \end{itemize}
+\end{theorem}
+\begin{proof}
+  上面的等价定义是利用命题的存在性和任意性得到的, 这种证明方法会在后续经常用到. 通俗来讲, 即: 并集表示存在性, 交集表示任意性.\par
+\end{proof}
+
+现在我们给出下面一些性质, 很好的描述了上限集和下限集在给定的集列上的关系:\par
+\begin{theorem}
+  给定$\{A_n\}$是一集列, 则下列命题成立:\par
+  \begin{itemize}
+    \item $(\limsup_{n \to \infty}A_n)^{c}=\liminf_{n \to \infty}(A_n)^{c}$.
+    \item $(\liminf_{n \to \infty}A_n)^{c}=\limsup_{n \to \infty}(A_n)^{c}$.
+    \item $\bigcap_{n}^{\infty}A_n \subset \liminf_{n \to \infty}A_n\subset \liminf_{n \to \infty}(A_n)\subset \bigcup_{n}^{\infty}A_n$.
+  \end{itemize}
+\end{theorem}
+
+\begin{proof}
+  前两个命题是利用上面给出的等价定义得到的. 这两个命题实际上解释了上限集和下限集的关系.\par
+  对于第三个命题, 首先考虑$\liminf_{n \to \infty}A_n\subset \liminf_{n \to \infty}(A_n)\subset$: 若$x\in \liminf_{n \to \infty}A_n$, 则$\exists N, \forall n\geqslant N, x\in A_n$, 这说明$x$在无穷多个$A_n$中出现, 因此$x\in \liminf_{n \to \infty}(A_n)$.\par
+  再考虑$\bigcap_{n}^{\infty}A_n \subset \liminf_{n \to \infty}A_n$: 若$x\in \bigcap_{n}^{\infty}A_n$, 则$\forall n, x\in A_n$, 因此$x\in \liminf_{n \to \infty}A_n$.\par
+  类似地我们也有$\liminf_{n \to \infty}(A_n)\subset \bigcup_{n}^{\infty}A_n$: 若$x\in \liminf_{n \to \infty}(A_n)$, 则$\exists N, \forall n\geqslant N, x\in A_n$, 因此$x\in \bigcup_{n}^{\infty}A_n$.\par
+\end{proof}
+
+
+
+\btocgroup
+\UseTocStyle{chapter}{emph}{toc}
+\chapter{Lebesgue测度}
+\etocgroup
+
+\btocgroup
+\UseTocStyle{chapter}{emph}{toc}
+\chapter{可测函数}
+\etocgroup
+\backmatter
+
+
+\end{document}
