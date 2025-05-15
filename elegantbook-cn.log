@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  15 MAY 2025 22:10
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  15 MAY 2025 22:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1790,10 +1790,6 @@ File: ./figure/logo-blue.png Graphic file (type bmp)
 [2
 
 ] (./elegantbook-cn.toc)
-\tf@toc=\write8
-\openout8 = `elegantbook-cn.toc'.
-
-
 
 [1
 
@@ -1846,10 +1842,10 @@ Package logreq Info: Writing requests to 'elegantbook-cn.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56664 strings out of 473832
- 1282305 string characters out of 5733158
- 2270504 words of memory out of 5000000
- 78792 multiletter control sequences out of 15000+600000
+ 56669 strings out of 473832
+ 1282425 string characters out of 5733158
+ 2270409 words of memory out of 5000000
+ 78797 multiletter control sequences out of 15000+600000
  574873 words of font info for 122 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  151i,11n,165p,1231b,1360s stack positions out of 10000i,1000n,20000p,200000b,200000s

@@ -167,6 +167,18 @@
   类似地我们也有$\liminf_{n \to \infty}(A_n)\subset \bigcup_{n}^{\infty}A_n$: 若$x\in \liminf_{n \to \infty}(A_n)$, 则$\exists N, \forall n\geqslant N, x\in A_n$, 因此$x\in \bigcup_{n}^{\infty}A_n$.\par
 \end{proof}
 
+\begin{definition}
+  集列$\{A_n\}$是收敛的, 当且仅当$\limsup_{n \to \infty}A_n=\liminf_{n \to \infty}A_n$. 此时记$\lim_{n \to \infty} A_n=\limsup_{n \to \infty}A_n=\liminf_{n \to \infty}A_n$为集列$\{A_n\}$的极限.\par
+\end{definition}
+
+\begin{corollary}
+  若递增集列$\{A_n\}$是收敛的, 则$\limsup_{n \to \infty}A_n=\liminf_{n \to \infty}A_n=\bigcup_{n}^{\infty}A_n$.\par
+  若递减集列$\{A_n\}$是收敛的, 则$\limsup_{n \to \infty}A_n=\liminf_{n \to \infty}A_n=\bigcap_{n}^{\infty}A_n$.\par
+\end{corollary}
+\begin{proof}
+  递增集列有$\forall n, A_n\subset A_{n+1}$, 因此$\bigcup_{n}^{\infty}A_n=\lim_{n \to \infty}A_n =\limsup_{n \to \infty}A_n=\liminf_{n \to \infty}A_n$.\par
+  递减集列有$\forall n, A_n\supset A_{n+1}$, 因此$\bigcap_{n}^{\infty}A_n=\lim_{n \to \infty}A_n =\limsup_{n \to \infty}A_n=\liminf_{n \to \infty}A_n$.\par
+\end{proof}
 
 
 \btocgroup
