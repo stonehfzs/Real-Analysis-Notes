@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>elegantbook-cn.bcf</file>
+      <file>"Real Analysis Notes".bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>elegantbook-cn.bbl</file>
+      <file>"Real Analysis Notes".bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -65,19 +65,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>elegantbook-cn</infile>
+      <infile>"Real Analysis Notes"</infile>
     </cmdline>
     <input>
-      <file>elegantbook-cn.bcf</file>
+      <file>"Real Analysis Notes".bcf</file>
     </input>
     <output>
-      <file>elegantbook-cn.bbl</file>
+      <file>"Real Analysis Notes".bbl</file>
     </output>
     <provides type="dynamic">
-      <file>elegantbook-cn.bbl</file>
+      <file>"Real Analysis Notes".bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>elegantbook-cn.bcf</file>
+      <file>"Real Analysis Notes".bcf</file>
     </requires>
     <requires type="editable">
       <file>reference.bib</file>

@@ -13,4 +13,10 @@
 \CTEX@ifnametrue 
 \contentsline {chapter}{\numberline {第三章}可测函数}{4}{chapter.3}%
 \endgroup 
+\CTEX@ifnametrue 
+\contentsline {section}{\numberline {3.1}广义实函数}{4}{section.3.1}%
+\CTEX@ifnametrue 
+\contentsline {section}{\numberline {3.2}可测函数的定义和性质}{4}{section.3.2}%
+\CTEX@ifnametrue 
+\contentsline {section}{\numberline {3.3}可测函数的收敛性}{4}{section.3.3}%
 \contentsfinish 

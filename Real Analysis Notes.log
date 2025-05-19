@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  15 MAY 2025 22:58
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  19 MAY 2025 23:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**elegantbook-cn
-(./elegantbook-cn.tex
+**"Real Analysis Notes"
+(./Real Analysis Notes.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (./easybook.cls
@@ -1603,8 +1603,8 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 55.
 Package hyperref Info: Option `colorlinks' set `false' on input line 55.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
- (./elegantbook-cn.aux)
-\openout1 = `elegantbook-cn.aux'.
+ (./Real Analysis Notes.aux)
+\openout1 = `"Real Analysis Notes.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
 LaTeX Font Info:    ... okay on input line 55.
@@ -1695,18 +1695,18 @@ Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout6 = `elegantbook-cn.bcf'.
+\openout6 = `"Real Analysis Notes.bcf"'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'elegantbook-cn.bbl' not found.
+Package biblatex Info: ... file '"Real Analysis Notes".bbl' not found.
 
-No file elegantbook-cn.bbl.
+No file "Real Analysis Notes".bbl.
 Package biblatex Info: Reference section=0 on input line 55.
 Package biblatex Info: Reference segment=0 on input line 55.
 Package hyperref Info: Link coloring ON on input line 55.
-(./elegantbook-cn.out) (./elegantbook-cn.out)
+(./Real Analysis Notes.out) (./Real Analysis Notes.out)
 \@outlinefile=\write7
-\openout7 = `elegantbook-cn.out'.
+\openout7 = `"Real Analysis Notes.out"'.
 
 Package hyperref Info: Option `pageanchor' set `false' on input line 58.
 *geometry* verbose mode - [ newgeometry ] result:
@@ -1789,7 +1789,11 @@ File: ./figure/logo-blue.png Graphic file (type bmp)
 
 [2
 
-] (./elegantbook-cn.toc)
+] (./Real Analysis Notes.toc)
+\tf@toc=\write8
+\openout8 = `"Real Analysis Notes.toc"'.
+
+
 
 [1
 
@@ -1830,24 +1834,24 @@ Package easybase Warning: The contents style 'emph' of 'chapter' is not
 
 [4
 
-] (./elegantbook-cn.aux)
+] (./Real Analysis Notes.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
-Package rerunfilecheck Info: File `elegantbook-cn.out' has not changed.
-(rerunfilecheck)             Checksum: 37E8A037C66BD945D37BE70BDD2652A4;466.
-Package logreq Info: Writing requests to 'elegantbook-cn.run.xml'.
-\openout1 = `elegantbook-cn.run.xml'.
+Package rerunfilecheck Info: File `"Real Analysis Notes".out' has not changed.
+(rerunfilecheck)             Checksum: <no file>.
+Package logreq Info: Writing requests to '"Real Analysis Notes".run.xml'.
+\openout1 = `"Real Analysis Notes.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56669 strings out of 473832
- 1282425 string characters out of 5733158
- 2270409 words of memory out of 5000000
- 78797 multiletter control sequences out of 15000+600000
+ 56691 strings out of 473832
+ 1283149 string characters out of 5733158
+ 2270539 words of memory out of 5000000
+ 78819 multiletter control sequences out of 15000+600000
  574873 words of font info for 122 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 151i,11n,165p,1231b,1360s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 151i,11n,165p,1238b,1360s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on elegantbook-cn.pdf (8 pages).
+Output written on Real Analysis Notes.pdf (8 pages).

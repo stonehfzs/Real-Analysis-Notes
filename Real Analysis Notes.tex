@@ -190,6 +190,49 @@
 \UseTocStyle{chapter}{emph}{toc}
 \chapter{可测函数}
 \etocgroup
+
+\section{广义实函数}
+
+
+\section{可测函数的定义和性质}
+
+\section{可测函数的收敛性}
+
+我们现在对函数的收敛作如下定义:\par
+
+\begin{definition}
+  设$f_n,f$是定义在$E$上的函数, 
+  \begin{itemize}
+    \item 称$f_n$逐点收敛到$f$, 当且仅当$\forall x\in E, \lim_{n \to \infty}f_n(x)=f(x)$.\par
+    \item 称$f_n$一致收敛到$f$, 当且仅当$\forall \varepsilon>0, \exists N\in \mathbb{N}, \forall n\geqslant N, |f_n(x)-f(x)|<\varepsilon$.\par
+    \item 称$f_n$几乎处处收敛到$f$, 当且仅当$\exists E_0\subset E, m(E_0) = 0, \forall x\in E\backslash E_0, \lim_{n \to \infty}f_n(x)=f(x)$.\par
+    \item 称$f_n$近乎一致收敛到$f$, 当且仅当$\forall \varepsilon>0, \forall \delta > 0, \exists E_0\subset E, m(E_0) < \delta, \exists N\in \mathbb{N}, \forall n\geqslant N, \forall x\in E\backslash E_0, |f_n(x)-f(x)|<\varepsilon$.\par
+  \end{itemize}
+\end{definition}
+
+\begin{example}
+  若$f_n(x)=x^n$, $f(x)=0$, 则$f_n(x)$近乎一致收敛到$f$.\par
+  这是由于$\forall \delta>0$, 取$E_0 =\left[1-\frac{\delta}{2},1\right]$, 则$m(E_0)=\frac{\delta}{2}<\delta$, $\forall x\in E\backslash E_0$, $|f_n(x)-f(x)|=|x^n|<\varepsilon$.\par
+  此时只需要取$N=\left|\frac{\varepsilon}{\log \left(1-\frac{\delta}{2}\right)}\right|$, 使得$\forall n\geqslant N$, $|x^n|<\varepsilon$.\par
+\end{example}
+
+\begin{remark}
+  这里$N$是和$\delta$有关的, 但不能和$x$有关, 否则就不再是一致收敛了.\par
+\end{remark}
+
+\begin{theorem}
+  下列命题等价:\par
+  \begin{itemize}
+    \item $\exists E_0\subset E, m(E_0) = 0, \forall x\in E\backslash E_0, \lim_{n \to \infty}f_n(x)=f(x)$.
+    \item $\lim_{n\to \infty}m(E[f_n \nrightarrow f])=0$.
+    \item $\forall x\in E[f_n \nrightarrow f], f_n(x)\nrightarrow f(x)$
+  \end{itemize}
+\end{theorem}
+
+\begin{lemma}
+  $E[f_n \nrightarrow f] = \bigcup_{\varepsilon} \bigcap_{N=1}^{+\infty} \bigcup_{n=N}^{+\infty}E\left[\left|f_n-f\right|\geqslant \varepsilon\right] = \bigcup_{k=1}^{+\infty} \bigcap_{N=1}^{+\infty} \bigcup_{n=N}^{+\infty}E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]$.
+\end{lemma}
+
 \backmatter
 
 
