@@ -233,6 +233,22 @@
   $E[f_n \nrightarrow f] = \bigcup_{\varepsilon} \bigcap_{N=1}^{+\infty} \bigcup_{n=N}^{+\infty}E\left[\left|f_n-f\right|\geqslant \varepsilon\right] = \bigcup_{k=1}^{+\infty} \bigcap_{N=1}^{+\infty} \bigcup_{n=N}^{+\infty}E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]$.
 \end{lemma}
 
+\begin{proof}
+  考虑$E[f_n \nrightarrow f]$的定义:\par
+  $\exists \varepsilon_0>0, \forall N\in \mathbb{N}, \exists n_0\geqslant N, \left|f_n(x)-f(x)\right|\geqslant \varepsilon_0$.\par
+  这说明$\exists \varepsilon_0>0, \forall N\in \mathbb{N}, \exists n_0\geqslant N, x\in E\left[\left|f_n-f\right|\geqslant \varepsilon_0\right]$.\par
+  于是有$x\in \bigcup_{\varepsilon} \bigcap_{N=1}^{+\infty} \bigcup_{n=N}^{+\infty}E\left[\left|f_n-f\right|\geqslant \varepsilon_0\right]$.\par
+  更进一步考虑$\varepsilon$的任意性, 我们有$x \in \bigcup_{k=1}^{+\infty} \bigcap_{N=1}^{+\infty} \bigcup_{n=N}^{+\infty}E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]$.\par
+\end{proof}
+
+\begin{remark}
+  上面的这种方法在后续的Lebesgue积分中也会用到, 这种方法实际上是利用了$\varepsilon$的任意性来构造一个新的集合, 使得这个集合的测度为0. 但同时考虑到$\varepsilon$是任意的, 因此我们选择$\frac{1}{k}$代替依旧是成立的.\par
+\end{remark}
+
+\begin{lemma}
+  Borel-Cantelli引理: 设$\{A_n\}$是一集列, 则$\sum_{n=1}^{\infty}m(A_n)<\infty \Rightarrow m(\limsup_{n \to \infty}A_n)=0$.
+\end{lemma}
+
 \backmatter
 
 
