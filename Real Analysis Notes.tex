@@ -246,8 +246,32 @@
 \end{remark}
 
 \begin{lemma}
-  Borel-Cantelli引理: 设$\{A_n\}$是一集列, 则$\sum_{n=1}^{\infty}m(A_n)<\infty \Rightarrow m(\limsup_{n \to \infty}A_n)=0$.
+  (Borel-Cantelli) 设$\{A_n\}$是一集列, 则$\sum_{n=1}^{\infty}m(A_n)<\infty \Rightarrow m(\limsup_{n \to \infty}A_n)=0$.
 \end{lemma}
+
+\begin{proof}
+  首先考虑$e_k$和$E$均可测, 则有下面的等价关系:\par
+  $E\backslash \left(\limsup_{k \to \infty}e_k \right)= \liminf_{k\to \infty}\left(E\backslash e_k\right)$.\par
+  事实上我们有$\left(\limsup_{k\to \infty}e_k\right)^{c}=\left(\bigcap_{N=1}^{\infty}\left(\bigcup_{k=N}^{\infty}e_k\right)\right)^{c}=\bigcup_{N=1}^{\infty}\left(\bigcup_{k=N}^{\infty}e_k\right)^{c} = \bigcup_{N=1}^{\infty}\bigcap_{k=N}^{\infty}e_k^c$.\par
+  下面再考虑$m(E_k)<\frac{1}{2^k}, \forall k$, 则有$m\left(\bigcup_{k=N}^{\infty}E_k\right)\leqslant \frac{1}{2^{N-1}}$. 记$F_N = \bigcup_{k=N}^{\infty}E_k$, 则$m\left(\bigcap_{N=1}^{\infty}F_N\right)\leqslant m\left(F_N\right)\to 0$.\par
+\end{proof}
+
+下面我们讨论近乎一致收敛, 几乎处处收敛的关系:\par
+
+\begin{theorem}
+  若$f_n,f$在$E$上可测, $f_n$近乎一致收敛到$f$, 则$f_n$几乎处处收敛到$f$.\par
+\end{theorem}
+
+\begin{proof}
+  $f_n$近乎一致收敛到$f$, 则有$\forall k >0, \exists {e_k}, m(e_k)<\frac{1}{k}, f_n \Rightarrow f \text{on} E\backslash e_k$, 其中$e_k$可测.\par
+  往证$m\left(\bigcup_{k=1}^{\infty}\bigcap_{N=1}^{\infty}\bigcup_{n=N}^{\infty} E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]\right)=0$.\par
+  令$E_0=\limsup_{k \to \infty}e_k$, 则$E\left[f_n\nrightarrow f\right]\subset E_0$.\par
+  由Borel-Cantelli引理, 我们有$\sum_{n=1}^{\infty}m\left(E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]\right)<\infty$, 因此$m\left(\limsup_{n \to \infty}E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]\right)=0$.\par
+\end{proof}
+
+\begin{theorem}
+  (Egoroff) 设$m(E)<\infty$, 若$f_n$在$E$上几乎处处收敛到$f$, 则$f_n$近乎一致收敛到$f$.\par
+\end{theorem}
 
 \backmatter
 
