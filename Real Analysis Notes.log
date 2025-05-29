@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  28 MAY 2025 15:29
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  29 MAY 2025 17:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1831,13 +1831,10 @@ Package easybase Warning: The contents style 'emph' of 'chapter' is not
 [4
 
 ]
-Overfull \hbox (1.37024pt too wide) in paragraph at lines 269--269
-[]\TU/FangSong(0)/m/n/10.53937 由 \TU/lmr/m/n/10.53937 Borel-Cantelli \TU/FangSong(0)/m/n/10.53937 引 理\TU/lmr/m/n/10.53937 , \TU/FangSong(0)/m/n/10.53937 我 们 有 $[] \OML/lmm/m/it/10.53937 m [] < \OMS/lmsy/m/n/10.53937 1$\TU/lmr/m/n/10.53937 , \TU/FangSong(0)/m/n/10.53937 因 此 $\OML/lmm/m/it/10.53937 m [] \OT1/lmr/m/n/10.53937 =
- []
 
+[5]
 
-
-[5] (./Real Analysis Notes.aux)
+[6] (./Real Analysis Notes.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
@@ -1849,12 +1846,12 @@ Package logreq Info: Writing requests to '"Real Analysis Notes".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56696 strings out of 473832
- 1283239 string characters out of 5733158
- 2270444 words of memory out of 5000000
- 78824 multiletter control sequences out of 15000+600000
+ 56702 strings out of 473832
+ 1283335 string characters out of 5733158
+ 2270446 words of memory out of 5000000
+ 78830 multiletter control sequences out of 15000+600000
  574873 words of font info for 122 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  151i,11n,165p,1238b,1360s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Real Analysis Notes.pdf (9 pages).
+Output written on Real Analysis Notes.pdf (10 pages).

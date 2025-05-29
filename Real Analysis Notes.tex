@@ -266,12 +266,69 @@
   $f_n$近乎一致收敛到$f$, 则有$\forall k >0, \exists {e_k}, m(e_k)<\frac{1}{k}, f_n \Rightarrow f \text{on} E\backslash e_k$, 其中$e_k$可测.\par
   往证$m\left(\bigcup_{k=1}^{\infty}\bigcap_{N=1}^{\infty}\bigcup_{n=N}^{\infty} E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]\right)=0$.\par
   令$E_0=\limsup_{k \to \infty}e_k$, 则$E\left[f_n\nrightarrow f\right]\subset E_0$.\par
-  由Borel-Cantelli引理, 我们有$\sum_{n=1}^{\infty}m\left(E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]\right)<\infty$, 因此$m\left(\limsup_{n \to \infty}E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]\right)=0$.\par
+  由Borel-Cantelli引理, 我们有$\sum_{n=1}^{\infty}m\left(E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]\right)<\infty$.\par
+  因此$m\left(\limsup_{n \to \infty}E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]\right)=0$.\par
 \end{proof}
 
 \begin{theorem}
   (Egoroff) 设$m(E)<\infty$, 若$f_n$在$E$上几乎处处收敛到$f$, 则$f_n$近乎一致收敛到$f$.\par
 \end{theorem}
+
+\begin{proof}
+  由$f_n \rightarrow f \text{ a.e.} on E$知, $m\left(\bigcup_{k=1}^{\infty}\bigcap_{N=1}^{\infty}\bigcup_{n=N}^{\infty}E\left[|f_n-f|\geqslant \frac{1}{k}\right]\right)=0$.\par
+  记$F_k=\bigcap_{N=1}^{\infty}\bigcup_{n=N}^{\infty}E\left[|f_n-f|\geqslant \frac{1}{k}\right]$, 则$m(F_k)=0, \forall k >0$. 由$m(E)<\infty$有$\lim_{k\to \infty}m(F_k) = m(\lim_{k\to \infty}F_k)=0$.\par
+  即$\forall k > 0, \forall \delta >0, \exists k_{\delta}>0, \forall k>k_{\delta}, m(F_{k_{\delta}})<\frac{\delta}{2^{k_{\delta}}}$, 于是$m\left(\bigcup_{k\geqslant k_{\delta}}F_k\right)<\sum_{N=1}^{\infty}\frac{\delta}{2^{k_{\delta}}}=\delta$.\par
+  令$e=\bigcup_{n\geqslant k_{\delta}}F_k$, 则$m(e)<\delta$, $\forall x\in E\backslash e, |f_n(x)-f(x)|<\frac{1}{k}$, 这说明$f_n$近乎一致收敛到$f$.\par 
+\end{proof}
+
+根据上面的讨论, 我们知道近乎一致收敛有下面的表述方法:
+$$\forall \delta >0, \forall \varepsilon >0, \exists E_0\subset E, m(E_0)<\delta, \exists N>0, \forall n\geqslant N, |f_n(x)-f(x)|<\varepsilon, \forall x\in E\backslash E_0.$$
+
+事实上, 我们知道这表示$|f_n(x)-f(x)|\geqslant \varepsilon$的集合的测度应当很小, 而又考虑到$\delta$是任意取的, $N$只与$\delta$有关, 于是我们可以作下面的定义:
+$$\forall \delta >0, \forall \varepsilon >0, \exists N, n\geqslant N, m\left(E\left[|f_n-f|\geqslant \varepsilon\right]\right)<\delta.$$
+
+更进一步, 这可以写成
+$\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_n-f|\geqslant \varepsilon\right]\right) = 0.$
+
+这就有了下面依测度收敛的定义:\par
+\begin{definition}
+  设$f_n,f$是定义在$E$可测且几乎处处有限的函数, 则$f_n$依测度收敛到$f$, 当且仅当$\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_n-f|\geqslant \varepsilon\right]\right) = 0$. 记作$f_n\Rightarrow f$.
+\end{definition}
+
+对于这种收敛, 我们继续讨论和其他收敛的关系, 于是有下面的定理:\par
+
+\begin{theorem}
+  (Lebesgue) 设$m(E)<\infty$, 若$f_n$几乎处处收敛到$f$, 则$f_n$依测度收敛到$f$.\par
+\end{theorem}
+
+\begin{proof}
+  由$f_n$几乎处处收敛到$f$, 则$\exists E_0\subset E, m(E_0)=0, \forall x\in E\backslash E_0, \lim_{n \to \infty}f_n(x)=f(x)$.\par
+  于是有$\forall \varepsilon >0, \exists N>0, \forall n\geqslant N, |f_n(x)-f(x)|<\varepsilon$, $\forall x\in E\backslash E_0$.\par
+  因此$m\left(E\left[|f_n-f|\geqslant \varepsilon\right]\right)\leqslant m(E_0)=0$, 这说明$f_n$依测度收敛到$f$.\par
+\end{proof}
+
+\begin{theorem}
+  (Riesz) 设$m(E)<\infty$, 若$f_n$依测度收敛到$f$, 则$\exists f_{n_k}$, $f_{n_k}$几乎处处收敛到$f$.\par
+\end{theorem}
+
+\begin{proof}
+  对于依测度收敛的函数列$f_n$, 总可以取$k>0$使得$e_k=E\left[|f_{n_k}-f|\geqslant \varepsilon\right]$满足$m(e_k)< \frac{1}{2^k}$. 于是$\sum_{k=1}^{\infty}m(e_k)=1<\infty$.\par
+  由Borel-Cantelli引理, 我们有$m\left(\limsup_{k \to \infty}e_k\right)=0$, 令$E_0=\limsup_{k \to \infty}e_k$, 则$\forall x \in E\backslash E_0, \exists k_0, \forall k\geqslant k_0, |f_{n_k}(x)-f(x)|<\varepsilon$.\par
+  这说明$f_{n_k}$几乎处处收敛到$f$.\par
+\end{proof}
+
+\begin{remark}
+  几乎处处收敛和依测度收敛不是等价的条件, 例如下面两个例子:\par
+  令$f_n(x)=\chi_{\left(\right.0,n\left.\right]}$, 则$f_n(x)$几乎处处收敛到$f(x)=\chi_{\left(\right.0,+\infty\left.\right)}$, 但$f_n$不依测度收敛到$f$, 这是因为我们可以验证$\lim_{n \to \infty}m\left(E\left[|f_n-f|\geqslant 1\right]\right) = +\infty$.\par
+  令$f_n(x)$按下面的方法排列: $f_1(x)=\chi_{\left[\right.0,\frac{1}{2}\left.\right]}$, $f_2(x)=\chi_{\left(\right.\frac{1}{2},1\left.\right]}$, $f_3(x)=\chi_{\left[\right.0,\frac{1}{4}\left.\right]}$, $f_4(x)=\chi_{\left(\right.\frac{1}{4},\frac{1}{2}\left.\right]}$,$\cdots$, 则$f_n(x)$依测度收敛到$f(x)=\chi_{\left[\right.0,1\left.\right]}$, 但$f_n$处处不收敛到$f$.\par
+\end{remark}
+
+基于上面的结果, 我们下面讨论依测度收敛的性质:\par
+
+\begin{example}
+  若$f_n\Rightarrow f$, $f_n\Rightarrow g$, 则$f=g$几乎处处成立.\par
+\end{example}
+
 
 \backmatter
 
