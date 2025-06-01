@@ -191,14 +191,13 @@
 \chapter{可测函数}
 \etocgroup
 
-\section{广义实函数}
-
-
 \section{可测函数的定义和性质}
+
+\newpage
 
 \section{可测函数的收敛性}
 
-我们现在对函数的收敛作如下定义:\par
+在讨论函数性质时, 我们自然想到普通微积分中实函数的收敛, 因此我们现在对函数的收敛作如下定义:\par
 
 \begin{definition}
   设$f_n,f$是定义在$E$上的函数, 
@@ -264,9 +263,8 @@
 
 \begin{proof}
   $f_n$近乎一致收敛到$f$, 则有$\forall k >0, \exists {e_k}, m(e_k)<\frac{1}{k}, f_n \Rightarrow f \text{on} E\backslash e_k$, 其中$e_k$可测.\par
-  往证$m\left(\bigcup_{k=1}^{\infty}\bigcap_{N=1}^{\infty}\bigcup_{n=N}^{\infty} E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]\right)=0$.\par
-  令$E_0=\limsup_{k \to \infty}e_k$, 则$E\left[f_n\nrightarrow f\right]\subset E_0$.\par
-  由Borel-Cantelli引理, 我们有$\sum_{n=1}^{\infty}m\left(E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]\right)<\infty$.\par
+  往证$m\left(\bigcup_{k=1}^{\infty}\bigcap_{N=1}^{\infty}\bigcup_{n=N}^{\infty} E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]\right)=0$. 令$E_0=\limsup_{k \to \infty}e_k$, 则$E\left[f_n\nrightarrow f\right]\subset E_0$.\par
+  由Borel-Cantelli引理, 我们有$\sum_{n=1}^{\infty}m\left(E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]\right)<\infty$. \par
   因此$m\left(\limsup_{n \to \infty}E\left[\left|f_n-f\right|\geqslant \frac{1}{k}\right]\right)=0$.\par
 \end{proof}
 
@@ -328,6 +326,82 @@ $\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_n-f|\geqslant \vare
 \begin{example}
   若$f_n\Rightarrow f$, $f_n\Rightarrow g$, 则$f=g$几乎处处成立.\par
 \end{example}
+
+\begin{example}
+  若$f_n\Rightarrow f$, $g_n\Rightarrow g$, $f_n\geqslant g_n$在$E$上几乎处处成立, 则$f\geqslant g$在$E$上几乎处处成立.\par
+\end{example}
+
+\begin{example}
+  若$f_n\Rightarrow f$, $a\in \mathbb{R}$, 则$af_n\Rightarrow af$.\par  
+  若$f_n\Rightarrow f$, $g_n \Rightarrow g$, 则$f_n+g_n\Rightarrow f+g$.\par
+\end{example}
+
+\begin{corollary}
+  若$f_n\Rightarrow 0$, $g_n \Rightarrow 0$, 则$f_ng_n\Rightarrow 0$.\par
+\end{corollary}
+
+\begin{proof}
+  往证: $\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_ng_n|\geqslant \varepsilon\right]\right) = 0$.\par
+  记$E_n=E\left[|g_n|>1\right]$, 则$E_n^c=E\left[|g_n|\leqslant 1\right]$.\par
+  于是$E\left[|f_ng_n|\geqslant \varepsilon\right]\subset E_n\left[|f_ng_n|\geqslant \varepsilon\right]\cup E_n^c\left[|f_ng_n|\geqslant \varepsilon\right]\subset E_n\cup E\left[|f_n|\geqslant \varepsilon\right]$.\par
+  由$f_n,g_n \Rightarrow 0$, $\exists N_1,N_2$使得$n\geqslant N_1, m(E\left[|f_n|\geqslant \varepsilon\right])<\frac{\delta}{2}$, $n\geqslant N_2, m(E\left[|g_n|\geqslant 1\right])<\frac{\delta}{2}$.\par
+  取$N = \max\{N_1,N_2\}$, 则$\forall n\geqslant N$, $m(E\left[|f_ng_n|\geqslant \varepsilon\right])<\frac{\delta}{2}+\frac{\delta}{2}=\delta$.\par
+  这说明$\lim_{n \to \infty}m\left(E\left[|f_ng_n|\geqslant \varepsilon\right]\right) = 0$. 即$f_ng_n \Rightarrow 0$.\par
+\end{proof}
+
+\begin{corollary}
+  若$f_n\Rightarrow f$, $g_n = g$有界可测, 则$f_ng\Rightarrow fg$.\par
+\end{corollary}
+
+\begin{proof}
+  往证: $\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_ng-fg|\geqslant \varepsilon\right]\right) = 0$.\par
+  由$f_n\Rightarrow f$, $\exists N, \forall n\geqslant N, m(E\left[|f_n-f|\geqslant \frac{\varepsilon}{M}\right])<\delta$.\par
+  注意到$E\left[|f_ng-fg|\geqslant \varepsilon\right]\subset  E\left[|f_n-f|\geqslant \frac{\varepsilon}{M}\right]$,其中$M=\sup |g_n|=\sup |g|$.\par
+  于是$m\left(E\left[|f_ng-fg|\geqslant \varepsilon\right]\right)\leqslant m\left(E\left[|f_n-f|\geqslant \frac{\varepsilon}{M}\right]\right)<\delta$. 即$f_ng\Rightarrow fg$.\par
+\end{proof}
+
+\begin{remark}
+  上面的若干例子说明了依测度收敛的函数列在数乘和加法下是封闭的, 但同时注意到第二个推论中的有界性是必要的, 例如下面这个例子:\par
+  令$f_n(x)=\chi_{\left(\right.0,n\left.\right]} \frac{1}{x}$, $g(x)=x$, 则$f_n\Rightarrow 0$, 但$f_n\cdot g = \chi_{\left(\right.0,n\left.\right]}$, $f\cdot g = 1$. 此时并没有$\chi_{\left(\right.0,n\left.\right]}\Rightarrow \chi_{\left(0,\infty\right)}$.\par
+\end{remark}
+
+\newpage
+
+\section{可测函数的连续性}
+
+上面讨论的许多收敛都是在可测函数的基础上进行的, 现在我们讨论可测函数的连续性, 这一点是必须的, 这是因为后续我们在建立可积函数, 可测函数与联系函数的关系时会更进一步讨论连续的特点. \par
+
+\begin{lemma}
+  若$E$是一可测集, 则$C(E)\subset \mathcal{M} (E)$.
+\end{lemma}
+
+\begin{proof}
+  由$E$是可测集, 因此$E[f>a]=E\cap f^{-1}\left(a,\infty\right), \forall a \in \mathbb{R}$. \par
+  由连续映射的定义知, $f^{-1}\left(a,\infty\right)$是开集. 于是$E\cap f^{-1}\left(a,\infty\right)$可测.\par
+  即$E[f>a],\forall a \in \mathbb{R}$是可测的. 于是$f$是可测函数.\par
+\end{proof}
+
+上面这个定理说明了连续函数在可测集上是可测的, 下面我们为了得到更强结果的连续性条件, 我们首先考虑下面的一系列问题.\par
+
+\begin{lemma}
+  设$A,B$均为闭集, $A\cap B=\Phi$, 则$\exists g\in C(\mathbb{R}^n), \left.g\right|_A=1, \left.g\right|_B=0$.且$g$满足$|g(x)|\leqslant 1,\forall x\in \mathbb{R}^n$. \par
+\end{lemma}
+
+\begin{proof}
+  可以自然想到距离定义, 于是有$g=\frac{d(x,B)}{d(x,A)+d(x,B)}$.\par
+  其中$d(x,A)=\inf_{y\in A}|x-y|$, $d(x,B)=\inf_{y\in B}|x-y|$.\par
+  同样可以验证$g(x)$是满足上面的条件的.\par
+\end{proof}
+
+
+\newpage
+
+\chapter{Lebesgue积分}
+
+\section{非负可测函数的积分}
+
+
+\section{可测函数的积分}
 
 
 \backmatter

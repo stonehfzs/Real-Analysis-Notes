@@ -14,9 +14,15 @@
 \contentsline {chapter}{\numberline {第三章}可测函数}{4}{chapter.3}%
 \endgroup 
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {3.1}广义实函数}{4}{section.3.1}%
+\contentsline {section}{\numberline {3.1}可测函数的定义和性质}{4}{section.3.1}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {3.2}可测函数的定义和性质}{4}{section.3.2}%
+\contentsline {section}{\numberline {3.2}可测函数的收敛性}{5}{section.3.2}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {3.3}可测函数的收敛性}{4}{section.3.3}%
+\contentsline {section}{\numberline {3.3}可测函数的连续性}{8}{section.3.3}%
+\CTEX@ifnametrue 
+\contentsline {chapter}{\numberline {第四章}Lebesgue积分}{9}{chapter.4}%
+\CTEX@ifnametrue 
+\contentsline {section}{\numberline {4.1}非负可测函数的积分}{9}{section.4.1}%
+\CTEX@ifnametrue 
+\contentsline {section}{\numberline {4.2}可测函数的积分}{9}{section.4.2}%
 \contentsfinish 
