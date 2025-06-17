@@ -193,6 +193,65 @@
 
 \section{可测函数的定义和性质}
 
+在研究可测函数的性质之前, 我们首先考虑广义实函数的定义:\par
+
+\begin{definition}
+  $f:A\rightarrow \mathbb{R}\cup\{-\infty,+\infty\}=\overline{\mathbb{R} }$称为定义在$A$上的广义实函数.\par
+\end{definition}
+
+类似地, 我们也有广义实函数的有界性的定义:\par
+
+\begin{definition}
+  设$f:A\rightarrow \overline{\mathbb{R} }$是定义在$A$上的广义实函数, 则称$f$是有界的, 当且仅当$\exists M>0, \forall x\in A, |f(x)|<M$.\par
+\end{definition}
+
+\begin{remark}
+  值得注意的是, 有界性和函数有限并不完全一致, 例如$f(x)=\frac{1}{x}$在$A=(0,1)$上是有界的, 但不是有限的. 另一方面, $f(x)=\chi_{(0,1)}$在$A=(0,1)$上是有限的, 但不是有界的.\par
+\end{remark}
+
+事实上, 我们可以给出函数有限的分析定义:\par
+
+\begin{definition}
+  设$f:A\rightarrow \overline{\mathbb{R} }$是定义在$A$上的广义实函数, 则称$f$是有限的, 当且仅当$\forall x\in A, f(x)\in \mathbb{R}$.\par
+\end{definition}
+
+而对于广义实函数的连续性, 我们也类似地给出定义:\par
+
+\begin{definition}
+  设$f$在$E$上有限, 则称$f$在$x_0\in E$处是连续的, 当且仅当$ \forall \varepsilon >0, \exists \delta_{x_0,\varepsilon} >0, \forall x\in E, \rho(x,x_0)<\delta$时有$ |f(x)-f(x_0)|<\varepsilon$.\par
+  若$f$在$E$上每一点都是连续的, 则称$f$在$E$上是连续的.\par
+  设$f$在$E$上有限, 则称$f$在$E$上是一致连续的, 当且仅当$ \forall \varepsilon >0, \exists \delta_{\varepsilon} >0, \forall x\in E, \rho(x,x_0)<\delta$时有$ |f(x)-f(x_0)|<\varepsilon, \forall x_0 \in E$.\par
+\end{definition}
+
+\begin{remark}
+  在抽象集合中讨论连续性时, 我们必须要指定讨论的集合范围, 因为在不同的集合上, 同一个函数可能会有不同的连续性. 因此为了方便讨论, 我们下面定义特征函数和简单函数.\par
+\end{remark}
+
+\begin{definition}
+  设$E$是集合, 则称$E$的特征函数为$\chi_E(x)=\begin{cases}
+    1, & x\in E \\
+    0, & x\notin E
+  \end{cases}$.\par
+  设$E_i$是一集列, 则称$E_i$的简单函数为$f(x)=\sum_{i=1}^{n}c_i\chi_{E_i}(x)$, 其中$c_i\in \mathbb{R}$, 且$E_i$互不交.\par
+  特别地, 若$E_i$均为区间, 则称$f$是阶梯函数.\par
+\end{definition}
+
+根据上面的讨论, 我们有一类特殊的例子来表示广义实函数的连续性:\par
+
+\begin{example}
+  $f=\chi_{\mathbb{Q}}(x)$在$\mathbb{Q}$上是连续的, 但在$\mathbb{R}$上是处处不连续的.\par
+\end{example}
+
+\begin{theorem}
+  若$E$,$F$为闭集, $f\in C(E)$, $f\in C(F)$, 则$f\in C(E \cup F)$.\par
+\end{theorem}
+
+\begin{proof}
+  若
+\end{proof}
+
+
+
 \newpage
 
 \section{可测函数的收敛性}
