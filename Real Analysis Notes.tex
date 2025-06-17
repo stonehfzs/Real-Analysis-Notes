@@ -389,19 +389,144 @@ $\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_n-f|\geqslant \vare
 
 \begin{proof}
   可以自然想到距离定义, 于是有$g=\frac{d(x,B)}{d(x,A)+d(x,B)}$.\par
-  其中$d(x,A)=\inf_{y\in A}|x-y|$, $d(x,B)=\inf_{y\in B}|x-y|$.\par
-  同样可以验证$g(x)$是满足上面的条件的.\par
+  其中$d(x,A)=\inf_{y\in A}|x-y|$, $d(x,B)=\inf_{y\in B}|x-y|$. 同样可以验证$g(x)$是满足上面的条件的.\par
 \end{proof}
 
+于是我们得到下面的定理, 具体说明了连续函数和可测函数的关系:\par
 
+\begin{theorem}
+  (Lusin I) 设$E$是一可测集, $f\in \mathcal{M} (E)$, 则$\forall \delta >0, \exists F\subset E, m(E\backslash F)<\delta,$ 其中$F$是闭集, 且$f$在$F$上连续.\par
+\end{theorem}
+
+\begin{proof}
+  由$f\in \mathcal{M} (E)$有, $\exists \psi_k \rightarrow f$, 其中$\psi_k$是简单函数.\par
+  若$f$有界可测, 则$\psi_k$有界, $\exists F_k, m(E\backslash F_k)<\frac{\delta}{2^{k+1}}$, 其中$F_k$是闭集. 此时$\psi_k$在$F_k$上连续.\par
+  令$F=\bigcap_{k=1}^{\infty}F_k$, 则$m(E\backslash F)\leqslant \sum_{k=1}^{\infty}m(E\backslash F_k)<\delta$. 于是$f$在$F$上连续.\par
+  若$f$无界, 构造$g(x)=\frac{f(x)}{1+|f(x)|}$, 则$g$是有界的, 且$g\in \mathcal{M} (E)$.\par
+  于是$\exists F\subset E, m(E\backslash F)<\delta$, 其中$F$是闭集, 且$g$在$F$上连续.\par
+  由$g(x)=\frac{f(x)}{1+|f(x)|}$, $g(x)+g(x)|f(x)|=f(x)$, 即$g(x)+|g(x)|f(x)=f(x)$, $f(x)=\frac{g(x)}{1-|g(x)|}$, $f$在$F$上连续.\par
+\end{proof}
+
+事实上我们还有$Lusin II$, 可以表示如下:\par
+
+\begin{theorem}
+  (Lusin II) 设$E$是一可测集, $f\in \mathcal{M} (E)$, 则$\forall \delta >0, \exists g\in C(\mathbb{R}^n), \exists F\subset E, m(E\backslash F)<\delta,$ 其中$F$是闭集, 且$g(x)=f(x),\forall x \in F$.\par
+\end{theorem}
+
+\begin{proof}
+  由Lusin I, 我们有$\exists F\subset E, m(E\backslash F)<\delta,$ 其中$F$是闭集, 且$f$在$F$上连续.\par
+  令$g=\left.f\right|_{F}$, 则$g\in C(F)$.\par
+  为了证明$g\in C(\mathbb{R}^n)$, 我们构造$g_k(x)=\left\{\begin{array}{ll}
+    g(x), & x\in F, \\
+    \frac{1}{k}, & x\in E\backslash F.
+  \end{array}\right.$\par
+  则$g_k\in C(\mathbb{R}^n)$, 且$\forall x\in F, g_k(x)=g(x)$, $\forall x\in E\backslash F, g_k(x)=\frac{1}{k}$.\par
+  于是$\forall x\in E, g_k(x)\rightarrow g(x)$, 这说明$g_k\rightarrow g$在$E$上收敛.\par
+  由于$g_k$是连续的, 因此$g\in C(\mathbb{R}^n)$.\par
+\end{proof}
 \newpage
 
 \chapter{Lebesgue积分}
 
 \section{非负可测函数的积分}
 
+在讨论一般的积分之前, 我们先定义下方图形, 这个概念实际上是Lebesgue积分的几何意义.\par
 
-\section{可测函数的积分}
+\begin{definition}
+  设$f$是定义在$E$上的非负可测函数, 则称$f$的下方图形称为$G(E,f)=\{(x,z)\in \mathbb{R}^2: x\in E, 0\leqslant z< f(x)\}$.\par
+\end{definition}
+
+\begin{remark}
+  这里我们要求$0\leqslant z< f(x)$, 实际上$0\leqslant z\leqslant f(x)$所表达的几何意义是一样的, 但按照后者定义证明函数Lebesgue可测时需要更深层次的分析技术.\par
+\end{remark}
+
+下面我们依次定义特征函数和简单函数的Lebesgue积分, 后面我们将用这些函数来定义一般的非负可测函数的Lebesgue积分.\par
+
+\begin{definition}
+  设$f(x)=\chi_{A}(x)$, 则$\int_{E}f(x)\mathrm{d}x=1\cdot m(A\cap E)$称为$f(x)$在$E$上的Lebesgue积分.\par
+  设$f(x)=\sum_{k=1}^{N}c_k\cdot \chi_{A_k}(x)$, 则$\int_{E}f(x)\mathrm{d}x=\sum_{k=1}^{N}c_k\cdot m(A_k\cap E)$称为$f(x)$在$E$上的Lebesgue积分.\par
+\end{definition}
+
+\begin{remark}
+  显然可以得到特征函数和简单函数的Lebesgue积分的几何意义就是对应的下方图形的测度.\par
+\end{remark}
+
+\begin{lemma}
+  设$f$和$g$是定义在$E$上的非负简单函数, 则:\par
+  \begin{itemize}
+    \item $\int_{E}f(x)\mathrm{d}x\geqslant 0$.
+    \item 若$f(x)\leqslant g(x)$, 则$\int_{E}f(x)\mathrm{d}x\leqslant \int_{E}g(x)\mathrm{d}x$.
+    \item $\int_{E}(af(x)+bg(x))\mathrm{d}x=a\int_{E}f(x)\mathrm{d}x+b\int_{E}g(x)\mathrm{d}x$, 其中$a,b\in \mathrm{R}^{+}$.
+  \end{itemize}
+\end{lemma}
+
+下面我们定义一般的非负可测函数的Lebesgue积分.\par
+
+\begin{definition}
+  设$f:E\rightarrow [c,d]$是非负可测函数, 则$f$在$E$上有Riemann积分$\lim_{|\lambda|\rightarrow 0}\sum_{k=1}^{N}f(\xi_k)\cdot \Delta x_k$, 类似地, 我们有Lebesgue积分$\lim_{|\lambda|\rightarrow 0}\sum_{k=1}^{N}\eta_k\cdot m(E_k)$.\par
+\end{definition}
+
+不难注意到, 这里的$\eta_k$是$f$在$E_k$上的平均值, 而$m(E_k)$是$E_k$的测度, 因此$\eta_k\cdot m(E_k)$实际上是下方图形的面积. 但从严格证明的角度, 这种方式并不方便处理抽象测度的集合, 因此我们考虑下面这种定义方式:\par
+
+\begin{definition}
+  设$f:E\rightarrow [c,d]$是非负可测函数, 则$f$在$E$上有Lebesgue积分$\lim_{k\to \infty}\int_{E}\phi_k(x)\mathrm{d}x$, 其中$\phi_k(x)$为单增简单函数, 且$\phi_k(x)\rightarrow  f(x)$, $\forall x\in E$.\par
+\end{definition}
+
+这种定义方式看似简单, 但实际上需要证明$\phi_k(x)$的存在性, 并且若出现$\phi_k(x)$和$\psi_k(x)$时, 需要进一步说明$\lim_{k\to \infty}\int_{E}\phi_k(x)\mathrm{d}x=\lim_{k\to \infty}\int_{E}\psi _k(x)\mathrm{d}x$.\par
+
+\begin{definition}
+  设$f:E\rightarrow [c,d]$是非负可测函数, 则$f$在$E$上有Lebesgue积分$\sup\left\{\int_{E}\phi(x)\mathrm{d}x: 0\leqslant \phi(x) \leqslant f(x)\right\}$, 其中 $g(x)$是一列非负简单函数.\par
+\end{definition}
+
+后面的各种Lebesgue积分的问题中我们都只采用第三种方式定义, 但可以证明三种定义方式时等价的.\par
+
+\begin{lemma}
+  设$f$和$g$是定义在$E$上的非负可测函数, 则:\par
+  \begin{itemize}
+    \item $\int_{E}f(x)\mathrm{d}x\geqslant 0$.
+    \item 若$f(x)\leqslant g(x)$, 则$\int_{E}f(x)\mathrm{d}x\leqslant \int_{E}g(x)\mathrm{d}x$.
+    \item $\int_{E}(af(x)+bg(x))\mathrm{d}x=a\int_{E}f(x)\mathrm{d}x+b\int_{E}g(x)\mathrm{d}x$, 其中$a,b\in \mathrm{R}^{+}$.
+  \end{itemize}
+\end{lemma}
+
+\begin{theorem}
+  设$f$是定义在$E$上的非负可测函数, 则$\int_{E}f(x)\mathrm{d}x=m(G(E,f))$.\par
+\end{theorem}
+
+\begin{proof}
+  由$f$是非负可测函数, 则$\exists \phi_k(x)$是单增简单函数, 且$\phi_k(x)\rightarrow f(x)$, $\forall x\in E$.\par
+  于是$m(G(E,\phi_k))\leqslant m(G(E,f))$. 于是$\int_{E}f(x)\mathrm{d}x\leqslant m(G(E,f))$. 下证$\int_{E}f(x)\mathrm{d}x\geqslant m(G(E,f))$:\par
+  $\forall (x,z)\in G(E,f), x \in E, 0\leqslant z<f(x)$, 则$\exists \phi_{k0}(x)$满足$0\leqslant z<\phi_k(x)<f(x)$, $\forall x\in E$.\par
+  即$(x,z)\in G(E,\phi_{k_0})\subset \bigcup_{k=1}^{\infty}G(E,\phi_{k})\subset G(E,f)$.\par
+  由$(x,z)$的任意性, 有$m(G(E,f))\subset \bigcup_{k=1}^{\infty}(G(E,\phi_k))$.\par
+  于是$m(G(E,f))=\lim_{k\to \infty}m(G(E,\phi_k))$. 即$\int_{E}f(x)\mathrm{d}x\geqslant m(G(E,f))$.\par
+\end{proof}
+
+下面围绕非负可测函数的Lebesgue积分, 我们讨论一些性质.\par
+
+\begin{corollary}
+  设$f\in \mathcal{M} (E)$, $f\geqslant 0$, 若$\int_{E}f(x)\mathrm{d}x=0$, 则$f(x)=0$, a.e. on $E$.\par
+\end{corollary}
+
+\begin{proof}
+  假设$m(E[f\ne 0])>0$, 则$m(E[f> 0])>0$, 于是$m(\bigcup_{n=1}^{\infty}E[f>\frac{1}{n}])$.\par
+  于是$\exists n_0>0, \delta>0, m(E[f>\frac{1}{n_0}])\geqslant \delta>0$.\par
+  此时就会有$\int_{E}f(x)\mathrm{d}x\geqslant \frac{1}{n_0}\cdot m(E[f>\frac{1}{n_0}])\geqslant \frac{\delta}{n_0}>0$.\par 
+\end{proof}
+
+\begin{corollary}
+  设$f\in \mathcal{M} (E)$, $m(E)\geqslant 0$, $f>0$ a.e. on $E$, 则$\int_{E}f(x)\mathrm{d}x>0$.\par
+\end{corollary}
+
+\begin{proof}
+  由$f>0$ a.e. on $E$, 则$m(E[f>0])>0$. 于是$\forall \varepsilon >0, m(E[f>\varepsilon])>0$.\par
+  于是$\int_{E}f(x)\mathrm{d}x\geqslant \varepsilon\cdot m(E[f>\varepsilon])>0$.\par
+\end{proof}
+
+
+\newpage
+
+\section{一般可测函数的积分}
 
 
 \backmatter
