@@ -228,6 +228,20 @@
   在抽象集合中讨论连续性时, 我们必须要指定讨论的集合范围, 因为在不同的集合上, 同一个函数可能会有不同的连续性. 因此为了方便讨论, 我们下面定义特征函数和简单函数.\par
 \end{remark}
 
+\begin{theorem}
+  若$E$,$F$为闭集, $f\in C(E)$, $f\in C(F)$, 则$f\in C(E \cup F)$.\par
+\end{theorem}
+
+\begin{proof}
+  若$x_0\in E\cup F$, 则$\forall \varepsilon >0, \exists \delta_{1} >0$, 使得$\forall x\in E, \rho(x,x_0)<\delta_{1}$时有$|f(x)-f(x_0)|<\varepsilon$.\par
+  同理, $\forall \varepsilon >0, \exists \delta_{2} >0$, 使得$\forall x\in F, \rho(x,x_0)<\delta_{2}$时有$|f(x)-f(x_0)|<\varepsilon$.\par
+  于是取$\delta = \min\{\delta_{1},\delta_{2}\}$, 则$\forall x\in E\cup F, \rho(x,x_0)<\delta$时有$|f(x)-f(x_0)|<\varepsilon$.\par
+  若$x_0\in E\backslash F$, 则$\forall \varepsilon >0, \exists \delta_{1} >0$, 使得$\forall x\in E, \rho(x,x_0)<\delta_{1}$时有$|f(x)-f(x_0)|<\varepsilon$.\par
+  同时有$\exists \delta_{3} >0$, 使得$O(x_0,\delta_{3})\subset F^c$.\par
+  于是取$\delta = \min\{\delta_{1},\delta_{3}\}$, 则$\forall x\in E\cup F, \rho(x,x_0)<\delta$时有$x\in E\backslash F$且$\rho(x,x_0)<\delta_{1}$,$|f(x)-f(x_0)|<\varepsilon$.\par
+  对于$x_0\in F\backslash E$, 类似可证.\par
+\end{proof}
+
 \begin{definition}
   设$E$是集合, 则称$E$的特征函数为$\chi_E(x)=\begin{cases}
     1, & x\in E \\
@@ -243,13 +257,33 @@
   $f=\chi_{\mathbb{Q}}(x)$在$\mathbb{Q}$上是连续的, 但在$\mathbb{R}$上是处处不连续的.\par
 \end{example}
 
+基于此我们给出可测函数的定义:\par
+
+\begin{definition}
+  设$E$是集合, $f$是定义在$E$上的广义实函数, 则称$f$在$E$上是可测的, 当且仅当$\forall a\in \mathbb{R}, E[f> a]$是可测集.\par
+\end{definition}
+
 \begin{theorem}
-  若$E$,$F$为闭集, $f\in C(E)$, $f\in C(F)$, 则$f\in C(E \cup F)$.\par
+  下面函数均为可测函数:\par
+  \begin{itemize}
+    \item 可测集的特征函数.\par
+    \item 简单函数.\par
+    \item 可测集上的连续函数.\par
+    \item 可测集上的单调函数.\par
+    \item 零测集上的函数.\par
+  \end{itemize}
 \end{theorem}
 
 \begin{proof}
-  若
+  对于可测集的特征函数, 由定义可知, $\forall a\in \mathbb{R}, E[\chi_E > a] = E$或$E^c$, 因此是可测的.\par
+  对于简单函数, 设$f(x)=\sum_{i=1}^{n}c_i\chi_{E_i}(x)$, 则$\forall a\in \mathbb{R}, E[f>a]=\bigcup_{c_i>a}E_i$, 因此是可测的.\par
+  对于可测集上的连续函数, 由连续函数的性质知, $\forall a\in \mathbb{R}, E[f>a]$是开集或闭集, 因此是可测的.\par
+  对于可测集上的单调函数, 类似地, $\forall a\in \mathbb{R}, E[f>a]$是开集或闭集, 因此是可测的.\par
+  对于零测集上的函数, 由于零测集上的函数在几乎处处上是常数函数, 因此也是可测的.\par
 \end{proof}
+
+
+
 
 
 
