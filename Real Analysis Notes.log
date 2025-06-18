@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  18 JUN 2025 00:29
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  18 JUN 2025 23:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1817,7 +1817,9 @@ Underfull \vbox (badness 7759) has occurred while \output is active []
 
 [12]
 
-[13] (./Real Analysis Notes.aux)
+[13]
+
+[14] (./Real Analysis Notes.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
@@ -1829,12 +1831,12 @@ Package logreq Info: Writing requests to '"Real Analysis Notes".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56172 strings out of 473832
- 1271343 string characters out of 5733158
- 2261774 words of memory out of 5000000
- 78334 multiletter control sequences out of 15000+600000
+ 56192 strings out of 473832
+ 1271698 string characters out of 5733158
+ 2261776 words of memory out of 5000000
+ 78354 multiletter control sequences out of 15000+600000
  574873 words of font info for 122 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  151i,16n,165p,1238b,1360s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Real Analysis Notes.pdf (17 pages).
+Output written on Real Analysis Notes.pdf (18 pages).

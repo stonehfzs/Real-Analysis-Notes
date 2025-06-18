@@ -43,15 +43,15 @@ To compile this document:
 
 ```bash
 # Using pdflatex
-pdflatex main.tex
-# Run twice for proper references
-pdflatex main.tex
+pdflatex Real Analysis Notes.tex
 ```
 
 Alternatively, you can use LaTeX editors such as:
 - [TeXStudio](https://www.texstudio.org/)
 - [Overleaf](https://www.overleaf.com/) (online)
 - [VS Code](https://code.visualstudio.com/) with [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension
+
+A much direct way to look through the notes is to just download the pdf version file.
 
 ## 📦 Dependencies
 
