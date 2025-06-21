@@ -217,8 +217,8 @@
 \begin{proposition}
   外测度具有如下性质:\par
   \begin{itemize}
-    \item $m^{*}(E)\geqslant 0$.
-    \item $m^{*}(E)=a<\infty \Leftrightarrow \forall \varepsilon >0, \exists \{I_k\}, E\subset \bigcup_{k=1}^{\infty}I_k, \sum_{k=1}^{\infty}|I_k|<a+\varepsilon$
+    \item (外测度非负性) $m^{*}(E)\geqslant 0$.
+    \item (外测度的等价定义) $m^{*}(E)=a<\infty \Leftrightarrow \forall \varepsilon >0, \exists \{I_k\}, E\subset \bigcup_{k=1}^{\infty}I_k, \sum_{k=1}^{\infty}|I_k|<a+\varepsilon$
   \end{itemize}
 \end{proposition}
 
@@ -242,7 +242,7 @@
 \end{proof}
 
 \begin{proposition}
-  若$E\subset F$, 则$m^{*}(E)\leqslant m^{*}(F)$.\par
+  (外测度的单调性) 若$E\subset F$, 则$m^{*}(E)\leqslant m^{*}(F)$.\par
 \end{proposition}
 
 \begin{proof}
@@ -264,7 +264,7 @@
 \end{remark}
 
 \begin{theorem}
-  设$E\subset \mathbb{R}^n$, $x+E=\{x+y:y\in E\}$, 则$m^{*}(E)=m^{*}(x+E)$.\par
+  (外测度的平移不变性) 设$E\subset \mathbb{R}^n$, $x+E=\{x+y:y\in E\}$, 则$m^{*}(E)=m^{*}(x+E)$.\par
 \end{theorem}
 
 \begin{proof}
@@ -275,7 +275,7 @@
 上面讨论了外测度的各种基本性质, 在一般微积分中我们可以自然做集合的各种运算, 其长度都是良好定义的, 因此接下来我们将讨论外测度的可加性.\par
 
 \begin{theorem}
-  设$E_1, \cdots, E_n\subset \mathbb{R}^n$, 则有$m^{*}\left(\bigcup_{k=1}^{\infty}E_k\right)\leqslant \sum_{k=1}^{\infty}m^{*}(E_k)$.\par
+  (外测度的次可加性) 设$E_1, \cdots, E_n\subset \mathbb{R}^n$, 则有$m^{*}\left(\bigcup_{k=1}^{\infty}E_k\right)\leqslant \sum_{k=1}^{\infty}m^{*}(E_k)$.\par
 \end{theorem}
 
 \begin{proof}
@@ -285,7 +285,7 @@
 \end{proof}
 
 \begin{theorem}
-  设$E_1, \cdots, E_n\subset \mathbb{R}^n$, 若$\forall i,j, \rho(E_i,E_j)>0$, 则有$m^{*}\left(\bigcup_{k=1}^{\infty}E_k\right)= \sum_{k=1}^{\infty}m^{*}(E_k)$.\par
+  (外测度的分离可加性) 设$E_1, \cdots, E_n\subset \mathbb{R}^n$, 若$\forall i,j, \rho(E_i,E_j)>0$, 则有$m^{*}\left(\bigcup_{k=1}^{\infty}E_k\right)= \sum_{k=1}^{\infty}m^{*}(E_k)$.\par
 \end{theorem}
 
 \begin{proof}
@@ -319,9 +319,12 @@
 \end{proof}
 
 \begin{remark}
-  上面的定理还可以改写成:\par
-  设$E$和$F$是定义在$\mathbb{R}^n$上的开区间, 若$E\cap F = \phi$, $E\cup F=I$ 则$m^{*}(E\cup F)= m^{*}(I\cap E)+m^{*}(I\cap E^c)$.\par
+  如果考虑集合的等价表示, 上面的定理还有另一种写法.\par
 \end{remark}
+
+\begin{corollary}
+  设$E$和$F$是定义在$\mathbb{R}^n$上的开区间, 若$E\cap F = \phi$, $E\cup F=I$ 则$m^{*}(E\cup F)= m^{*}(I\cap E)+m^{*}(I\cap E^c)$.\par
+\end{corollary}
 
 \begin{corollary}
   设$E$和$F$是定义在$\mathbb{R}^n$上的任意集合, $\exists I$是开区间, 使得$E\subset I$, $F\subset I^c$, 则$m^{*}(E\cup F)= m^{*}(E)+m^{*}(F)$.\par
@@ -343,17 +346,223 @@
 \end{remark}
 
 \begin{definition}
-  设$E\subset \mathbb{R}^n$, 则$E$是可测集当且仅当$E$满足Carathéodory条件. 若$E$是可测的, 则定义其测度为$m(E)=m^{*}(E)$.\par
+  设$E\subset \mathbb{R}^n$, 则$E$是可测集当且仅当$E$满足Carathéodory条件.\par
+  若$E$是可测的, 则定义其测度为$m(E)=m^{*}(E)$.\par
   记$\mathcal{M}$为所有可测集的集合, $\mathcal{M}$表示可测集族.\par
 \end{definition}
 
 \begin{remark}
   由次可加性知, 从定义角度说明一个集合可测只需证$\forall T\subset \mathbb{R}^n, m^{*}(T)\geqslant m^{*}(T\cap E)+m^{*}(T\cap E^c)$.\par
+  另一方面, 可以发现测度是外测度的一个限制, 因此测度满足外测度的所有性质, 但反之未必.\par
+  此外, 任何集合都可以定义外测度, 但并不是所有集合都可以定义测度.\par
 \end{remark}
 
+上面这种条件是针对所有集合的可测性来分析的, 下面我们给出一些定理, 说明一些特殊的集合的可测性可以通过更简单的方法得到.\par
 
+\begin{theorem}
+  (余集的可测性) $E$可测等价于$E^c$可测.\par
+\end{theorem}
+
+\begin{proof}
+  由Carathéodory条件知, $\forall T\subset \mathbb{R}^n, m^{*}(T)=m^{*}(T\cap E)+m^{*}(T\cap E^c)$.\par
+  则有$m^{*}(T)=m^{*}(T\cap E^c)+m^{*}(T\cap E)$, 因此$E^c$满足Carathéodory条件, 即$E^c$可测. 反之亦然.\par
+\end{proof}
+
+\begin{theorem}
+  若$m^{*}(E)=0$, 则$E$是可测的.\par
+\end{theorem}
+
+\begin{proof}
+  由定义, 只需验证$\forall T\subset \mathbb{R}^n, m^{*}(T)\geqslant m^{*}(T\cap E)+m^{*}(T\cap E^c)$.\par
+  由$m^{*}(E)=0$, 有$m^{*}(T\cap E)\leqslant m^{*}(E)=0$.\par
+  再考虑$T\cap E\subset E$, $(T\cap E)\cup (T\cap E^c)=T$, 于是$m^{*}(T\cap E^c)\leqslant m^{*}(T)$.\par
+  因此有$m^{*}(T)\geqslant m^{*}(T\cap E)+m^{*}(T\cap E^c)$, 即$E$是可测的.\par
+\end{proof}
+
+\begin{corollary}
+  可列集是可测集.\par
+\end{corollary}
+
+\begin{proof}
+  由上面的定理, 外测度为0的集合可测. 而可列集的外测度为0, 因此可列集是可测集.\par
+\end{proof}
+
+\begin{theorem}
+  $E$是可测集, $A\subset E$, $B\subset E^c$当且仅当$m^{*}(A\cup B)=m^{*}(A)+m^{*}(B)$.\par
+\end{theorem}
+
+\begin{proof}
+  由Carathéodory条件知, $\forall T\subset \mathbb{R}^n, m^{*}(T)=m^{*}(T\cap E)+m^{*}(T\cap E^c)$.\par
+  由$T$的任意性, 令$A=T\cap E$, $B=T\cap E^c$, 则有$m^{*}(T)=m^{*}(A)+m^{*}(B)$.\par
+  考虑反方向, 设$T=A\cup B$, 由$E$可测, 有$m^{*}(T)=m^{*}(A\cup B)=m^{*}(A)+m^{*}(B)$.\par
+  于是有$m^{*}(T\cap E)=m^{*}(A)$, $m^{*}(T\cap E^c)=m^{*}(B)$. 即说明$E$可测.\par
+\end{proof}
+
+我们再进一步考虑可测集之间作运算, 是否有类似的结果. 事实上可测集之间的运算是封闭的, 其性质如下:\par
+
+\begin{proposition}
+  (集合运算的封闭性) 设$E,F$是可测集, 则:\par
+  \begin{itemize}
+    \item $E\cup F$是可测集.
+    \item $E\cap F$是可测集.
+    \item $E\backslash F$是可测集.
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  首先考虑$E\cup F$, 往证$\forall T\subset \mathbb{R}^n, m^{*}(T)=m^{*}(T\cap (E\cup F))+m^{*}(T\cap (E\cup F)^c)$.\par
+  注意到$m^{*}(T\cap (E\cup F))=m^{*}(T\cap E)+m^{*}((T\cap F)\backslash E)$, 再由$E$和$F$可测, 有$m^{*}(T)=m^{*}(T\cap E)+m^{*}(T\cap E^c)$, $m^{*}(T\cap E^c)=m^{*}(T\backslash (E\cup F))+m^{*}(T\cap (F\backslash E))$.\par
+  于是$\forall T\subset \mathbb{R}^n, m^{*}(T)=m^{*}(T\cap (E\cup F))+m^{*}(T\cap (E\cup F)^c)$.\par
+  考虑$E\cap F$, 注意到$E\cup F$已经可测, 因此取余集, $E^c$和$F^c$可测可推出$E\cap F=(E^c\cup F^c)^c$也是可测的.\par
+  对于$E\backslash F$, 注意到$E\backslash F=E\cap F^c$, 因此由上面的结论可知$E\backslash F$也是可测的.\par
+\end{proof}
+
+\begin{corollary}
+  (有限并的封闭性) 设$E_1,\cdots, E_n$是两两不交的可测集, 则:\par
+  \begin{itemize}
+    \item $m^{*}(T\cap (\bigcup_{i=1}^{n}E_i))=\sum_{i=1}^{n}m^{*}(T\cap E_i)$.
+    \item $m(\bigcup_{i=1}^{n}E_i)=\sum_{i=1}^{n}m(E_i)$.
+  \end{itemize}
+\end{corollary}
+
+\begin{proof}
+  由上面的结论, 用归纳法, $\forall T\subset \mathbb{R}^n, m^{*}(T\cap (E_1 \cup E_2))=m^{*}(T\cap E_1)+m^{*}(T\cap E_2)$. 依次作有限次可得.\par
+  对于一般情形, 取$T=\mathbb{R}^n$即可.\par
+\end{proof}
+
+\begin{corollary}
+  (可列并的封闭性) 设$E_1,\cdots, E_n,\cdots $是两两不交的可测集, 则:\par
+  \begin{itemize}
+    \item $m^{*}(T\cap (\bigcup_{i=1}^{\infty}E_i))=\sum_{i=1}^{\infty}m^{*}(T\cap E_i)$.
+    \item $m(\bigcup_{i=1}^{\infty}E_i)=\sum_{i=1}^{\infty}m(E_i)$.
+  \end{itemize}
+\end{corollary}
+
+\begin{proof}
+  考虑$\forall T\subset \mathbb{R}^n, m^{*}(T)=m^{*}(T\cap (\bigcup_{i=1}^{n}E_i))+m^{*}(T\cap (\bigcup_{i=1}^{n}E_i)^c)$.\par
+  注意到$m^{*}(T)=m^{*}(T\cap (\bigcup_{i=1}^{n}E_i))= \sum_{i=1}^{n}m^{*}(T\cap E_i)$, $m^{*}(T\cap (\bigcup_{i=1}^{n}E_i)^c)\geqslant m^{*}(T\cap (\bigcup_{i=1}^{\infty}E_i)^c)$.\par
+  于是$m^{*}(T)\geqslant \sum_{i=1}^{n}m^{*}(T\cap E_i)+m^{*}(T\cap (\bigcup_{i=1}^{\infty}E_i)^c)$.\par
+  令$n\to \infty$, 则有$m^{*}(T)\geqslant \sum_{i=1}^{\infty}m^{*}(T\cap E_i)+m^{*}(T\cap (\bigcup_{i=1}^{\infty}E_i)^c)\geqslant m^{*}(\bigcup_{i=1}^{\infty}(T\cap E_i))+m^{*}(T\cap (\bigcup_{i=1}^{\infty}E_i)^c) = m^{*}(T\cap (\bigcup_{i=1}^{\infty}E_i))+m^{*}(T\cap (\bigcup_{i=1}^{\infty}E_i)^c)$.\par
+  因此有$m^{*}(T\cap (\bigcup_{i=1}^{\infty}E_i))=\sum_{i=1}^{\infty}m^{*}(T\cap E_i)$.\par
+  对于一般情形, 取$T=\mathbb{R}^n$即可.\par
+\end{proof}
+
+这里我们进一步讨论了无穷多个可测集的性质, 更进一步, 我们还可以讨论单调集列的可测性, 并对应得到这些集列的极限的集合的测度的计算方法.\par
+
+\begin{theorem}
+  (下连续性) 设$\{E_n\}$是递增集列, 则$\lim_{n \to \infty}E_n$可测, 且$m(\bigcup_{n=1}^{\infty}E_n)=\lim_{n \to \infty}m(E_n)$.\par
+  (上连续性) 设$\{E_n\}$是递减集列, 且$\exists E_{n_0}, m(E_{n_0})<\infty$, 则$\lim_{n \to \infty}E_n$可测, 且$m(\bigcap_{n=1}^{\infty}E_n)=\lim_{n \to \infty}m(E_n)$.\par
+\end{theorem}
+
+\begin{proof}
+  先证明下连续性, 显然递增集列有$m(\bigcup_{n=1}^{\infty}E_n)=m(\lim_{n \to \infty}E_n)$.\par
+  取$F_k=E_k \backslash E_{k-1}, \forall k \geqslant 2$, $F_1=E_1$, $E_0=\phi$, 则$\{F_k\}$是两两不交的可测集, 且$\bigcup_{k=1}^{\infty}F_k=\bigcup_{n=1}^{\infty}E_n$.\par
+  于是$m(\bigcup_{n=1}^{\infty}E_n)=m(\bigcup_{k=1}^{\infty}F_k) = \sum_{k=1}^{\infty}m(F_k)=\lim_{n \to \infty} m(\bigcup_{k=1}^{n}F_k)=\lim_{n \to \infty}m(E_n)$.\par
+  对于上连续性, 我们首先构造$F_{i}=E_1\backslash E_{i}$, 则当$\exists E_{n_0}, m(E_{n_0})<\infty$时有$\{F_i\}$单增可测.\par
+  于是由下连续性可得.\par
+\end{proof}
+
+\begin{corollary}
+  设$\{E_n\}$可测, 且$\sum_{i=1}^{\infty}m(E_i)<\infty$, 则$m(\limsup_{i \to \infty} E_i)=0$.\par
+\end{corollary}
+
+\begin{proof}
+  $m(\limsup_{i \to \infty} E_i)=\lim_{k \to \infty} m(\bigcup_{i=k}^{\infty}E_i)\leqslant \sum_{i=k}^{\infty}m(E_i)$.\par
+\end{proof}
+
+最后我们再讨论一些特殊集合的测度.\par
+
+\begin{proposition}
+  Cantor集的测度为0.\par
+\end{proposition}
+
+\begin{proof}
+  Cantor集是通过不断去掉中间的三分之一部分得到的, 因此其外测度为0. 因此测度为0.\par
+\end{proof}
+
+\newpage
 
 \section{可测集族}
+
+在讨论了一般的可测集的性质后, 我们更进一步讨论可测集族的性质. 这是一种很自然的想法, 例如讨论定义在区间上的微积分, 我们实际上是讨论了一般区间的一些性质. 因此这里我们也从区间开始研究.\par
+
+\begin{theorem}
+  $\mathbb{R}^n$上任意区间$I$可测, 且$m(I)=|I|$.\par
+\end{theorem}
+
+\begin{proof}
+  易知区间的外测度$m^{*}(I)=|I|$. 同时区间又满足测度的可加性, 因此区间可测.\par
+\end{proof}
+
+\begin{corollary}
+  $m(\mathbb{R}^n)=\infty$.\par
+\end{corollary}
+
+\begin{proof}
+  由上可知, $\mathbb{R}^n$可以被任意大的区间所覆盖, 因此其测度为无穷大.\par
+\end{proof}
+
+下面我们考虑更一般的可测集, 因此首先我们考虑用更一般的集合来定义外测度.\par
+
+\begin{lemma}
+  设$E\subset \mathbb{R}^n$, 则$m^{*}(E)=\inf\{m(G): E\subset G \}$. 其中$G$为开集.\par
+\end{lemma}
+
+\begin{proof}
+  由外测度的单调性, $m^{*}(E)\leqslant m^{*}(G)=m(G)$.\par
+  若$m^{*}(E)=\infty$, 则显然成立.\par
+  若$m^{*}(E)<\infty$, 则$\exists \{I_k\}, E\subset \bigcup_{k=1}^{\infty}I_k, m^{*}(E)\leqslant \sum_{k=1}^{\infty}|I_k|<m^{*}(E)+\varepsilon<\infty$.\par
+  此时令$G=\bigcup_{k=1}^{\infty}I_k$, 则$E\subset G$, 且$m(G)\leqslant \sum_{k=1}^{\infty}|I_k|<m^{*}(E)+\varepsilon$.\par
+  于是有$m^{*}(E)\leqslant m(G)$, 因此$m^{*}(E)=\inf\{m(G): E\subset G \}$.\par
+\end{proof}
+
+\begin{lemma}
+  开集和闭集均为可测集.\par
+\end{lemma}
+
+\begin{proof}
+  由上面的引理, 对于开集$G$, 有$m^{*}(G)=\inf\{m(H): G\subset H \}$, 其中$H$为开集.\par
+  因此$G$满足Carathéodory条件, 即$G$是可测集.\par
+  对于闭集$F$, 注意到$F^c$是开集, 因此由上面的引理知$m^{*}(F^c)=\inf\{m(G): F^c\subset G \}$, 其中$G$为开集.\par
+  因此$F^c$满足Carathéodory条件, 即$F^c$是可测集. 于是由余集的可测性知, $F$也是可测集.\par
+\end{proof}
+
+\begin{theorem}
+  Borel集是可测集.\par
+\end{theorem}
+
+\begin{proof}
+  Borel集是由开集和闭集通过有限次并、交、补运算得到的集合, 由于开集和闭集都是可测集, 因此由上面的结论知, Borel集也是可测集.\par
+\end{proof}
+
+通过上面的讨论, 我们更进一步得到Borel集和可测集的关系, 即Borel集是可测集的一个子集. 事实上, 这是一个真子集. 接下来我们给出可测集的另外一些等价定义.\par
+
+\begin{lemma}
+  以下命题等价:\par
+  \begin{itemize}
+    \item $E$是可测集.
+    \item $\forall \varepsilon>0, \exists F\subset E\subset G, m^{*}(G\backslash F)<\varepsilon $, 其中$F$为闭集, $G$为开集.
+  \end{itemize}
+\end{lemma}
+
+\begin{proof}
+  
+\end{proof}
+
+\begin{theorem}
+  以下命题等价:\par
+  \begin{itemize}
+    \item $E$是可测集.
+    \item $\exists H\supset E, m^{*}(H\backslash E)=0$, 其中$H$为$G_{\delta}$集.
+    \item $\exists K\subset E, m^{*}(E\backslash K)=0$, 其中$K$为$F_{\sigma}$集.
+    \item $\exists K\subset E\subset H, m(H\backslash K)=0$, 其中$K$为$F_{\sigma}$集, $H$为$G_{\delta}$集.
+  \end{itemize}
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}
+
 
 \section{不可测集}
 

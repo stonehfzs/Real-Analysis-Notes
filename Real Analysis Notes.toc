@@ -22,31 +22,31 @@
 \CTEX@ifnametrue 
 \contentsline {section}{\numberline {2.2}可测集及其测度}{6}{section.2.2}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {2.3}可测集族}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.3}可测集族}{10}{section.2.3}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {2.4}不可测集}{7}{section.2.4}%
+\contentsline {section}{\numberline {2.4}不可测集}{11}{section.2.4}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {2.5}乘积测度}{7}{section.2.5}%
+\contentsline {section}{\numberline {2.5}乘积测度}{11}{section.2.5}%
 \begingroup 
 \CTEX@ifnametrue 
-\contentsline {chapter}{\numberline {第三章}可测函数}{8}{chapter.3}%
+\contentsline {chapter}{\numberline {第三章}可测函数}{12}{chapter.3}%
 \endgroup 
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {3.1}可测函数的定义和性质}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.1}可测函数的定义和性质}{12}{section.3.1}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {3.2}可测函数的收敛性}{10}{section.3.2}%
+\contentsline {section}{\numberline {3.2}可测函数的收敛性}{14}{section.3.2}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {3.3}可测函数的连续性}{13}{section.3.3}%
+\contentsline {section}{\numberline {3.3}可测函数的连续性}{17}{section.3.3}%
 \CTEX@ifnametrue 
-\contentsline {chapter}{\numberline {第四章}Lebesgue积分}{14}{chapter.4}%
+\contentsline {chapter}{\numberline {第四章}Lebesgue积分}{18}{chapter.4}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {4.1}非负可测函数的积分}{14}{section.4.1}%
+\contentsline {section}{\numberline {4.1}非负可测函数的积分}{18}{section.4.1}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {4.2}一般可测函数的积分}{17}{section.4.2}%
+\contentsline {section}{\numberline {4.2}一般可测函数的积分}{21}{section.4.2}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {4.3}可积函数的连续性}{18}{section.4.3}%
+\contentsline {section}{\numberline {4.3}可积函数的连续性}{22}{section.4.3}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {4.4}Lebesgue积分与Riemann积分的关系}{18}{section.4.4}%
+\contentsline {section}{\numberline {4.4}Lebesgue积分与Riemann积分的关系}{22}{section.4.4}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {4.5}重积分与累次积分的关系}{18}{section.4.5}%
+\contentsline {section}{\numberline {4.5}重积分与累次积分的关系}{22}{section.4.5}%
 \contentsfinish 

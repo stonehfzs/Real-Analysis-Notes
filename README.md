@@ -22,12 +22,47 @@ These notes were created based on a Real Analysis course at Ocean University of 
 
 ## 📑 Document Structure
 
+### Covering Topics
+
 The notes are organized into the following chapters:
 
 1. **Fundemantal Set Theory** - Foundational concepts and theorems in set theory
 2. **Lebesgue Measure** - Introduction to measure theory and Lebesgue measure
 3. **Measurable Functions** - Properties and operations of measurable functions
 4. **Lebesgue Integration** - Theory and applications of Lebesgue integration
+
+### Status
+
+| Section Number | Section Name | Status |
+| --- | --- | --- |
+| 1.1 | Set Operations | ❇️ |
+| 1.2 | Set Equivalence | ❎ |
+| 1.3 | Set Cardinality | ❎ |
+| 1.4 | Metric Space | ❎ |
+| 1.5 | Open Set, Closed Set and their Constructions | ❎ |
+| 2.1 | Outer Measure | ✅ |
+| 2.2 | Measurable Set and Measure | ✅ |
+| 2.3 | Measurable Set Class | ❎ |
+| 2.4 | Non-measurable Set | ❎ |
+| 2.5 | Product Measure | ❎ |
+| 3.1 | Measurable Function: Definition and Properties | ❇️ |
+| 3.2 | Measurable Function: Convergence | ✅ |
+| 3.3 | Measurable Function: Continuous | ✅ |
+| 4.1 | Lebesgue Integral: Non-negative Measurable Function | ❇️ |
+| 4.2 | Lebesgue Integral: All Measurable Function | ✅ |
+| 4.3 | The Continuous of Lebesgue Integrable Functions | ❎ |
+| 4.4 | Lebesgue Integral and Riemann Integral | ❎ |
+| 4.5 | Multiple Integral and Repeated Integral | ❎ |
+
+Notice that the whole notes is written in Chinese, the content might have some translation mistakes.
+
+Status Symbol Meanings:
+
+| Status | Symbol |
+| --- | --- |
+| ❎ | Not started yet |
+| ❇️ | Partially finished |
+| ✅ | Already finished |
 
 ## 🚀 Getting Started
 
