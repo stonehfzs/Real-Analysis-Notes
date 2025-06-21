@@ -24,7 +24,7 @@ These notes were created based on a Real Analysis course at Ocean University of 
 
 The notes are organized into the following chapters:
 
-1. **Sets and Mappings** - Foundational concepts in set theory
+1. **Fundemantal Set Theory** - Foundational concepts and theorems in set theory
 2. **Lebesgue Measure** - Introduction to measure theory and Lebesgue measure
 3. **Measurable Functions** - Properties and operations of measurable functions
 4. **Lebesgue Integration** - Theory and applications of Lebesgue integration

@@ -87,7 +87,7 @@
 
 \btocgroup
 \UseTocStyle{chapter}{emph}{toc}
-\chapter{集合与映射}
+\chapter{基础集合论}
 \etocgroup
 
 \section{集合的运算}
@@ -181,11 +181,183 @@
   递减集列有$\forall n, A_n\supset A_{n+1}$, 因此$\bigcap_{n}^{\infty}A_n=\lim_{n \to \infty}A_n =\limsup_{n \to \infty}A_n=\liminf_{n \to \infty}A_n$.\par
 \end{proof}
 
+\section{集合的对等}
+
+\section{集合的基数}
+
+\section{距离空间}
+
+\section{开集、闭集及其构造}
+
+
+
 
 \btocgroup
 \UseTocStyle{chapter}{emph}{toc}
 \chapter{Lebesgue测度}
+
 \etocgroup
+
+\section{外测度}
+
+在一般的微积分中, 我们会选择区间和对应的长度来衡量集合的大小, 因为我们发现这是定义和运算微积分的前提. 而对于在第一章中定义的各种不同集合, 我们也需要类似的一种方法来定义集合的大小, 这就自然考虑到下面提及的外测度和测度.\par
+
+\begin{definition}
+  设$E\subset \mathbb{R}^n$, 则称$E$的外测度为
+  \begin{equation*}
+    m^{*}(E)=\inf\left\{\sum_{i=1}^{\infty}|I_i|: E\subseteq \bigcup_{i=1}^{\infty}I_i\right\},
+  \end{equation*}
+  其中$I_i$是$\mathbb{R}^n$中的开区间, $|I_i|$是$I_i$的体积.\par
+\end{definition}
+
+\begin{example}
+  考虑两个最特殊的集合$\mathbb{R}$和$\phi$, 我们有$m^{*}(\mathbb{R})=\infty$和$m^{*}(\phi)=0$.\par
+\end{example}
+
+\begin{proposition}
+  外测度具有如下性质:\par
+  \begin{itemize}
+    \item $m^{*}(E)\geqslant 0$.
+    \item $m^{*}(E)=a<\infty \Leftrightarrow \forall \varepsilon >0, \exists \{I_k\}, E\subset \bigcup_{k=1}^{\infty}I_k, \sum_{k=1}^{\infty}|I_k|<a+\varepsilon$
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  考虑到外测度是由若干开区间的并构成的, 且开区间的体积总是非负的, 因此外测度一定非负.\par
+  根据下确界的定义, 如果$m^{*}(E)=\inf\left\{\sum_{i=1}^{\infty}|I_i|: E\subseteq \bigcup_{i=1}^{\infty}I_i\right\}$.\par
+  则$\forall \varepsilon >0$, 都存在一组开区间$\{I_k\}$, 使得$E\subset \bigcup_{k=1}^{\infty}I_k$且$\sum_{k=1}^{\infty}|I_k|<m^{*}(E)+\varepsilon$.\par
+\end{proof}
+
+\begin{corollary}
+  $\mathbb{R}^n$中可列点集的外测度为0.\par
+\end{corollary}
+
+\begin{proof}
+  首先考虑$\mathbb{R}^1$上的情形, 设$E=\{r_1,r_2,\cdots\}$, 并且首先考虑$r_1$, 此时应当有$\forall \delta >0, I_{\delta} = (p-\delta,p+\delta)\supset E$.\par
+  于是$m^{*}(\{r_1\})=\inf\left\{\sum_{i=1}^{\infty}|I_i|: E\subseteq \bigcup_{i=1}^{\infty}I_i\right\}\leqslant |I_{\delta}|=2\delta.$\par
+  令$\delta \to 0$, 则$m^{*}(\{r_1\})=0$.\par
+  对于$r_2$, 同理有$m^{*}(\{r_2\})=0$.\par
+  于是对于$\{r_1,r_2,\cdots\}$, 由于$\{r_1,r_2,\cdots\}$是可列点集, 因此可以找到一组开区间$\{I_k\}$, 使得$E\subset \bigcup_{k=1}^{\infty}I_k$且$\sum_{k=1}^{\infty}|I_k|<\varepsilon$.\par
+  而对于$\mathbb{R}^n$上的情形, 可将其看作$\mathbb{R}^1$上的可列点集的乘积, 因此同样有$m^{*}(E)=0$.\par
+\end{proof}
+
+\begin{proposition}
+  若$E\subset F$, 则$m^{*}(E)\leqslant m^{*}(F)$.\par
+\end{proposition}
+
+\begin{proof}
+  由外测度的定义, $\exists \{I_k\}, F\subset \bigcup_{k=1}^{\infty}I_k, \sum_{k=1}^{\infty}|I_k|<m^{*}(F)+\varepsilon$.\par
+  因为$E\subset F$, 所以$E\subset \bigcup_{k=1}^{\infty}I_k$, 因此$m^{*}(E)\leqslant m^{*}(F)$.\par
+\end{proof}
+
+\begin{corollary}
+  $m^{*}((a,b))=b-a$, $m^{*}([a,b])=b-a$.\par
+\end{corollary}
+
+\begin{proof}
+  显然$(a,b)$和$[a,b]$都可以被开区间$(a-\varepsilon,b+\varepsilon)$所覆盖, 且其体积为$b-a+2\varepsilon$, 因此当$\varepsilon \to 0$时, 有$m^{*}((a,b))=b-a$和$m^{*}([a,b])=b-a$.\par
+\end{proof}
+
+\begin{remark}
+  上述结论推广至$\mathbb{R}^n$上也是成立的, 综合上面两个推论的证明即可.\par
+  对于区间某一端点为开的情形, 结论也是成立的, 这里只需要考虑开区间的另一端即可.\par
+\end{remark}
+
+\begin{theorem}
+  设$E\subset \mathbb{R}^n$, $x+E=\{x+y:y\in E\}$, 则$m^{*}(E)=m^{*}(x+E)$.\par
+\end{theorem}
+
+\begin{proof}
+  这是很显然的, 因为对于每个满足$m^{*}(E)=\inf\left\{\sum_{i=1}^{\infty}|I_i|: E\subseteq \bigcup_{i=1}^{\infty}I_i\right\}$的开区间$I_i$, 都可以通过平移得到满足$m^{*}(x+E)=\inf\left\{\sum_{i=1}^{\infty}|J_i|: x+E\subseteq \bigcup_{i=1}^{\infty}J_i\right\}$的开区间.\par
+  而对于每个$I_i$和$J_i$, 都有$|I_i|=|J_i|$, 因此有$m^{*}(E)=m^{*}(x+E)$.\par
+\end{proof}
+
+上面讨论了外测度的各种基本性质, 在一般微积分中我们可以自然做集合的各种运算, 其长度都是良好定义的, 因此接下来我们将讨论外测度的可加性.\par
+
+\begin{theorem}
+  设$E_1, \cdots, E_n\subset \mathbb{R}^n$, 则有$m^{*}\left(\bigcup_{k=1}^{\infty}E_k\right)\leqslant \sum_{k=1}^{\infty}m^{*}(E_k)$.\par
+\end{theorem}
+
+\begin{proof}
+  若$\exists E_{n_0}, m^{*}(E_{n_0})=\infty$, 则$\sum_{k=1}^{\infty}m^{*}(E_k)=\infty$, 此时显然成立.\par
+  若$\forall n, m^{*}(E_n)<\infty$, 则$\forall E_k$ 都有$\forall \varepsilon >0, \exists \{I_{k_j}\}, E_k\subset \bigcup_{k=1}^{\infty}I_{k_j}, m^{*}(E_k)\leqslant \sum_{j=1}^{\infty}|I_{k_j}|<m^{*}(E_k)+\frac{\varepsilon}{2^k}$.\par
+  于是$\sum_{k=1}^{\infty}m^{*}(E_k)+\varepsilon \geqslant m^{*}(\bigcup_{k=1}^{\infty}E_k)$. 即成立.\par
+\end{proof}
+
+\begin{theorem}
+  设$E_1, \cdots, E_n\subset \mathbb{R}^n$, 若$\forall i,j, \rho(E_i,E_j)>0$, 则有$m^{*}\left(\bigcup_{k=1}^{\infty}E_k\right)= \sum_{k=1}^{\infty}m^{*}(E_k)$.\par
+\end{theorem}
+
+\begin{proof}
+  若$\forall i,j, \rho(E_i,E_j)>0$, 则总可以把每个$E_i$都拆成若干不相交的小区间, 即$E_i=\bigcup_{k=1}^{\infty}E_{i_k}$, $E_j=\bigcup_{k=1}^{\infty}E_{j_k}$且$\left(\bigcup_{k=1}^{\infty}E_{i_k}\right)\cap \left(\bigcup_{k=1}^{\infty}E_{j_k}\right) = \phi $.\par
+  于是对于每个$E_i$, 都可以找到恰好满足$m^{*}(E_i)=\sum_{i=1}^{\infty}m^{*}(E_{i_k})$的开区间, 使得$E_i\subset \bigcup_{k=1}^{\infty}I_{i_k}$.\par
+  因此有$m^{*}\left(\bigcup_{i=1}^{\infty}E_i\right)= \sum_{i=1}^{\infty}m^{*}(E_i)$.\par
+\end{proof}
+
+\begin{remark}
+  一般情形的集合的外测度不满足可列可加性.\par
+\end{remark}
+
+\newpage
+
+\section{可测集及其测度}
+
+上一节我们提到外测度的可加性是必须满足一定条件才能成立的, 因此对于更特殊的集合, 始终满足可加性的集合就说明其存在一种良好的性质. 因此这里我们就从可加性的角度来考虑集合可测性.\par
+
+\begin{theorem}
+  设$E$和$F$是定义在$\mathbb{R}^n$上的开区间, 若$E\cap F = \phi$, 则$m^{*}(E\cup F)= m^{*}(E)+m^{*}(F)$.\par
+\end{theorem}
+
+\begin{proof}
+  首先由次可加性有$m^{*}(E\cup F)\leqslant m^{*}(E)+m^{*}(F)$. 因此下面证明另一个方向的不等式.\par
+  考虑$E\subset \bigcup_{i=1}^{\infty}(E\cap I_i)$, 其中$I_i$是开区间, 于是有$m^{*}(E)\leqslant \sum_{i=1}^{\infty}|E\cap I_i|$.\par
+  对于$F$, 也有$m^{*}(F)\leqslant \sum_{i=1}^{\infty}|F\cap J_i|$.\par
+  由于$E\cap F = \phi$, $I_i=(I_i\cap E)\cup (I_i\cap F)\cup (I_i\backslash (E\cup F))$. 因此$|I_i|\geqslant |I_i\cap E|+|I_i\cap F|$.\par
+  由外测度定义可知, $\forall \varepsilon >0, \exists \{I_i\}, m^{*}(E\cup F)\leqslant \sum_{i=1}^{\infty}|I_i|\leqslant m^{*}(E\cup F)+\varepsilon$.\par
+  于是$m^{*}(E\cup F)+\varepsilon \geqslant \sum_{i=1}^{\infty}|I_i\cap E|+|I_i\cap F|\geqslant m^{*}(E)+m^{*}(F)$.\par
+  因此有$m^{*}(E\cup F)= m^{*}(E)+m^{*}(F)$.\par
+\end{proof}
+
+\begin{remark}
+  上面的定理还可以改写成:\par
+  设$E$和$F$是定义在$\mathbb{R}^n$上的开区间, 若$E\cap F = \phi$, $E\cup F=I$ 则$m^{*}(E\cup F)= m^{*}(I\cap E)+m^{*}(I\cap E^c)$.\par
+\end{remark}
+
+\begin{corollary}
+  设$E$和$F$是定义在$\mathbb{R}^n$上的任意集合, $\exists I$是开区间, 使得$E\subset I$, $F\subset I^c$, 则$m^{*}(E\cup F)= m^{*}(E)+m^{*}(F)$.\par
+\end{corollary}
+
+\begin{proof}
+  类似地, 作$m^{*}(E)\leqslant \sum_{k=1}^{\infty}|I\cap I_k|$和$m^{*}(F)\leqslant \sum_{k=1}^{\infty}|I^c\cap I_k|$.\par
+  则由$E\cap F=\phi$, $I_k=(I_k\cap I)\cup (I_k\cap I^c)$, 此时有$|I_k|=|I_k\cap I|+|I_k\cap I^c|$.\par
+\end{proof}
+
+我们发现, 上面的定理和推论都满足可加性, 这说明这些集合具有良好的性质. 而对于一般的集合, 满足这种可加性被称为Carathéodory条件, 其定义如下:\par
+
+\begin{definition}
+  设$E\subset \mathbb{R}^n$, 则称$E$满足Carathéodory条件, 当且仅当$\forall T\subset \mathbb{R}^n, m^{*}(T)=m^{*}(T\cap E)+m^{*}(T\cap E^c)$.\par 
+\end{definition}
+
+\begin{remark}
+  上面的定义说明, 满足Carathéodory条件的集合, 在任意集合上都满足可加性. 这为下面定义可测集提供了一种方式.\par
+\end{remark}
+
+\begin{definition}
+  设$E\subset \mathbb{R}^n$, 则$E$是可测集当且仅当$E$满足Carathéodory条件. 若$E$是可测的, 则定义其测度为$m(E)=m^{*}(E)$.\par
+  记$\mathcal{M}$为所有可测集的集合, $\mathcal{M}$表示可测集族.\par
+\end{definition}
+
+\begin{remark}
+  由次可加性知, 从定义角度说明一个集合可测只需证$\forall T\subset \mathbb{R}^n, m^{*}(T)\geqslant m^{*}(T\cap E)+m^{*}(T\cap E^c)$.\par
+\end{remark}
+
+
+
+\section{可测集族}
+
+\section{不可测集}
+
+\section{乘积测度}
 
 \btocgroup
 \UseTocStyle{chapter}{emph}{toc}
@@ -724,6 +896,15 @@ $\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_n-f|\geqslant \vare
 \begin{proof}
   由在$E$上$f_n\Rightarrow f$, $\forall \varepsilon >0, \lim_{n \to \infty}m(E[|f_n-f|\geqslant \varepsilon])=0$. 又有
 \end{proof}
+
+\section{可积函数的连续性}
+
+\section{Lebesgue积分与Riemann积分的关系}
+
+
+\section{重积分与累次积分的关系}
+
+
 
 \backmatter
 
