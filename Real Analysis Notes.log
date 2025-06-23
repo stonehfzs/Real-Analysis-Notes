@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  22 JUN 2025 00:01
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  22 JUN 2025 22:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1748,10 +1748,6 @@ File: ./figure/logo.jpg Graphic file (type bmp)
 [2
 
 ] (./Real Analysis Notes.toc)
-\tf@toc=\write8
-\openout8 = `"Real Analysis Notes.toc"'.
-
-
 
 [1
 
@@ -1771,51 +1767,38 @@ Package easybase Warning: The contents style 'emph' of 'chapter' is not
 
 ]
 
-Package easybase Warning: The contents style 'emph' of 'chapter' is not
-(easybase)                defined.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
 [2]
 
 [3]
-第二章
 
-
-[4
-
-]
+[4]
 
 [5]
 
 [6]
-Underfull \vbox (badness 1005) has occurred while \output is active []
-
-
-
-[7]
-
-[8]
-
-[9]
-
-[10]
 
 Package easybase Warning: The contents style 'emph' of 'chapter' is not
 (easybase)                defined.
 
+第二章
 
 
-[11]
-第三章
-
-
-[12
+[7
 
 ]
+
+[8]
+
+[9]
+Underfull \vbox (badness 1005) has occurred while \output is active []
+
+
+
+[10]
+
+[11]
+
+[12]
 
 [13]
 
@@ -1823,18 +1806,20 @@ Package easybase Warning: The contents style 'emph' of 'chapter' is not
 
 [15]
 
+Package easybase Warning: The contents style 'emph' of 'chapter' is not
+(easybase)                defined.
+
+
+
 [16]
-
-[17]
-第四章
-
-Underfull \vbox (badness 7759) has occurred while \output is active []
+第三章
 
 
-
-[18
+[17
 
 ]
+
+[18]
 
 [19]
 
@@ -1842,7 +1827,42 @@ Underfull \vbox (badness 7759) has occurred while \output is active []
 
 [21]
 
-[22] (./Real Analysis Notes.aux)
+[22]
+
+[23]
+
+[24]
+
+[25]
+第四章
+
+Underfull \vbox (badness 7759) has occurred while \output is active []
+
+
+
+[26
+
+]
+
+[27]
+
+[28]
+
+[29]
+
+[30]
+
+[31]
+
+[32]
+
+[33]
+第五章
+
+
+[34
+
+] (./Real Analysis Notes.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
@@ -1854,12 +1874,12 @@ Package logreq Info: Writing requests to '"Real Analysis Notes".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56279 strings out of 473832
- 1274415 string characters out of 5733158
- 2265773 words of memory out of 5000000
- 78441 multiletter control sequences out of 15000+600000
+ 56330 strings out of 473832
+ 1276479 string characters out of 5733158
+ 2265681 words of memory out of 5000000
+ 78492 multiletter control sequences out of 15000+600000
  574873 words of font info for 122 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  151i,16n,165p,1238b,1360s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Real Analysis Notes.pdf (26 pages).
+Output written on Real Analysis Notes.pdf (38 pages).

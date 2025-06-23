@@ -181,13 +181,23 @@
   递减集列有$\forall n, A_n\supset A_{n+1}$, 因此$\bigcap_{n}^{\infty}A_n=\lim_{n \to \infty}A_n =\limsup_{n \to \infty}A_n=\liminf_{n \to \infty}A_n$.\par
 \end{proof}
 
+\newpage
+
 \section{集合的对等}
+
+\newpage
 
 \section{集合的基数}
 
+\newpage
+
 \section{距离空间}
 
+\newpage
+
 \section{开集、闭集及其构造}
+
+\newpage
 
 
 
@@ -470,6 +480,10 @@
   $m(\limsup_{i \to \infty} E_i)=\lim_{k \to \infty} m(\bigcup_{i=k}^{\infty}E_i)\leqslant \sum_{i=k}^{\infty}m(E_i)$.\par
 \end{proof}
 
+\begin{remark}
+  这实际上是Borel- Cantelli引理, 其结果将在各种收敛关系的证明中用到.\par
+\end{remark}
+
 最后我们再讨论一些特殊集合的测度.\par
 
 \begin{proposition}
@@ -546,7 +560,14 @@
 \end{lemma}
 
 \begin{proof}
-  
+  若$E$是可测集, 则$\exists F\subset E, m(E\backslash F)<\frac{\varepsilon}{2}$, 其中$F$为开集.\par
+  同理$\exists G^c\subset E^c, m(E^c\backslash G^c)=m(G\backslash E)<\frac{\varepsilon}{2}$, 其中$G^c$为开集.\par
+  于是$F\subset E\subset G$, 且$m(G\backslash F)<m(E\backslash F)+m(G\backslash E)<\varepsilon$.\par
+  反之, 若$\exists F\subset E\subset G, m^{*}(G\backslash F)<\varepsilon $, 其中$F$为闭集, $G$为开集. 下证$E$可测.\par
+  于是$\forall k>0, \exists F_k\subset E\subset G_k, m^{*}(G_k\backslash F_k)<\frac{1}{k}$. 其中$F_k$为闭集, $G_k$为开集.\par
+  $m^{*}(E\backslash F_k)\leqslant m^{*}(G_k\backslash F_k)<\frac{1}{k}$, 因此$\lim_{k \to \infty}m^{*}(E\backslash F_k)=0$.\par
+  即$m^{*}(E\cap (\bigcup_{k=1}^{\infty}F_k))=0$. $E\cap (\bigcup_{k=1}^{\infty}F_k)$可测.\par
+  又有$\bigcup_{k=1}^{\infty}F_k$可测, 于是$E$可测.\par
 \end{proof}
 
 \begin{theorem}
@@ -560,11 +581,53 @@
 \end{theorem}
 
 \begin{proof}
+  由上面的定理, 我们已经有$E$可测当且仅当$\forall \varepsilon>0, \exists F\subset E\subset G, m^{*}(G\backslash F)<\varepsilon $, 其中$F$为闭集, $G$为开集.\par
+  首先考虑$E$可测推出$\exists H\supset E, m^{*}(H\backslash E)=0$, 其中$H$为$G_{\delta}$集.\par
+  由$E$可测, $\forall k>0, \exists F\subset E\subset G, m^{*}(G\backslash F)<\frac{1}{k} $, 其中$F$为闭集, $G$为开集.\par
+  于是$H=\bigcap_{k=1}^{\infty}G_k$是$G_{\delta}$集, 且$H\supset E$, $m^{*}(H\backslash E)\leqslant m^{*}(G_k\backslash F_k)<\frac{1}{k}$.\par
+  令$k\to \infty$, 则$m^{*}(H\backslash E)=0$. 由$H$可测知$E$可测.\par
+  类似地, 也可以得到$\exists K\subset E, m^{*}(E\backslash K)=0$, 其中$K$为$F_{\sigma}$集.\par
+  反之, 若$\exists H\supset E, m^{*}(H\backslash E)=0$, 其中$H$为$G_{\delta}$集. 下证$E$可测.\par
+  由$H$为$G_{\delta}$集, $\exists G_k\supset E, m^{*}(G_k\backslash E)<\frac{1}{k}$, 其中$G_k$为开集.\par
+  于是$E\subset G_k$, 且$m^{*}(G_k\backslash E)<\frac{1}{k}$. 令$k \to \infty$, 则$m^{*}(H\backslash E)=0$. 由$H$可测知$E$可测.\par
+  类似地, 也可以得到$\exists K\subset E, m^{*}(E\backslash K)=0$, 其中$K$为$F_{\sigma}$集.\par
+  下证$E$可测当且仅当$\exists K\subset E\subset H, m(H\backslash K)=0$, 其中$K$为$F_{\sigma}$集, $H$为$G_{\delta}$集.\par
+  考虑$E$可测有$\exists H\supset E, m^{*}(H\backslash E)=0$, 其中$H$为$G_{\delta}$集. $\exists K\subset E, m^{*}(E\backslash K)=0$, 其中$K$为$F_{\sigma}$集.\par
+  于是有$m^{*}(H\backslash K)\leqslant m^{*}(H\backslash E)+m^{*}(E\backslash K)=0+0=0$. 由$H$为$G_{\delta}$集, $K$为$F_{\sigma}$集, 则$m(H\backslash K)=0$.\par
+  下证反方向的命题, 设$\exists K\subset E\subset H, m(H\backslash K)=0$, 其中$K$为$F_{\sigma}$集, $H$为$G_{\delta}$集.\par
+  考虑$m^{*}(H\backslash E)\leqslant m^{*}(H\backslash K)=0$, $m^{*}(E\backslash K)\leqslant m^{*}(H\backslash K)=0$.\par
+  又有$H$为$G_{\delta}$集, $K$为$F_{\sigma}$集, 于是有$E$可测.\par
+\end{proof}
+
+更进一步讨论, 我们有关于可测集族的更显然的性质.\par
+
+\begin{theorem}
+  可测集族构成$\sigma$-代数.\par
+\end{theorem}
+
+\begin{proof}
+  可测集族具有封闭性: 设$E,F$是可测集, 则$E\cup F$, $E\cap F$和$E\backslash F$都是可测集.\par
+  再考虑可测集族的补运算, 由余集的可测性知, 若$E$是可测集, 则$E^c$也是可测集.\par
+  最后考虑可测集族的可列并和交运算, 由上面的定理知, 可测集族在有限并和交下封闭. 因此在可列并和交下也封闭.\par
+  综上所述, 可测集族在补、并、交下封闭, 因此构成$\sigma$-代数.\par
+\end{proof}
+
+\newpage
+
+\section{不可测集}
+
+上面所有的讨论都是围绕可测集展开的, 下面我们考虑这样的定义方式是否会导致一些不可测集的出现. 然而在实际问题中, 我们发现尽管不可测集总是存在的, 但其总是不如可测集出现的频繁, 更进一步, 我们还需要讨论不可测集和可测集的数量的比较.\par
+
+\begin{theorem}
+  (Vitali集) 存在不可测集.\par
+\end{theorem}
+
+\begin{proof}
+  首先考虑$\mathbb{R}$上的开区间$E=(0,1)$, 我们下面构造$A\subset E$, 使得$A$不可测.\par
 
 \end{proof}
 
-
-\section{不可测集}
+\newpage
 
 \section{乘积测度}
 
@@ -642,6 +705,7 @@
 
 \begin{definition}
   设$E$是集合, $f$是定义在$E$上的广义实函数, 则称$f$在$E$上是可测的, 当且仅当$\forall a\in \mathbb{R}, E[f> a]$是可测集.\par
+  若$f$在$E$上是可测的, 则称$f$是$E$上的可测函数, 记为$f\in \mathcal{M}(E)$.\par
 \end{definition}
 
 \begin{theorem}
@@ -663,10 +727,182 @@
   对于零测集上的函数, 由于零测集上的函数在几乎处处上是常数函数, 因此也是可测的.\par
 \end{proof}
 
+事实上可测函数还有一些等价的定义, 我们下面来证明这些定义是等价的.\par
 
+\begin{theorem}
+  设$f$是定义在$E$上的广义实函数, 则下列命题等价:\par
+  \begin{itemize}
+    \item $f$在$E$上是可测的.
+    \item $\forall a\in \mathbb{R}, E[f>a]$是可测集.
+    \item $\forall a\in \mathbb{R}, E[f\geqslant a]$是可测集.
+    \item $\forall a\in \mathbb{R}, E[f<a]$是可测集.
+    \item $\forall a\in \mathbb{R}, E[f\leqslant a]$是可测集.
+  \end{itemize}
+\end{theorem}
 
+\begin{proof}
+  由定义知, $f$在$E$上是可测的当且仅当$\forall a\in \mathbb{R}, E[f>a]$是可测集.\par
+  首先考虑$E[f\leqslant a]$是$E[f>a]$的余集, 因此$E[f\leqslant a]$的可测性和$E[f>a]$是等价的.\par
+  下面考虑$E[f<a]=\bigcup_{k=1}^{\infty}E[f\leqslant a-\frac{1}{k}]$, 而对于每个$a\in \mathbb{R}$, $E[f\leqslant a-\frac{1}{k}]$是可测集, 因此$\bigcup_{k=1}^{\infty}E[f\leqslant a-\frac{1}{k}]$也是可测集.\par
+  于是类似地, 由$E[f\geqslant a]$是$E[f<a]$的可测性是等价的知$E[f\geqslant a]$可测也是成立的.\par
+\end{proof}
 
+下面我们利用可测函数的定义来讨论一些初等和基本的性质.\par
 
+\begin{proposition}
+  若$f$在$E$上是可测的, 则$\forall a\in \overline{\mathbb{R}}, E[f=a]$可测.\par
+\end{proposition}
+
+\begin{proof}
+  对于$a \in \mathbb{R}$, 我们有$E[f\geqslant a]\cap E[f\leqslant a]=E[f=a]$, 于是可测.\par
+  对于$a = +\infty$, 则$E[f=+\infty]=\bigcap_{n=1}^{\infty}E[f\geqslant n]$, 由于$E[f\geqslant n]$是可测集, 因此$E[f=+\infty]$也是可测的.\par
+  对于$a = -\infty$, 则$E[f=-\infty]=\bigcap_{n=1}^{\infty}E[f\leqslant -n]$, 由于$E[f\leqslant -n]$是可测集, 因此$E[f=-\infty]$也是可测的.\par
+\end{proof}
+
+\begin{remark}
+  上面的结果是充分的, 但不是必要的. 即$\forall a \in \mathbb{R}, E[f=a]$可测不蕴含$f$在$E$上是可测的.\par
+\end{remark}
+
+\begin{proposition}
+  $f\in \mathcal{M}(E)$当且仅当$\forall E_1\subset E, f\in \mathcal{M}(E_1)$, 其中$E_1$可测.\par
+\end{proposition}
+
+\begin{proof}
+  由于$\forall a \in \mathbb{R}$, $E_1[f>a]=E_1\cap E[f>a]$可测, 因此$E_1[f>a]$可测.\par
+\end{proof}
+
+\begin{proposition}
+  记$E=\bigcup_{i=1}^{\infty}E_i$, $\{E_i\}$互不交可测, 则$f\in \mathcal{M}(E)\Leftrightarrow f\in \mathcal{M}(E_i), \forall i$.\par
+\end{proposition}
+
+\begin{proof}
+  由$E=\bigcup_{i=1}^{\infty}E_i$, $\forall a \in \mathbb{R}$, 有$E[f>a]=\bigcup_{i=1}^{\infty}E_i[f>a]$, 由于$\{E_i\}$互不交可测, 因此$E[f>a]$是可测的当且仅当$\forall i, E_i[f>a]$是可测的.\par
+\end{proof}
+
+\begin{remark}
+  上面的结果说明了可测函数具有良好的性质, 即可测函数在可测集上的限制仍然是可测的.\par
+\end{remark}
+
+\begin{theorem}
+  若$\{f_n\}\in \mathcal{M}(E)$, 则$\sup \{f_n\}$, $\inf \{f_n\}$, $\limsup_{n \to \infty} f_n$, $\liminf_{n \to \infty} f_n$, $\lim_{n \to \infty} f_n$均在$E$上可测.\par
+\end{theorem}
+
+\begin{proof}
+  事实上我们只需要证明$\sup \{f_n\}$和$\inf \{f_n\}$在$E$上可测, 上下极限事实上是由$\sup \{f_n\}$和$\inf \{f_n\}$来定义的, 因此其可测性在上下确界可测时自然成立.\par
+  首先考虑$\sup \{f_n\}$, 由定义知, $\forall a \in \mathbb{R}, E[\sup \{f_n\}\leqslant a]=\bigcap_{n=1}^{\infty}E[f_n\leqslant a]$, 由于$\{f_n\}\in \mathcal{M}(E)$, 因此$E[\sup \{f_n\}\leqslant a]$也是可测的.\par
+  类似地, 我们有$E[\inf \{f_n\}\geqslant a]=\bigcap_{n=1}^{\infty}E[f_n\geqslant a]$, 其可测性显然.\par
+  于是$\sup \{f_n\}$和$\inf \{f_n\}$在$E$上均可测.\par
+  由于$\limsup_{n \to \infty} f_n = \inf_{N\geqslant 1} \sup_{n\geqslant N} \{f_n\}$, $\liminf_{n \to \infty} f_n = \sup_{N\geqslant 1} \inf_{n\geqslant N} \{f_n\}$.\par
+  其可测性显然, 因为$\sup$和$\inf$的可测性已经证明.\par
+  最后考虑$\lim_{n \to \infty} f_n$存在时有$\lim_{n \to \infty} f_n = \limsup_{n \to \infty} f_n = \liminf_{n \to \infty} f_n$, 由于$\limsup_{n \to \infty} f_n$和$\liminf_{n \to \infty} f_n$均在$E$上可测. 因此其可测性也显然.\par
+\end{proof}
+
+\begin{remark}
+  上面的结果事实上反映了可测函数列的极限的可测性, 即可测函数列的极限仍然是可测函数.\par
+  同时注意到这里我们选择的证明方式是利用可测函数的等价定义构造可测集的可列交得到的, 这和我们证明可测函数的等价定义时的想法是类似的.\par
+\end{remark}
+
+下面我们考虑简单函数列和可测函数的关系, 这里我们首先考虑连续函数列的情形.\par
+
+\begin{lemma}
+  连续函数列的极限在可测集上可测.\par
+\end{lemma}
+
+\begin{proof}
+  设$f_n$是定义在$E$上的连续函数列, 且$f_n\to f$, 则$\forall a\in \mathbb{R}$, $E[f_n>a]$是开集, 因此是可测的.\par
+  由于$\bigcap_{k=1}^{\infty}E[f_n> a]=E[f>a]$, 因此$E[f>a]$也是可测的.\par
+  于是$f$在$E$上是可测的.\par
+\end{proof}
+
+\begin{corollary}
+  简单函数列的极限在可测集上可测.\par
+\end{corollary}
+
+\begin{proof}
+  设$f_n$是定义在$E$上的简单函数列, 且$f_n\to f$, 则$\forall a\in \mathbb{R}$, $E[f_n>a]$是可测集, 因此是可测的.\par
+  由于$\bigcap_{k=1}^{\infty}E[f_n> a]=E[f>a]$, 因此$E[f>a]$也是可测的.\par
+  于是$f$在$E$上是可测的.\par
+\end{proof}
+
+下面考虑简单函数列的极限, 我们有下面的结果:\par
+
+\begin{theorem}
+  设$f\geqslant 0$, $f\in \mathcal{M}(E)$, 则$\exists \{\phi_n\}$, $\phi_n$为$E$上单增简单函数列满足$\lim_{n \to \infty} \phi_n = f$.\par
+\end{theorem}
+
+\begin{proof}
+  $\forall n \in \mathbb{N}$, 将$[0,+\infty]$拆成若干小区间: $[0,\frac{1}{2^n}), [\frac{1}{2^n}, \frac{2}{2^n}), \cdots, [\frac{(n2^n-1)}{2^n},n),[n,+\infty]$.
+  同时也有$E=E[0\leqslant f<\frac{1}{2^n}]\cup E[\frac{1}{2^n}\leqslant f<\frac{2}{2^n}]\cup \cdots \cup E[\frac{(n2^n-1)}{2^n}\leqslant f<n]\cup E[f\geqslant n]$.\par
+  于是我们可以定义$\phi_n(x)=\sum_{k=0}^{n} \frac{k}{2^n}\chi_{E[\frac{k}{2^n}\leqslant f<\frac{k+1}{2^n}]}(x)$. 下面说明这就是我们要求的简单函数列.\par
+  首先$\phi_n$是单增的, 因为$\forall x\in E$, $\phi_n(x)$是单调递增的.\par
+  其次$\phi_n$是简单函数, 因为$\phi_n(x)$是有限个特征函数的线性组合.\par
+  最后考虑$\lim_{n \to \infty} \phi_n(x)$, 由于$\phi_n(x)$是单调递增的, 且$\phi_n(x)\leqslant f(x)$, 因此$\lim_{n \to \infty} \phi_n(x) = f(x)$.\par
+  于是$\phi_n$是满足要求的单增简单函数列.\par
+\end{proof}
+
+下面我们讨论一般函数的情形, 为了方便起见, 我们这里定义一般函数的非负部分和非正部分:\par
+
+\begin{definition}
+  设$f$是定义在$E$上的广义实函数, 则称$f$的正部为$f^+=\max\{f,0\}$, 负部为$f^-=\max\{-f,0\}$.\par
+\end{definition}
+
+\begin{remark}
+  对于函数的正部和负部, 我们有一些基本结论, 这里不再证明.\par
+  \begin{itemize}
+    \item $f=f^+-f^-$.
+    \item $|f|=f^++f^-$.
+    \item $f^+\geqslant 0$, $f^-\geqslant 0$.
+  \end{itemize}
+\end{remark}
+
+\begin{corollary}
+  设$f\in \mathcal{M}(E)$, 则$\exists \{\phi_n\}$, $\phi_n$为$E$上简单函数列满足$\lim_{n \to \infty} \phi_n = f$.\par
+\end{corollary}
+
+\begin{proof}
+  由上面的结果, 把$f$分解为正部和负部, 即$f=f^+-f^-$, 其中$f^+=\max\{f,0\}$, $f^-=\max\{-f,0\}$.\par
+  由于$f^+$和$f^-$均为非负可测函数, 因此存在单增简单函数列$\{\phi_n^{+}\}$和$\{\phi_n^{-}\}$逼近$f^+$和$f^-$.\par
+\end{proof}
+
+\begin{remark}
+  上面的结果说明了可测函数可以用一列单增的简单函数列逼近, 一方面这是和一般的微积分中的结果是类似的, 另一方面这也为下面研究可测函数提供了重要支持.\par
+\end{remark}
+
+下面我们来讨论可测函数的运算封闭性, 实际上这是由上面简单函数的逼近得到的.\par
+
+\begin{theorem}
+  设$f,g\in \mathcal{M}(E)$, 则$f+g$, $f-g$, $fg$, $\frac{f}{g}$在$E$上有意义时均可测.\par
+\end{theorem}
+
+\begin{proof}
+  由于$f$和$g$均为可测函数, 因此$\exists \{\phi_n\}$和$\{\psi_n\}$, $\phi_n$和$\psi_n$均为$E$上单增简单函数列满足$\lim_{n \to \infty} \phi_n = f$, $\lim_{n \to \infty} \psi_n = g$.\par
+  于是考虑$f+g$, $f-g$, $fg$, $\frac{f}{g}$的情况:\par
+  \begin{itemize}
+    \item 对于$f+g$, $\exists \{\phi_n+\psi_n\}$, $\phi_n+\psi_n$为$E$上单增简单函数列满足$\lim_{n \to \infty} (\phi_n+\psi_n) = f+g$.\par
+    \item 对于$f-g$, $\exists \{\phi_n-\psi_n\}$, $\phi_n-\psi_n$为$E$上单增简单函数列满足$\lim_{n \to \infty} (\phi_n-\psi_n) = f-g$.\par
+    \item 对于$fg$, $\exists \{\phi_n\cdot\psi_n\}$, $\phi_n\cdot\psi_n$为$E$上单增简单函数列满足$\lim_{n \to \infty} (\phi_n\cdot\psi_n) = fg$.\par
+    \item 对于$\frac{f}{g}$, 若$\forall x\in E, g(x)\neq 0$, 则$\exists \{\frac{\phi_n}{\psi_n}\}$, $\frac{\phi_n}{\psi_n}$为$E$上单增简单函数列满足$\lim_{n \to \infty} (\frac{\phi_n}{\psi_n}) = \frac{f}{g}$.\par
+  \end{itemize}
+  于是$f+g$, $f-g$, $fg$, $\frac{f}{g}$在$E$上均可测.\par
+\end{proof}
+
+\begin{remark}
+  上面的结果说明了可测函数在几乎处处有限的情形下构成线性空间, 即可测函数的和、差、积和商（除数不为零时）仍然是可测函数.\par
+\end{remark}
+
+最后我们给出一个关于简单函数列和函数的可测性间关系的最简洁的结果, 这个结果可以用来判断函数的可测性.\par
+
+\begin{theorem}
+  $f\in \mathcal{M}(E)$当且仅当$\exists \{\phi_n\}$, $\phi_n$为$E$上简单函数列满足$\lim_{n \to \infty} \phi_n = f$.\par
+\end{theorem}
+
+\begin{proof}
+  由上结果可知, 若$f\in \mathcal{M}(E)$, 则$\exists \{\phi_n\}$, $\phi_n$为$E$上单增简单函数列满足$\lim_{n \to \infty} \phi_n = f$.\par
+  下证反方向的命题, 设$\exists \{\phi_n\}$, $\phi_n$为$E$上简单函数列满足$\lim_{n \to \infty} \phi_n = f$.\par
+  由于$\phi_n$是简单函数, 因此$\forall a\in \mathbb{R}$, $E[\phi_n>a]$是可测集, 因此$\bigcap_{k=1}^{\infty}E[\phi_n>a]$也是可测集.\par
+  于是$\forall a\in \mathbb{R}$, $E[f>a] = \bigcap_{k=1}^{\infty}E[\phi_n>a]$是可测集.\par
+  由于$\forall a\in \mathbb{R}$, $E[f>a]$是可测集, 因此$f$在$E$上是可测的.\par
+\end{proof}
 
 \newpage
 
@@ -781,7 +1017,7 @@ $\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_n-f|\geqslant \vare
 \end{proof}
 
 \begin{theorem}
-  (Riesz) 设$m(E)<\infty$, 若$f_n$依测度收敛到$f$, 则$\exists f_{n_k}$, $f_{n_k}$几乎处处收敛到$f$.\par
+  (Riesz) 若$f_n$依测度收敛到$f$, 则$\exists f_{n_k}$, $f_{n_k}$几乎处处收敛到$f$.\par
 \end{theorem}
 
 \begin{proof}
@@ -1036,8 +1272,7 @@ $\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_n-f|\geqslant \vare
 对于一般可测函数, 我们考虑将其分成正部函数和负部函数, 于是有下面的定义:\par
 
 \begin{definition}
-  设$f$是定义在$E$上的可测函数, 则称$f^{+}(x)=\max\{f(x),0\}$为$f$的正部函数, $f^{-}(x)=\max\{-f(x),0\}$为$f$的负部函数.\par
-  于是$f$在$E$上的Lebesgue积分定义为$\int_{E}f(x)\mathrm{d}x=\int_{E}f^{+}(x)\mathrm{d}x-\int_{E}f^{-}(x)\mathrm{d}x$.\par
+  $f$在$E$上的Lebesgue积分定义为$\int_{E}f(x)\mathrm{d}x=\int_{E}f^{+}(x)\mathrm{d}x-\int_{E}f^{-}(x)\mathrm{d}x$.\par
 \end{definition}
 
 \begin{lemma}
@@ -1099,21 +1334,82 @@ $\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_n-f|\geqslant \vare
 \end{proof}
 
 \begin{theorem}
-  (Lebesgue 控制收敛) 设$f_n$几乎处处有限且可测, $F(x)\geqslant |f_n(x)|$, $f_n\Rightarrow f$在$E$上, 则$f\in L(E)$, 且$\int_{E}f(x)\mathrm{d}x= \int_{E}\lim_{n\to \infty}f_n(x)\mathrm{d}x$.\par
+  (Lebesgue 控制收敛) 设$f_n$几乎处处有限且可测, $F(x)\geqslant |f_n(x)|$, $f_n\Rightarrow f$在$E$上, 则$f\in L(E)$, 且$\int_{E}f(x)\mathrm{d}x=\lim_{n\to \infty} \int_{E}f_n(x)\mathrm{d}x$.\par
 \end{theorem}
 
 \begin{proof}
   由在$E$上$f_n\Rightarrow f$, $\forall \varepsilon >0, \lim_{n \to \infty}m(E[|f_n-f|\geqslant \varepsilon])=0$. 又有
 \end{proof}
 
+\newpage
+
 \section{可积函数的连续性}
+
+
+\newpage
 
 \section{Lebesgue积分与Riemann积分的关系}
 
+\newpage
 
 \section{重积分与累次积分的关系}
 
 
+\newpage
+
+\chapter{习题集}
+
+\begin{example}
+  集合可以与其真子集对等.
+\end{example}
+
+\begin{proof}
+  在连续集和离散集中均存在例子, 考虑$\mathbb{N}$和$\mathbb{N}\backslash \{1\}$, 则$\mathbb{N}$和$\mathbb{N}\backslash \{1\}$是等势的.\par
+  另考虑$\mathbb{R}$和$[0,1]$, 可以构造双射$f:\mathbb{R}\rightarrow [0,1]$, 例如$f(x)=\frac{x}{1+|x|}$, 则$f$是双射, 且$f(\mathbb{R})=[0,1]$.\par
+  于是$\mathbb{R}$和$[0,1]$是等势的.\par
+\end{proof}
+
+\begin{example}
+  稠密集的余集不一定是疏朗集.
+\end{example}
+
+\begin{proof}
+  考虑$\mathbb{Q}$和$\mathbb{R}\backslash \mathbb{Q}$, 则$\mathbb{Q}$和$\mathbb{R}\backslash \mathbb{Q}$均为稠密集, 但$\mathbb{R}\backslash \mathbb{Q}$的余集$\mathbb{Q}$不是疏朗集.\par
+\end{proof}
+
+\begin{example}
+  $A \backslash C =  B \backslash C \nRightarrow A = B$.
+\end{example}
+
+\begin{proof}
+  反例可取$A=\{1,2,3\}, B=\{1,3\}, C=\{2\}$, 则$A \backslash C = \{1\} \nRightarrow B \backslash C = \{1,3\}$. 但$A=B$.\par
+\end{proof}
+
+\begin{example}
+  全体有理系数多项式是可数集.
+\end{example}
+
+\begin{proof}
+  设$P_n(x)=a_0+a_1x+\cdots+a_nx^n$, 其中$a_i\in \mathbb{Q}$, 则$P_n(x)$的系数个数为$n+1$, 因此全体有理系数多项式的个数为$\bigcup_{n=0}^{\infty}\mathbb{Q}^{n+1}$.\par
+  由于$\mathbb{Q}$是可数集, $\mathbb{Q}^{n+1}$是可数集, 因此$\bigcup_{n=0}^{\infty}\mathbb{Q}^{n+1}$是可数集.\par
+\end{proof}
+
+\begin{example}
+  开集一定是某一列闭集的并集.
+\end{example}
+
+\begin{proof}
+  设$E$是开集, 则$\forall x\in E, \exists r>0, B(x,r)\subset E$, 于是$E=\bigcup_{x\in E}B(x,r)$.\par
+  由于$B(x,r)$是闭集, 因此$E$是某一列闭集的并集.\par
+\end{proof}
+
+\begin{example}
+  任意多个可测集的交集不一定是可测集.
+\end{example}
+
+\begin{proof}
+  只能说明至多可列的情形是成立的.\par
+\end{proof}
 
 \backmatter
 
