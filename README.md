@@ -48,7 +48,7 @@ The notes are organized into the following chapters:
 | 3.1 | Measurable Function: Definition and Properties | ✅ |
 | 3.2 | Measurable Function: Convergence | ✅ |
 | 3.3 | Measurable Function: Continuous | ✅ |
-| 4.1 | Lebesgue Integral: Non-negative Measurable Function | ❇️ |
+| 4.1 | Lebesgue Integral: Non-negative Measurable Function | ✅ |
 | 4.2 | Lebesgue Integral: All Measurable Function | ✅ |
 | 4.3 | The Continuous of Lebesgue Integrable Functions | ❎ |
 | 4.4 | Lebesgue Integral and Riemann Integral | ❎ |

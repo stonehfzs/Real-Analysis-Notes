@@ -1334,12 +1334,33 @@ $\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_n-f|\geqslant \vare
 \end{proof}
 
 \begin{theorem}
-  (Lebesgue 控制收敛) 设$f_n$几乎处处有限且可测, $F(x)\geqslant |f_n(x)|$, $f_n\Rightarrow f$在$E$上, 则$f\in L(E)$, 且$\int_{E}f(x)\mathrm{d}x=\lim_{n\to \infty} \int_{E}f_n(x)\mathrm{d}x$.\par
+  (Lebesgue 控制收敛) 设$f_n$几乎处处有限且可测, $F(x)\geqslant |f_n(x)|$, 其中$F$可积, $f_n\Rightarrow f$在$E$上, 则$f\in L(E)$, 且$\int_{E}f(x)\mathrm{d}x=\lim_{n\to \infty} \int_{E}f_n(x)\mathrm{d}x$.\par
 \end{theorem}
 
 \begin{proof}
-  由在$E$上$f_n\Rightarrow f$, $\forall \varepsilon >0, \lim_{n \to \infty}m(E[|f_n-f|\geqslant \varepsilon])=0$. 又有
+  由在$E$上$f_n\Rightarrow f$, $\exists f_{n_k}, f_{n_k}\rightarrow f$ a.e. on $E$, 又有$F(x)\geqslant |f_{n_k}(x)|$, 则$|f|\leqslant F$, 于是$f$在$E$上可积.\par
+  下证$\int_{E}f(x)\mathrm{d}x=\lim_{n\to \infty} \int_{E}f_n(x)\mathrm{d}x$:\par
+  考虑$E=\bigcup_{k=1}^{\infty}E_k$, 其中$\{E_k\}$递增可测.\par
+  由$0\leqslant \int_{E}F(x)\mathrm{d}x=\lim_{k\to \infty}\int_{E_k}F(x)\mathrm{d}x<+\infty$, $\forall \varepsilon >0, \exists k\in \mathrm{N}, \int_{E\backslash E_k}F(x)\mathrm{d}x<\frac{\varepsilon}{4}$.\par
+  于是有$\lim_{n\to \infty}\int_{E_k}f_n(x)\mathrm{d}x=\int_{E_k}f(x)\mathrm{d}x$. 下面考虑$\left|\int_{E_k}(f-f_n)\mathrm{d}x\right|=\left|\int_{E_k}f\mathrm{d}x-\int_{E_k}f_n\mathrm{d}x\right|<\frac{\varepsilon}{2}$.\par
+  于是有$\exists N\in \mathrm{N}, n\geqslant N, \left|\int_{E}f\mathrm{d}x-\int_{E}f_n\mathrm{d}x\right|=\left|\int_{E}(f-f_n)\mathrm{d}x\right|\leqslant \frac{\varepsilon}{2}+2\int_{E\backslash E_k}F\mathrm{d}x=\varepsilon$.\par
+  即$\int_{E}f(x)\mathrm{d}x=\lim_{n\to \infty} \int_{E}f_n(x)\mathrm{d}x$.\par
 \end{proof}
+
+\begin{remark}
+  Lebesgue控制收敛定理中依测度收敛可以改成其他条件较弱的收敛, 因为前面的若干定理已经证明了全空间测度有限的情况下有几乎处处收敛函数列必定依测度收敛和近乎一致收敛.\par
+\end{remark}
+
+类似地, 我们还有Lebesgue有界收敛定理, 可以表示如下:\par
+
+\begin{corollary}
+  (Lebesgue 有界收敛) 设$f_n$几乎处处有限且可测, $\exists K >0, K\geqslant |f_n(x)|$, $f_n\Rightarrow f$在$E$上, 则$f\in L(E)$, 且$\int_{E}f(x)\mathrm{d}x=\lim_{n\to \infty} \int_{E}f_n(x)\mathrm{d}x$.\par
+\end{corollary}
+
+\begin{remark}
+  其证明过程和Lebesgue控制收敛定理完全相同, 因为这里要求有界性是一致的.\par
+  事实上, 在面对具体函数时, 使用Lebesgue有界收敛定理更方便, 因为判断函数列的界比判断其极限的有限性更简单.\par
+\end{remark}
 
 \newpage
 
