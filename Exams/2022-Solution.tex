@@ -182,4 +182,28 @@
     因此有$\left|\int_{A_k}f(x)\mathrm{d}x\right|\leqslant \int_{A_k}|f(x)|\mathrm{d}x\leqslant m(A_k)\cdot \sup_{x\in E}|f(x)|<\varepsilon$, 从而$\lim_{k \to \infty}\int_{A_k}f(x)\mathrm{d}x=0$.\par
   \end{solution}
 
+  3. 设$f(x)$是$E$上的可积函数, 且对任意可测集$A\subset E$, 均有$\int_{A}f(x)\mathrm{d}x=0$. 证明$f(x)=0$ a.e. on $E$.\par
+
+  \begin{solution}
+    假设$f(x)\neq 0$在$E$上有正测度的集合$A$, 不妨设$f(x)>0$, 则$\int_{A}f(x)\mathrm{d}x$, 与条件矛盾.\par
+    因此$f(x)=0$在$E$上几乎处处成立.\par
+  \end{solution}
+
+  \subsection*{五、辨析题}
+
+  设$\{f_n\}$是可测集$E$上的非负可测函数列, 且$\{f_n\}$在$E$上几乎处处收敛到$0$.\par
+  (1) 判断$\{f_n\}$在$E$上是否依测度收敛到$0$, 并简要说明理由.\par
+  (2) 若$\int_{E} \max{f_1(x),f_2(x),\ldots,f_n(x)}\mathrm{d}x\leqslant M$, 验证$\lim \limits_{n \to \infty}\int_{E}f_n(x)\mathrm{d}x=0$.\par
+  (3) 当$\lim \limits_{n \to \infty}\int_{E}f_n(x)\mathrm{d}x=0$时判断$\{f_n\}$在$E$上是否依测度收敛到$0$, 并简要说明理由.\par
+
+  \begin{solution}
+    (1) $\{f_n\}$在$E$上不总是依测度收敛到$0$, 例如$f_n(x)=\chi_{[0,n]}(x)$在$E=\left[0,\right.\left.+\infty\right)$上几乎处处收敛到$0$, 但不依测度收敛到$0$.\par
+    (2) 要证明$\lim \limits_{n \to \infty}\int_{E}f_n(x)\mathrm{d}x=0$, 由于$\int_{E} \max{f_1(x),f_2(x),\ldots,f_n(x)}\mathrm{d}x\leqslant M$, 
+    于是有$\exists M>0, \int_{E}f_k(x)\mathrm{d}x\leqslant M$. 由有界收敛定理, $\lim \limits_{n \to \infty}\int_{E}f_n(x)\mathrm{d}x=\int_{E}\lim \limits_{n \to \infty}f_n(x)\mathrm{d}x=0$.\par
+    (3) $\{f_n\}$在$E$上依测度收敛到$0$, 下面证明这一结果:\par
+    由于$\lim \limits_{n \to \infty}\int_{E}f_n(x)\mathrm{d}x=0$, 则对于任意$\varepsilon >0$, 存在$N$使得当$n>N$时$\int_{E}f_n(x)\mathrm{d}x<\varepsilon$.\par
+    由非负性, $\int_{E}f_n(x)\mathrm{d}x\geqslant \int_{E\left[f_n\geqslant \frac{1}{k}\right]}f_n(x)\mathrm{d}x\geqslant \frac{1}{k}\cdot m\left(E\left[f_n\geqslant \frac{1}{k}\right]\right)$.\par
+    于是当$n \to \infty$时有$m\left(E\left[f_n\geqslant \frac{1}{k}\right]\right)\leqslant 0$. 从而$\{f_n\}$在$E$上依测度收敛到$0$.\par
+  \end{solution}
+
 \end{document}

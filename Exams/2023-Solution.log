@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  24 JUN 2025 13:07
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  24 JUN 2025 15:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**2022-Solution
-(./2022-Solution.tex
+**2023-Solution
+(./2023-Solution.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (d:/TexLive/2025/texmf-dist/tex/latex/base/article.cls
@@ -720,8 +720,8 @@ File: ctex.cfg 2022/07/14 v2.5.10 Configuration file (CTEX)
 \c@example=\count360
 \c@solution=\count361
 \c@num=\count362
- (./2022-Solution.aux)
-\openout1 = `2022-Solution.aux'.
+ (./2023-Solution.aux)
+\openout1 = `2023-Solution.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
 LaTeX Font Info:    ... okay on input line 55.
@@ -793,9 +793,9 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
  on input line 55.
 
 Package hyperref Info: Link coloring ON on input line 55.
-(./2022-Solution.out) (./2022-Solution.out)
+(./2023-Solution.out) (./2023-Solution.out)
 \@outlinefile=\write4
-\openout4 = `2022-Solution.out'.
+\openout4 = `2023-Solution.out'.
 
 
 Package fontspec Info: 
@@ -862,12 +862,17 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
  (d:/TexLive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
@@ -876,51 +881,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--105
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
 
 
 [2]
-Overfull \hbox (7.02086pt too wide) in paragraph at lines 178--178
-[]\TU/lmr/m/n/10.53937 2. \TU/SimSun(0)/m/n/10.53937 设 $\OML/cmm/m/it/10.53937 f\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 x\OT1/cmr/m/n/10.53937 )$ \TU/SimSun(0)/m/n/10.53937 是 $\OML/cmm/m/it/10.53937 E$ \TU/SimSun(0)/m/n/10.53937 上 的 可 积 函 数\TU/lmr/m/n/10.53937 , $\OMS/cmsy/m/n/10.53937 f\OML/cmm/m/it/10.53937 A[]\OMS/cmsy/m/n/10.53937 g$ \TU/SimSun(0)/m/n/10.53937 是 $\OML/cmm/m/it/10.53937 E$ \TU/SimSun(0)/m/n/10.53937 的 一 列 可 测 子 集 且 $[][] \OML/cmm/m/it/10.53937 m\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 A[]\OT1/cmr/m/n/10.53937 ) = 0$\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 证 明 $[][] [][] \OML/cmm/m/it/10.53937 f\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 x\OT1/cmr/m/n/10.53937 )[]\OML/cmm/m/it/10.53937 x \OT1/cmr/m/n/10.53937 =
- []
-
-
 
 [3]
-Overfull \hbox (3.71945pt too wide) in paragraph at lines 201--202
-[]\TU/lmr/m/it/10.53937 (2) \TU/SimSun(0)/m/it/10.53937 要 证 明 $[] [][] \OML/cmm/m/it/10.53937 f[]\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 x\OT1/cmr/m/n/10.53937 )[]\OML/cmm/m/it/10.53937 x \OT1/cmr/m/n/10.53937 = 0$\TU/lmr/m/it/10.53937 , \TU/SimSun(0)/m/it/10.53937 由 于 $[][] [] [][]\OML/cmm/m/it/10.53937 x \U/msa/m/n/10.53937 6 \OML/cmm/m/it/10.53937 M$\TU/lmr/m/it/10.53937 , \TU/SimSun(0)/m/it/10.53937 于 是 有 $\OMS/cmsy/m/n/10.53937 9\OML/cmm/m/it/10.53937 M > \OT1/cmr/m/n/10.53937 0\OML/cmm/m/it/10.53937 ; [][] f[]\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 x\OT1/cmr/m/n/10.53937 )[]\OML/cmm/m/it/10.53937 x \U/msa/m/n/10.53937 6
+Overfull \hbox (34.38416pt too wide) in paragraph at lines 214--214
+[]\TU/SimSun(0)/m/it/10.53937 由 于 $[]$ 在 $\OT1/cmr/m/n/10.53937 [0\OML/cmm/m/it/10.53937 ; \OT1/cmr/m/n/10.53937 1]$ \TU/SimSun(0)/m/it/10.53937 上 几 乎 处 处 有 限\TU/lmr/m/it/10.53937 , \TU/SimSun(0)/m/it/10.53937 且 $[][] [][]\OML/cmm/m/it/10.53937 x$ \TU/SimSun(0)/m/it/10.53937 是 有 界 的\TU/lmr/m/it/10.53937 , \TU/SimSun(0)/m/it/10.53937 因 此 根 据 有 界 收 敛 定 理\TU/lmr/m/it/10.53937 , $[][] [][] [][]\OML/cmm/m/it/10.53937 x \OT1/cmr/m/n/10.53937 =
  []
 
 
 
-[4] (./2022-Solution.aux)
+[4] (./2023-Solution.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/07/14>
  ***********
-Package rerunfilecheck Info: File `2022-Solution.out' has not changed.
+Package rerunfilecheck Info: File `2023-Solution.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  36966 strings out of 473832
  915489 string characters out of 5733158
- 1428040 words of memory out of 5000000
+ 1429040 words of memory out of 5000000
  59437 multiletter control sequences out of 15000+600000
  564436 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,12n,111p,1228b,496s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,14n,111p,1228b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 2022-Solution.pdf (4 pages).
+Output written on 2023-Solution.pdf (4 pages).
