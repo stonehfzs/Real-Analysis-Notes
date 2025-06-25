@@ -123,7 +123,7 @@
   \end{solution}
 
   4. 设$f_k,f$均为可测集$E$上的可测函数, 当$k \to \infty$时下列命题成立的是:\par
-  \fourch{若$f_k$在$E$上几乎处处收敛到$f$, 则$f_k$在$E$上近乎一致收敛到$E$.}{若$f_k$在$E$上几乎处处收敛到$f$, 则$\lim_{k \to \infty}\int_{E}f_k(x)\mathrm{d}x=\int_{E}f(x)\mathrm{d}x$.}{若$f_k$在$E$上近乎一致收敛到$f$, 则$f_k$在$E$上依测度收敛到$f$.}{若$f_k$在$E$上依测度收敛到$f$, 则$\lim_{k \to \infty}\int_{E}f_k(x)\mathrm{d}x=\int_{E}f(x)\mathrm{d}x$.}
+  \fourch{若$f_k$在$E$上几乎处处收敛到$f$, 则$f_k$在$E$上近乎一致收敛到$E$.}{若$f_k$在$E$上几乎处处收敛到$f$, 则$\lim \limits_{k \to \infty}\int_{E}f_k(x)\mathrm{d}x=\int_{E}f(x)\mathrm{d}x$.}{若$f_k$在$E$上近乎一致收敛到$f$, 则$f_k$在$E$上依测度收敛到$f$.}{若$f_k$在$E$上依测度收敛到$f$, 则$\lim \limits_{k \to \infty}\int_{E}f_k(x)\mathrm{d}x=\int_{E}f(x)\mathrm{d}x$.}
   
   \begin{solution}
     \textbf{A} 错误, 几乎处处收敛不一定近乎一致收敛.\par
@@ -160,10 +160,10 @@
     $\int_{0}^{1}f(x)\mathrm{d}x=\int_{\mathbb{Q}}x^2\mathrm{d}x+\int_{\mathbb{R}\backslash \mathbb{Q}}(1+x)\mathrm{d}x=\int_{0}^{1}(1+x)\mathrm{d}x=\frac{3}{2}$.\par
   \end{solution}
     
-  2. 设$f$为可测集$E$上的可积函数, 记$E_k=E\left[|f|<\frac{1}{k}\right]$, 计算$\lim_{k \to +\infty}\int_{E_k}|f(x)|\mathrm{d}x$.\par
+  2. 设$f$为可测集$E$上的可积函数, 记$E_k=E\left[|f|<\frac{1}{k}\right]$, 计算$\lim \limits_{k \to +\infty}\int_{E_k}|f(x)|\mathrm{d}x$.\par
 
   \begin{solution}
-    考虑$\lim_{k \to +\infty}\int_{E_k}|f(x)|\mathrm{d}x=\lim_{k \to +\infty}\int_{E\left[|f|<\frac{1}{k}\right]}|f(x)|\mathrm{d}x=\int_{E\left[|f|=0\right]}|f(x)|\mathrm{d}x=0$.\par
+    考虑$\lim \limits_{k \to +\infty}\int_{E_k}|f(x)|\mathrm{d}x=\lim \limits_{k \to +\infty}\int_{E\left[|f|<\frac{1}{k}\right]}|f(x)|\mathrm{d}x=\int_{E\left[|f|=0\right]}|f(x)|\mathrm{d}x=0$.\par
   \end{solution}
 
   \subsection*{四、证明题}
@@ -175,11 +175,11 @@
     由于$f(x)$是可测函数, 则$\mathrm{e}^{f(x)}$也是可测函数. 于是$\int_{E}\mathrm{e}^{f(x)}\mathrm{d}x\geqslant \int_{E\left[f\geqslant a\right]}\mathrm{e}^{f(x)}\mathrm{d}x\geqslant \int_{E[f\geqslant a]}\mathrm{e}^{a}\mathrm{d}x\geqslant m(E[f\geqslant a])\cdot \mathrm{e}^a$.\par
   \end{solution}
 
-  2. 设$f(x)$是$E$上的可积函数, $\{A_k\}$是$E$的一列可测子集且$\lim_{k \to \infty}m(A_k)=0$, 证明$\lim_{k \to \infty}\int_{A_k}f(x)\mathrm{d}x=0$.\par
+  2. 设$f(x)$是$E$上的可积函数, $\{A_k\}$是$E$的一列可测子集且$\lim_{k \to \infty}m(A_k)=0$, 证明$\lim \limits_{k \to \infty}\int_{A_k}f(x)\mathrm{d}x=0$.\par
     
   \begin{solution}
-    由于$f(x)$是可积函数, 则$\int_{E}|f(x)|\mathrm{d}x<+\infty$. 由$\lim_{k \to \infty}m(A_k)=0$, 可知对于任意$\varepsilon >0$, 存在$N$使得当$k>N$时$m(A_k)<\varepsilon/\int_{E}|f(x)|\mathrm{d}x$.\par
-    因此有$\left|\int_{A_k}f(x)\mathrm{d}x\right|\leqslant \int_{A_k}|f(x)|\mathrm{d}x\leqslant m(A_k)\cdot \sup_{x\in E}|f(x)|<\varepsilon$, 从而$\lim_{k \to \infty}\int_{A_k}f(x)\mathrm{d}x=0$.\par
+    由于$f(x)$是可积函数, 则$\int_{E}|f(x)|\mathrm{d}x<+\infty$. 由$\lim \limits_{k \to \infty}m(A_k)=0$, 可知对于任意$\varepsilon >0$, 存在$N$使得当$k>N$时$m(A_k)<\varepsilon/\int_{E}|f(x)|\mathrm{d}x$.\par
+    因此有$\left|\int_{A_k}f(x)\mathrm{d}x\right|\leqslant \int_{A_k}|f(x)|\mathrm{d}x\leqslant m(A_k)\cdot \sup_{x\in E}|f(x)|<\varepsilon$, 从而$\lim \limits_{k \to \infty}\int_{A_k}f(x)\mathrm{d}x=0$.\par
   \end{solution}
 
   3. 设$f(x)$是$E$上的可积函数, 且对任意可测集$A\subset E$, 均有$\int_{A}f(x)\mathrm{d}x=0$. 证明$f(x)=0$ a.e. on $E$.\par

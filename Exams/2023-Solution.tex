@@ -150,7 +150,7 @@
   6. 有限个闭集的并是闭集, 可数多个闭集的并不一定是闭集.\par
 
   \begin{solution}
-    正确, 有限个闭集的并是闭集, 但可数多个闭集的并不一定是闭集, 例如$\bigcup_{n=1}^{+\infty}[0,1/n]$是开集.\par
+    正确, 有限个闭集的并是闭集, 但可数多个闭集的并不一定是闭集, 例如$\bigcup_{n=1}^{+\infty}[0,\frac{1}{n}]$是开集.\par
   \end{solution}
 
   \subsection*{三、简答题}
@@ -186,16 +186,16 @@
 
   \subsection*{四、证明题}
 
-  1. 设$f$为可测集$E$上的可积函数, 记$E_k=E\left[|f|<\frac{1}{k^2}\right]$, 证明$\lim_{k \to +\infty}\int_{E_k}|f(x)|\mathrm{d}x=0$.\par
+  1. 设$f$为可测集$E$上的可积函数, 记$E_k=E\left[|f|<\frac{1}{k^2}\right]$, 证明$\lim \limits_{k \to +\infty}\int_{E_k}|f(x)|\mathrm{d}x=0$.\par
 
   \begin{solution}
-    考虑$\lim_{k \to +\infty}\int_{E_k}|f(x)|\mathrm{d}x=\lim_{k \to +\infty}\int_{E\left[|f|<\frac{1}{k^2}\right]}|f(x)|\mathrm{d}x=\int_{E\left[|f|=0\right]}|f(x)|\mathrm{d}x=0$.\par
+    考虑$\lim \limits_{k \to +\infty}\int_{E_k}|f(x)|\mathrm{d}x=\lim \limits_{k \to +\infty}\int_{E\left[|f|<\frac{1}{k^2}\right]}|f(x)|\mathrm{d}x=\int_{E\left[|f|=0\right]}|f(x)|\mathrm{d}x=0$.\par
   \end{solution}
 
-  2. 设$f_k(x)$为可测集$E$上的可测函数列, 若$\lim_{k \to +\infty}\int_{E_k}|f(x)|\mathrm{d}x=0$, 证明$f_k(x)$在$E$上依测度收敛到0.\par
+  2. 设$f_k(x)$为可测集$E$上的可测函数列, 若$\lim \limits_{k \to +\infty}\int_{E_k}|f(x)|\mathrm{d}x=0$, 证明$f_k(x)$在$E$上依测度收敛到0.\par
 
   \begin{solution}
-    由于$\lim_{k \to +\infty}\int_{E_k}|f(x)|\mathrm{d}x=0$, 则对于任意$\varepsilon >0$, 存在$N$使得当$k>N$时$m(E_k)<\frac{\varepsilon}{\int_{E}|f(x)|\mathrm{d}x}$.\par
+    由于$\lim \limits_{k \to +\infty}\int_{E_k}|f(x)|\mathrm{d}x=0$, 则对于任意$\varepsilon >0$, 存在$N$使得当$k>N$时$m(E_k)<\frac{\varepsilon}{\int_{E}|f(x)|\mathrm{d}x}$.\par
     由依测度收敛的定义, 对于任意$\varepsilon >0$, 存在$N$使得当$k>N$时$m(E\left[|f_k(x)|\geqslant \varepsilon\right])\to 0$. 因此$f_k(x)$在$E$上依测度收敛到0.\par
   \end{solution}
 
@@ -210,8 +210,8 @@
   2. 计算$\lim \limits_{n \to +\infty}\int_{0}^{1}\frac{kx \sin{kx}}{2+k^2x^3}\mathrm{d}x$.\par
 
   \begin{solution}
-    考虑$\lim_{n \to +\infty}\int_{0}^{1}\frac{kx \sin{kx}}{2+k^2x^3}\mathrm{d}x$.\par
-    由于$\frac{kx \sin{kx}}{2+k^2x^3}$在$[0,1]$上几乎处处有限, 且$\int_{0}^{1}\frac{kx}{2+k^2x^3}\mathrm{d}x$是有界的, 因此根据有界收敛定理, $\lim_{n \to +\infty}\int_{0}^{1}\frac{kx \sin{kx}}{2+k^2x^3}\mathrm{d}x=0$.\par
+    考虑$\lim \limits_{n \to +\infty}\int_{0}^{1}\frac{kx \sin{kx}}{2+k^2x^3}\mathrm{d}x$.\par
+    由于$\frac{kx \sin{kx}}{2+k^2x^3}$在$[0,1]$上几乎处处有限, 且$\int_{0}^{1}\frac{kx}{2+k^2x^3}\mathrm{d}x$是有界的, 因此根据有界收敛定理, $\lim \limits_{n \to +\infty}\int_{0}^{1}\frac{kx \sin{kx}}{2+k^2x^3}\mathrm{d}x=0$.\par
   \end{solution}
 
 \end{document}

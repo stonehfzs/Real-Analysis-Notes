@@ -79,7 +79,7 @@
   \fourch{$f(x)$在$E$上可测当且仅当$|f(x)|$在$E$上可测}{若$f(x)$在$E$上可测, 则$f(x)$在$E$的任意子集上可测}{若$f(x)$在$E$上可测, 则$f(x)$在$E$的任意测度为零的子集上可积}{若$f(x)$在$E$上可测, 则$f(x)$在$E$上几乎处处有限}
 
   4. 设$f_k,f$均为可测集$E$上的可测函数, 当$k \to \infty$时下列命题成立的是:\par
-  \fourch{若$f_k$在$E$上几乎处处收敛到$f$, 则$f_k$在$E$上近乎一致收敛到$E$.}{若$f_k$在$E$上几乎处处收敛到$f$, 则$\lim_{k \to \infty}\int_{E}f_k(x)\mathrm{d}x=\int_{E}f(x)\mathrm{d}x$.}{若$f_k$在$E$上近乎一致收敛到$f$, 则$f_k$在$E$上依测度收敛到$f$.}{若$f_k$在$E$上依测度收敛到$f$, 则$\lim_{k \to \infty}\int_{E}f_k(x)\mathrm{d}x=\int_{E}f(x)\mathrm{d}x$.}
+  \fourch{若$f_k$在$E$上几乎处处收敛到$f$, 则$f_k$在$E$上近乎一致收敛到$E$.}{若$f_k$在$E$上几乎处处收敛到$f$, 则$\lim \limits_{k \to \infty}\int_{E}f_k(x)\mathrm{d}x=\int \limits_{E}f(x)\mathrm{d}x$.}{若$f_k$在$E$上近乎一致收敛到$f$, 则$f_k$在$E$上依测度收敛到$f$.}{若$f_k$在$E$上依测度收敛到$f$, 则$\lim \limits_{k \to \infty}\int_{E}f_k(x)\mathrm{d}x=\int_{E}f(x)\mathrm{d}x$.}
   
   5. 下列命题成立的是:\par
   \fourch{若$E\subset \mathbb{R}^n$测度为0, 则$E$为至多可数集.}{设$E\subset \mathbb{R}^n$, 存在包含$E$的开集$G$, $m(G\backslash E)=0$}{若$G\subset \mathbb{R}^n$是开集, 则$\partial G$是零测集.}{零测集是可测集.}
@@ -93,13 +93,13 @@
   (1) $f(x)$在$[0,1]$上是否$R$可积? 简单说明理由.\par
   (2) $f(x)$在$[0,1]$上是否$L$可积? 简单说明理由.\par
 
-  2. 设$f$为可测集$E$上的可积函数, 记$E_k=E\left[|f|<\frac{1}{k}\right]$, 计算$\lim_{k \to +\infty}\int_{E_k}|f(x)|\mathrm{d}x$.\par
+  2. 设$f$为可测集$E$上的可积函数, 记$E_k=E\left[|f|<\frac{1}{k}\right]$, 计算$\lim \limits_{k \to +\infty}\int_{E_k}|f(x)|\mathrm{d}x$.\par
 
   \subsection*{四、证明题}
 
   1. 设$f(x)$是$E$上的可测函数, 证明$\forall a >0, m(E\left[f\geqslant a\right])\leqslant \mathrm{e}^{-a}\int_{E}\mathrm{e}^{f(x)}\mathrm{d}x$.\par
 
-  2. 设$f(x)$是$E$上的可积函数, $\{A_k\}$是$E$的一列可测子集且$\lim_{k \to \infty}m(A_k)=0$, 证明$\lim_{k \to \infty}\int_{A_k}f(x)\mathrm{d}x=0$.\par
+  2. 设$f(x)$是$E$上的可积函数, $\{A_k\}$是$E$的一列可测子集且$\lim \limits_{k \to \infty}m(A_k)=0$, 证明$\lim \limits_{k \to \infty}\int_{A_k}f(x)\mathrm{d}x=0$.\par
 
   3. 设$f(x)$是$E$上的可积函数, 且对任意可测集$A\subset E$, 均有$\int_{A}f(x)\mathrm{d}x=0$. 证明$f(x)=0$ a.e. on $E$.\par
 
