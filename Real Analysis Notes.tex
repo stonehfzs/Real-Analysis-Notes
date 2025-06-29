@@ -185,9 +185,226 @@
 
 \section{集合的对等}
 
+\begin{definition}
+  设$A,B$是集合, 则称$A$和$B$是对等的, 当且仅当$\exists f:A\to B$, $f$是双射. 此时记$A\sim B$表示$A$和$B$是对等的.\par
+\end{definition}
+
+\begin{lemma}
+  若$A\sim B$, $C \sim D$, $A\cap C=\emptyset$, $B\cap D=\emptyset$, 则$A\cup C\sim B\cup D$.\par
+\end{lemma}
+
+\begin{proof}
+  设$f:A\to B$是双射, $g:C\to D$是双射, 则定义映射$h:A\cup C\to B\cup D$如下:
+  \begin{equation*}
+    h(x)=
+    \begin{cases}
+      f(x), & x\in A\\
+      g(x), & x\in C
+    \end{cases}
+  \end{equation*}
+  显然$h$是单射, 且对于任意$y\in B\cup D$, 存在$x\in A\cup C$, 使得$h(x)=y$, 因此$h$是满射. 因此$h$是双射, 即$A\cup C\sim B\cup D$.\par
+\end{proof}
+
+\begin{theorem}
+  若$A\sim B$, $C \sim D$, 且这两个对等关系可以用同一个映射$\phi$来表示, $C\subset A$, $D\subset B$, 则$A\backslash C\sim B\backslash D$.\par
+\end{theorem}
+
+\begin{proof}
+  $\forall x \in A\backslash C$, 令$f(x)=\phi(x)\in B$, 下证$f(x)\in B\backslash D$:\par
+  若$f(x)\in D$, 则$\exists x_0 \in C$, $f(x)= \phi(x)= \phi(x_0)$.\par
+  于是$A\backslash C\sim B\backslash D$.\par
+\end{proof}
+
+\begin{proposition}
+  对于任何映射$\phi$, 都有:\par
+  \begin{itemize}
+    \item $\phi(A\cup B) = \phi(A)\cup \phi(B)$.
+    \item $\phi(A\cap B) \subset \phi(A)\cap \phi(B)$.
+    \item $\phi^{-1}(A\cup B) = \phi^{-1}(A)\cup \phi^{-1}(B)$.
+    \item $\phi^{-1}(A\cap B) = \phi^{-1}(A)\cap \phi^{-1}(B)$.
+  \end{itemize}
+\end{proposition}
+
+\begin{remark}
+  这里不再证明上述命题, 这些命题是映射的基本性质, 其证明可以通过直接验证映射的定义来完成.\par
+\end{remark}
+
+下面我们自然会想到, 这种描述集合对等的想法是否和集合本身的性质有关, 于是有下面的定理:\par
+
+\begin{theorem}
+  (Bernstein) 若$A\sim B_0\subset B$, $B\sim A_0\subset A$, 则$A\sim B$.\par
+\end{theorem}
+
+\begin{proof}
+  为了证明这个事实, 我们需要利用一个引理, 说明集合在一个给定映射下的分解.\par
+  若有$f: X\rightarrow Y$, $g: Y\rightarrow X$, 则存在分解$X=A\cup A^{\sim}$, $Y=B\cup B^{\sim}$, 其中$f(A)= B$, $g(B^{\sim})=A^{\sim}$, $A\cap A^{\sim} = \emptyset$, $B\cap B^{\sim} = \emptyset$.\par
+  设$A\sim B_0\subset B$, 则存在$f: A\to B$是双射, $g: B_0\to A_0$是双射, 则定义映射$h: A\cup A^{\sim}\to B\cup B^{\sim}$如下:\par
+  \begin{equation*}
+    h(x)=
+    \begin{cases}
+      f(x), & x\in A\\
+      g(x), & x\in A^{\sim}
+    \end{cases}
+  \end{equation*}
+  显然$h$是单射, 且对于任意$y\in B\cup B^{\sim}$, 存在$x\in A\cup A^{\sim}$, 使得$h(x)=y$, 因此$h$是满射. 因此$h$是双射, 即$A\cup A^{\sim}\sim B\cup B^{\sim}$.\par
+  于是$A\sim B$.\par
+\end{proof}
+
 \newpage
 
 \section{集合的基数}
+
+在上面, 我们抽象讨论了集合的基数的一些性质, 现在为了更进一步分析不同的集合, 并且引入在Lebesgue测度中常用到的可列集, 我们首先作下面的这些定义:\par
+
+\begin{definition}
+  若存在$n\in \mathbb{N}$满足$A\sim M_{n}$, 则称$A$是有限集, 其中$M_{n}=\{1,2,\cdots,n\}$. 否则称为无限集.\par
+  若$\mathbb{N}$满足$A\sim \mathbb{N}$, 则称$A$是可列集.\par
+\end{definition}
+
+\begin{remark}
+  这里的可列集是指可以和自然数集$\mathbb{N}$一一对应的集合, 也就是可以被自然数标号的集合.\par
+  另一方面, 在一些实分析的参考书中, 可列集也被称为可数集, 这里的定义是一致的, 因此我们统一称之为可列集.\par
+\end{remark}
+
+\begin{theorem}
+  任何无限集都有一个可列的真子集.\par
+\end{theorem}
+
+\begin{proof}
+  由题, $\exists a_1\in A$, $A\backslash \{a_1\} \ne \emptyset$. 于是$\exists a_2 \in A\backslash \{a_1\}$,  $A\backslash \{a_1,a_2\} \ne \emptyset$.\par
+  类似地, 我们有$\exists a_k, a_k \in A\backslash \{a_1,a_2,\cdots,a_{k-1}\}$, $A\backslash \{a_1,a_2,\cdots,a_k\} \ne \emptyset$.\par
+  于是可以取$A'=\{a_1,a_2,\cdots\}$, 则$A'$是$A$的一个可列的真子集.\par
+  真子集是由永远可以再取一个元保证的.\par 
+\end{proof}
+
+在讨论下面的性质之前, 我们首先需要定义集合的基数. 通俗来解释, 这就是集合的大小.\par
+
+\begin{definition}
+  设$A,B$是集合, 则称$A$的基数为$|A|$, 定义如下:\par
+  \begin{itemize}
+    \item 若$A\sim \mathbb{N}$, 则称$|A|=\aleph_{0}$.
+    \item 若$A\sim M_n$, 则称$|A|=n$.
+  \end{itemize}
+\end{definition}
+
+\begin{remark}
+  能够从定义中很自然的得到下面的一系列性质:\par
+  \begin{itemize}
+    \item 若$A\sim B$, 则$|A|=|B|$.
+    \item 若$A\subset B$, 则$|A|\leqslant |B|$.
+  \end{itemize}
+\end{remark}
+
+\begin{theorem}
+  可列集的无限子集一定可列.\par
+\end{theorem}
+
+\begin{proof}
+  取$A= B_0\subset B$, $\phi: A\rightarrow A$, 于是有$|A|\leqslant |B|$.\par
+  设$B$可列, 于是有$|B|=\aleph_{0}$, 因此$|A|\leqslant |B|=\aleph_{0}$.\par
+  由于$\exists C\subset B$为无限的, 因此$|B|\geqslant |C|$, 下证$\exists D, |D|=\aleph_{0}$.\par
+  由于$B$是可列集, 因此可以找到一个可列的真子集$D\subset B$, 且$|D|=\aleph_{0}$.\par
+  于是$A$的无限子集$C$也是可列的, 即$|C|=\aleph_{0}$.\par
+  因此可列集的无限子集一定可列.\par 
+\end{proof}
+
+针对上面给出的定义, 我们再来讨论基数的运算:\par
+
+\begin{proposition}
+  \begin{itemize}
+    \item 若$|A|=\aleph_{0}$, $|B|=\aleph_{0}$, 则$|A\cup B|=\aleph_{0}$.
+    \item 若$|A|=\aleph_{0}$, $|B|=n$, 则$|A\cup B|=\aleph_{0}$.
+    \item 若$|A_i|=\aleph_{0}, i =1,2,\cdots, n$, 则$|\sum_{i=1}^{n}A_i|=\aleph_{0}$.
+    \item 若$|A_i|=\aleph_{0}, i =1,2,\cdots$, 则$|\sum_{i=1}^{\infty}A_i|=\aleph_{0}$.
+  \end{itemize}
+\end{proposition}
+
+下面我们讨论集合的乘积, 这事实上是由一般集合构造而成的, 我们这里给出其定义, 并相应给出其运算的性质:\par
+
+\begin{definition}
+  设$A,B$是集合, 则称$A\times B=\{(a,b)|a\in A, b\in B\}$为$A$和$B$的笛卡尔积, 又称为集合的乘积.\par
+\end{definition}
+
+\begin{proposition}
+  集合的乘积的基数具有以下性质:\par
+  \begin{itemize}
+    \item 若$|A|=n$, $|B|=m$, 则$|A\times B|=nm$.
+    \item 若$|A|=\aleph_{0}$, $|B|=\aleph_{0}$, 则$|A\times B|=\aleph_{0}$.
+    \item 若$|A|=\aleph_{0}$, $|B|=n$, 则$|A\times B|=\aleph_{0}$.
+    \item 若$|A_i|=\aleph_{0}, i =1,2,\cdots, n$, 则$|\prod_{i=1}^{n}A_i|=\aleph_{0}$.
+  \end{itemize}
+\end{proposition}
+
+\begin{remark}
+  这里的关于基数的性质和上面的性质类似, 我们都不再单独证明.\par
+\end{remark}
+
+事实上下面我们会考虑在一般的微积分中讨论的区间, 区间的基数事实上很复杂, 因为我们不能利用上面给出的任何集合来表示区间, 所以我们定义如下:\par
+
+\begin{definition}
+  区间$[0,1]$的基数为$\aleph_{1}$, 又记为$c$.\par
+\end{definition}
+
+\begin{remark}
+  事实上区间$[0,1]$的基数是$\aleph_{1}$说明了任何区间的基数都为$\aleph_{1}$, 因为任何区间都可以和$[0,1]$一一对应.\par
+\end{remark}
+
+\begin{theorem}
+  $[0,1]$不是可列集.\par
+\end{theorem}
+
+\begin{proof}
+  假设$[0,1]$是可列集, 则$[0,1]\sim \{1,2,\cdots\}$, 于是$[0,1]=\{a_1,a_2,\cdots\}$.\par
+  下面我们说明$\exists x \in [0,1]$, 但$x\ne a_k$, $\forall k\in \mathbb{N}$.\par
+  令$a_1=0.a_{11}a_{12}a_{13}\cdots$, $a_2=0.a_{21}a_{22}a_{23}\cdots$, $\cdots$, $a_k=0.a_{k1}a_{k2}a_{k3}\cdots$, $\cdots$.\par
+  作$b=0.b_{11}b_{22}b_{33}\cdots$, 其中$a_{kk}=1$时$b_{kk}=2$, $a_{kk}\ne 1$时$b_{kk}=2$.\par
+  令$b=x$, 则$b\in [0,1]$, 且$b\ne a_k$, $\forall k\in \mathbb{N}$.\par
+  于是$[0,1]$不是可列集.\par
+\end{proof}
+
+和上面的结果类似, 我们下面开始讨论基数为$\aleph_{1}$的集合的基数.\par
+
+\begin{proposition}
+  \begin{itemize}
+    \item 若$|A|=\aleph_{1}$, $|B|=\aleph_{1}$, 则$|A\cup B|=\aleph_{1}$.
+    \item 若$|A|=\aleph_{1}$, $|B|=\aleph_{0}$, 则$|A\cup B|=\aleph_{1}$.
+    \item 若$|A_i|=\aleph_{1}, i =1,2,\cdots, n$, 则$|\sum_{i=1}^{n}A_i|=\aleph_{1}$.
+    \item 若$|A_i|=\aleph_{1}, i =1,2,\cdots$, 则$|\sum_{i=1}^{\infty}A_i|=\aleph_{1}$.
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  对于第一个性质, 我们只需要证明两个区间的并还是区间即可, 这是显然的.\par
+  对于第二个性质, 由于$|A|=\aleph_{1}$, $|B|=\aleph_{0}$, 因此对于可列集, 可以把可列的那一部分放到不可列集中, 因此$|A\cup B|=\aleph_{1}$.\par
+  对于第三个性质和第四个性质, 我们只需要证明$[0,1]^{n}\sim [0,1]$和$[0,1]^{\infty}\sim [0,1]$即可, 这是显然的.\par
+\end{proof}
+
+上面的性质告诉我们, 实数集的基数为$\aleph_{1}$, 有理数集的基数为$\aleph_{0}$. 于是我们有下面的一系列结果.\par
+
+\begin{corollary}
+  以整数 (或有理数) 为系数的多项式全体可列.\par
+  以实数为系数的多项式全体不可列.\par
+\end{corollary}
+
+\begin{proof}
+  以整数 (或有理数) 为系数的多项式全体可以看作是$\mathbb{N}$的有限次笛卡尔积, 因此是可列的.\par
+  以实数为系数的多项式全体可以看作是$\mathbb{R}$的有限次笛卡尔积, 因此是不可列的.\par
+\end{proof}
+
+更进一步, 我们还希望讨论这两种基数之间的关系, 事实上我们有:\par
+
+\begin{theorem}
+  $2^{\aleph_{0}}=\aleph_{1}$.\par
+\end{theorem}
+
+\begin{proof}
+  设$A$是可列集, 则$A\sim \mathbb{N}$, 因此$|A|=\aleph_{0}$.\par
+  于是$2^{A}=\{f:A\to \{0,1\}\}$, $|2^{A}|=2^{\aleph_{0}}$.\par
+  而$2^{A}$的基数是$\aleph_{1}$, 因为$2^{A}$是不可列的.\par
+  因此$2^{\aleph_{0}}=\aleph_{1}$.\par
+\end{proof}
+
+
 
 \newpage
 
