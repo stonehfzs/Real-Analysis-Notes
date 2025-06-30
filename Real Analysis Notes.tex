@@ -404,11 +404,132 @@
   因此$2^{\aleph_{0}}=\aleph_{1}$.\par
 \end{proof}
 
+\begin{theorem}
+  (Cantor) 对于任意集合$A$, 都有$|A|<|2^{A}|$.\par
+\end{theorem}
 
+\begin{proof}
+  若$|A|=n$, 则$|2^{A}|=2^{n}$, 因此$|A|<|2^{A}|$.\par
+  若$|A|=\aleph_{0}$, 则$|2^{A}|=2^{\aleph_{0}}=\aleph_{1}$, 因此$|A|<|2^{A}|$.\par
+  若$|A|>\aleph_{0}$, 假设$\exists \phi: A\to 2^{A}$.\par
+  记$A_1=\{x:x\notin \phi(x)\}$, 则$A_1\subset 2^{A}$.\par
+  由于$A_1\ne \phi(x)$, $\forall x\in A$, 因此$A_1\notin \phi(A)$.\par
+  于是$|A|<|2^{A}|$.\par
+\end{proof}
 
 \newpage
 
 \section{距离空间}
+
+下面我们讨论距离和空间, 在这之前, 我们首先定义区间. 并相应得到距离的定义.\par
+
+\begin{definition}
+  $I=\left\{x\in (x_1,\cdot, x_n): a_i<x_i<b_i,i=1,2,\cdots,n\right\}$称为开区间.\par
+  对任意区间, 都有$|l|=\prod_{i=1}^{n}(b_i-a_i)$称为区间的体积.\par
+\end{definition}
+
+在区间中任取两点, 都可以定义它们之间的距离, 于是我们有下面的定义:\par
+\begin{definition}
+  设$x=(x_1,x_2,\cdots,x_n), y=(y_1,y_2,\cdots,y_n)$是$\mathbb{R}^n$中的两点, 则称$x$和$y$之间的距离为$\rho(x,y)=\left|\sum_{i=1}^{n}(x_i-y_i)^2\right|^{\frac{1}{2}}$.\par
+\end{definition}
+
+\begin{remark}
+  虽然上面的定义是在区间中定义的, 但事实上我们知道任何两点都可以在区间中找到, 因此上面的定义是可以推广到任意两点的, 这也就随之产生了距离的定义.\par
+  另一方面, 这里我们选择的是抽象的距离, 这是因为距离在更加广泛的空间中会有不同的定义, 但它们都表示两个点在对应空间中的相对“远近”.\par
+\end{remark}
+
+\begin{proposition}
+  对空间中任意给出的三个点$x$, $y$, $z$, 其距离满足如下性质:\par
+  \begin{itemize}
+    \item (非负性) $\rho(x,y)\geqslant 0$.
+    \item (对称性) $\rho(x,y)=\rho(y,x)$.
+    \item (三角不等式) $\rho(x,y)+\rho(y,z)\geqslant \rho(x,z)$.
+    \item (自反性) $\rho(x,y)=0\Leftrightarrow x=y$.
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  这里的性质是欧氏距离的基本性质, 其证明可以通过直接验证距离的定义来完成, 因此不再证明.\par
+\end{proof}
+
+\begin{definition}
+  若$m \to +\infty$时$\rho(x,x_m)\to 0$, 则称点列$\{x_m\}$收敛于点$x$, 记作$\lim_{m \to +\infty}x_m= x$.\par
+\end{definition}
+
+下面给出一个关于收敛的基本定理, 事实上在一般的数学分析中适用的定理大多都可以类似得到.\par
+
+\begin{theorem}
+  若$x_m \to x$, $y_m \to y$, 则$m \to +\infty$时$\rho(x_m,y_m)\to \rho(x,y)$.\par
+\end{theorem}
+
+\begin{proof}
+  由$x_m \to x$和$y_m \to y$, 则$m \to +\infty$时$\rho(x_m,x)\to 0$和$\rho(y_m,y)\to 0$.\par
+  于是有$\rho(x_m,y_m)\leqslant \rho(x_m,x)+\rho(x,y)+\rho(y,y_m)\to \rho(x,y)$.\par
+  即$m \to +\infty$时$\rho(x_m,y_m)\to \rho(x,y)$.\par
+\end{proof}
+
+类似地, 有了距离的定义之后我们就可以定义邻域, 进而得到许多特殊的集合的定义.\par
+
+\begin{definition}
+  若$x_0\in \mathbb{R}^n$, $\forall \delta>0$, 称$x_0$的$\delta$-邻域为$O(x_0, \delta)=\{x\in \mathbb{R}^n: \rho(x,x_0)<\delta\}$.\par
+\end{definition}
+
+\begin{remark}
+  这里邻域的定义实际上表达的含义是以$x_0$为圆心, $\delta$为半径的一个开球的内部. 类似我们可以定义闭邻域, 但在实分析中很少用到.\par
+\end{remark}
+
+于是更进一步, 我们有一列数列收敛的等价表述:\par
+
+\begin{theorem}
+  $x_m \to x$当且仅当$\forall \delta >0, \exists N >0 , \forall n\geqslant N, x_n \in O(x,\delta)$.\par
+\end{theorem}
+
+\begin{proof}
+  $x_m \to x$即当$m \to +\infty$时$\rho(x_m,x)\to 0$, 因此对于任意$\delta >0$, 都存在$N>0$, 使得当$n\geqslant N$时, $\rho(x_n,x)<\delta$.\par
+  于是有$x_n \in O(x,\delta)$.\par
+\end{proof}
+
+下面我们定义一系列常用但有特殊性质的集合, 在这之前, 我们首先给出一个在实分析中常用定理的推广.\par
+
+\begin{definition}
+  若$\exists x \in \mathbb{R}^n$, $\delta >0$, 使得$A\subset O(x,\delta)$, 则称$A$为有界集.\par
+  此时对于有界集$A$, 定义其直径为$\text{diam}(A)=\sup \left\{\rho(x,y): x,y\in A\right\}$.\par
+\end{definition}
+
+\begin{theorem}
+  (Bolzano-Weierstrass) 设$A\subset \mathbb{R}^n$是有界集, 则$A$中存在一个收敛的子列.\par
+\end{theorem}
+
+\begin{proof}
+  设$A=\{x_m\}_{m=1}^{\infty}$, 则$\exists M>0$, $\forall m, \rho(x_m,0)<M$.\par
+  于是$\{x_m\}$是有界的, 因此根据一维的Bolzano-Weierstrass定理, $\{x_m\}$中存在一个收敛的子列.\par
+  即$A$中存在一个收敛的子列.\par
+\end{proof}
+
+下面我们对一个集合进行划分, 得到下面三种点的类型:\par
+
+\begin{definition}
+  $E\subset \mathbb{R}^n$, $x_0 \in \mathbb{R}^n$:\par
+  \begin{itemize}
+    \item 若$\exists O(x_0, \delta) \subset E$, 则$x_0$是$E$的内点.
+    \item 若$\exists O(x_0, \delta)$, $O(x_0,\delta)\cap E = \emptyset$, 则$x_0$是$E$的外点.
+    \item 若$\exists O(x_0, \delta)$, $O(x_0,\delta)\cap E \ne \emptyset$, $O(x_0,\delta)\cap E^{c} \ne \emptyset$, 则$x_0$是$E$的边界点.
+  \end{itemize}
+\end{definition}
+
+\begin{proposition}
+  $E$和$E^{c}$的边界点相同.\par
+\end{proposition}
+
+\begin{proof}
+  设$x_0$是$E$的边界点, 则$\exists O(x_0, \delta)$, $O(x_0,\delta)\cap E \ne \emptyset$, $O(x_0,\delta)\cap E^{c} \ne \emptyset$.\par
+  于是$x_0$也是$E^{c}$的边界点.\par
+  反之, 若$x_0$是$E^{c}$的边界点, 则同理可得$x_0$也是$E$的边界点.\par
+\end{proof}
+
+
+
+
 
 \newpage
 

@@ -35,10 +35,10 @@ The notes are organized into the following chapters:
 
 | Section Number | Section Name | Status |
 | --- | --- | --- |
-| 1.1 | Set Operations | ❇️ |
-| 1.2 | Set Equivalence | ❎ |
-| 1.3 | Set Cardinality | ❎ |
-| 1.4 | Metric Space | ❎ |
+| 1.1 | Set Operations | ✅ |
+| 1.2 | Set Equivalence | ✅ |
+| 1.3 | Set Cardinality | ✅ |
+| 1.4 | Metric Space | ❇️ |
 | 1.5 | Open Set, Closed Set and their Constructions | ❎ |
 | 2.1 | Outer Measure | ✅ |
 | 2.2 | Measurable Set and Measure | ✅ |
