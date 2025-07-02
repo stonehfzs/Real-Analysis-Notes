@@ -687,9 +687,106 @@
   有界闭集$E\subset \mathbb{R}^n$的任意开覆盖存在有限子覆盖.\par
 \end{theorem}
 
+\begin{remark}
+  这个定理的证明是不太显然的, 但它是实分析中一个非常重要的定理, 其证明可以通过紧性来完成, 我们会在泛函分析中更进一步讨论.\par
+\end{remark}
+
+下面我们来讨论开集和闭集的构造, 在讨论一般的情形前, 我们首先讨论最特殊的区间.\par
+
+\begin{definition}
+  若$(\alpha, \beta)\subset G$且$\alpha \notin G$, $\beta \notin G$, 则称$(\alpha, \beta)$为$G$的构成区间.\par
+\end{definition}
+
+\begin{lemma}
+  任意两个$G$的构成区间不交.\par
+\end{lemma}
+
+\begin{proof}
+  设$(\alpha_1, \beta_1)$和$(\alpha_2, \beta_2)$是$G$的两个构成区间, 则$\alpha_1 < \beta_1$, $\alpha_2 < \beta_2$.\par
+  假设$(\alpha_1, \beta_1)$和$(\alpha_2, \beta_2)$相交, 则$\alpha_1 < \alpha_2 < \beta_1$或$\alpha_2 < \alpha_1 < \beta_2$.\par
+  但这与$\alpha_i \notin G$和$\beta_i \notin G$矛盾.\par
+\end{proof}
+
+\begin{remark}
+  上面的引理说明了构成区间是不交的, 这也就说明了构成区间是唯一的, 因为任意一个开集都可以由一系列不交的构成区间来表示.\par
+\end{remark}
+
+\begin{theorem}
+  任意开集$G\subset \mathbb{R}$都可以表示为至多可数个不交的构成区间的并, 即$G=\bigcup_{i=1}^{\infty}(a_i,b_i)$, 其中$(a_i,b_i)$均为构成区间.\par
+\end{theorem}
+
+\begin{proof}
+  设$G$是开集, 则$G$中任意点都是内点, 因此对于任意点$x\in G$, $\exists \delta >0$, 使得$(x-\delta,x+\delta)\subset G$.\par
+  于是可以将$G$表示为所有这样的区间的并, 即$G=\bigcup_{x\in G}(x-\delta,x+\delta)$.\par
+  而由于构成区间是不交的, 因此可以将这些区间进行合并, 得到至多可数个不交的构成区间的并.\par
+  即$G=\bigcup_{i=1}^{\infty}(a_i,b_i)$, 其中$(a_i,b_i)$均为构成区间.\par
+\end{proof}
+
+于是我们可以得到闭集的构造, 事实上闭集可以看作开集的补集, 因此我们有下面的结论:\par
+
+\begin{theorem}
+  任意闭集$F\subset \mathbb{R}$都可以表示为$\mathbb{R}$和至多可数个不交的构成区间的余集的交.\par
+\end{theorem}
+
+\begin{proof}
+  由闭集的余集为开集可立即得到.\par
+\end{proof}
+
+下面我们再来讨论一般的$\mathbb{R}^n$中的开集和闭集的构造, 事实上我们可以将$\mathbb{R}^n$中的开集和闭集看作是$\mathbb{R}$中的开集和闭集的推广.\par
+
+\begin{theorem}
+  任意开集$G\subset \mathbb{R}^n$都可以表示为至多可数个开区间的并, 即$G=\bigcup_{i=1}^{\infty}I_i$, 其中$I_i$是$\mathbb{R}^n$中的开区间.\par
+\end{theorem}
+
+\begin{proof}
+  我们以二维空间为例, 高维空间类似可证.\par
+  设$G\subset \mathbb{R}^2$是开集, 则$G$中任意点都是内点, 因此对于任意点$(x,y)\in G$, $\exists \delta >0$, 使得$(x-\delta,x+\delta)\times (y-\delta,y+\delta)\subset G$.\par
+  于是可以将$G$表示为所有这样的开区间的并, 即$G=\bigcup_{(x,y)\in G}(x-\delta,x+\delta)\times (y-\delta,y+\delta)$.\par
+  而由于开区间是不交的, 因此可以将这些开区间进行合并, 得到至多可数个开区间的并.\par
+  即$G=\bigcup_{i=1}^{\infty}I_i$, 其中$I_i$是$\mathbb{R}^n$中的开区间.\par
+\end{proof}
+
 \newpage
 
+\section{Cantor集}
 
+前面我们讨论了许多关于开集和闭集的性质, 现在我们来讨论一个特殊的集合, 这个集合在Lebesgue测度意义下十分重要, 因为它体现了Lebesgue测度并不能完美解决所有Riemann积分的问题.\par
+
+\begin{definition}
+  考虑取$[0,1]$, 将其分为三段, 即$[0,\frac{1}{3}]$, $(\frac{1}{3},\frac{2}{3})$, $[\frac{2}{3},1]$, 然后去掉中间的$(\frac{1}{3},\frac{2}{3})$, 剩下的部分是$C_1=[0,\frac{1}{3}]\cup [\frac{2}{3},1]$.\par
+  然后再将$C_1$分为三段, 即$[0,\frac{1}{9}]$, $(\frac{1}{9},\frac{2}{9})$, $[\frac{2}{9},\frac{1}{3}]\cup [\frac{2}{3},\frac{7}{9}]\cup [\frac{8}{9},1]$, 然后去掉中间的$(\frac{1}{9},\frac{2}{9})\cup (\frac{2}{9},\frac{7}{9})$, 剩下的部分是$C_2=[0,\frac{1}{9}]\cup [\frac{2}{9},\frac{1}{3}]\cup [\frac{2}{3},\frac{7}{9}]\cup [\frac{8}{9},1]$.\par
+  以此类推, 我们可以得到一系列的集合$C_n$, 其中$C_n$是$C_{n-1}$去掉中间的部分后得到的集合.\par
+  最终我们定义Cantor集为$C=\bigcap_{n=1}^{\infty}C_n$, 即Cantor集是所有$C_n$的交.\par
+\end{definition}
+
+\begin{remark}
+  通过这种方法定义的集合还有很多种, 例如胖Cantor集, 其定义方法与Cantor集类似, 但去掉的部分不同. 这些集合在Lebesgue测度中有着重要的地位, 都是后面Lebesgue测度论中的典型反例.\par
+\end{remark}
+
+下面我们进一步讨论Cantor集的性质.\par
+
+\begin{proposition}
+  Cantor集$C$中的每个点都是聚点.\par
+\end{proposition}
+
+\begin{proof}
+  设$x\in C$, 则$x$是$C_n$的聚点, 因为$C_n$是由去掉中间部分后得到的集合, 而去掉的部分是开区间, 因此对于任意$\delta >0$, 都可以找到一个点在$C_n$中, 且在$x$的$\delta$邻域内.\par
+  由于$C=\bigcap_{n=1}^{\infty}C_n$, 因此$x$也是所有$C_n$的聚点, 即$x$是Cantor集中的聚点.\par
+\end{proof}
+
+\begin{corollary}
+  Cantor集是闭集.\par
+\end{corollary}
+
+\begin{proposition}
+  Cantor集是疏朗集.\par
+\end{proposition}
+
+\begin{proof}
+  假设Cantor集是不疏朗的, 则存在$\delta >0$, 使得$C$的每个点的$\delta$邻域内都有Cantor集中的点.\par
+  但由于Cantor集是由去掉中间部分后得到的集合, 其中不含任何区间, 因此对于任意点$x\in C$, $\exists \varepsilon >0$, 使得$(x-\varepsilon,x+\varepsilon)\cap C=\emptyset$.\par
+  这与假设矛盾, 因此Cantor集是疏朗集.\par
+\end{proof}
 
 
 \btocgroup

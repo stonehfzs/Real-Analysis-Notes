@@ -39,8 +39,8 @@ The notes are organized into the following chapters:
 | 1.2 | Set Equivalence | ✅ |
 | 1.3 | Set Cardinality | ✅ |
 | 1.4 | Metric Space | ✅ |
-| 1.5 | Open Set, Closed Set and their Constructions | ❎ |
-| 1.6 | Cantor Set | ❎ |
+| 1.5 | Open Set, Closed Set and their Constructions | ✅ |
+| 1.6 | Cantor Set | ✅ |
 | 2.1 | Outer Measure | ✅ |
 | 2.2 | Measurable Set and Measure | ✅ |
 | 2.3 | Measurable Set Class | ✅ |
