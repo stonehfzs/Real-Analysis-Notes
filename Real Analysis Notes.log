@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  1 JUL 2025 21:32
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  2 JUL 2025 23:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1787,26 +1787,26 @@ Package easybase Warning: The contents style 'emph' of 'chapter' is not
 
 [9]
 
+[10]
+
+[11]
+
 Package easybase Warning: The contents style 'emph' of 'chapter' is not
 (easybase)                defined.
 
 第二章
 
 
-[10
+[12
 
 ]
-
-[11]
-
-[12]
-Underfull \vbox (badness 1005) has occurred while \output is active []
-
-
 
 [13]
 
 [14]
+Underfull \vbox (badness 1005) has occurred while \output is active []
+
+
 
 [15]
 
@@ -1816,22 +1816,22 @@ Underfull \vbox (badness 1005) has occurred while \output is active []
 
 [18]
 
+[19]
+
+[20]
+
 Package easybase Warning: The contents style 'emph' of 'chapter' is not
 (easybase)                defined.
 
 
 
-[19]
+[21]
 第三章
 
 
-[20
+[22
 
 ]
-
-[21]
-
-[22]
 
 [23]
 
@@ -1844,19 +1844,19 @@ Package easybase Warning: The contents style 'emph' of 'chapter' is not
 [27]
 
 [28]
+
+[29]
+
+[30]
 第四章
 
 Underfull \vbox (badness 7759) has occurred while \output is active []
 
 
 
-[29
+[31
 
 ]
-
-[30]
-
-[31]
 
 [32]
 
@@ -1867,10 +1867,14 @@ Underfull \vbox (badness 7759) has occurred while \output is active []
 [35]
 
 [36]
+
+[37]
+
+[38]
 第五章
 
 
-[37
+[39
 
 ] (./Real Analysis Notes.aux)
  ***********
@@ -1884,12 +1888,12 @@ Package logreq Info: Writing requests to '"Real Analysis Notes".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56428 strings out of 473832
- 1279904 string characters out of 5733158
- 2265776 words of memory out of 5000000
- 78590 multiletter control sequences out of 15000+600000
+ 56456 strings out of 473832
+ 1280380 string characters out of 5733158
+ 2269776 words of memory out of 5000000
+ 78618 multiletter control sequences out of 15000+600000
  574873 words of font info for 122 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  151i,16n,165p,1238b,1461s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Real Analysis Notes.pdf (41 pages).
+Output written on Real Analysis Notes.pdf (43 pages).

@@ -181,6 +181,14 @@
   递减集列有$\forall n, A_n\supset A_{n+1}$, 因此$\bigcap_{n}^{\infty}A_n=\lim_{n \to \infty}A_n =\limsup_{n \to \infty}A_n=\liminf_{n \to \infty}A_n$.\par
 \end{proof}
 
+下面我们给出一类特殊的集合, 为了定义这种集合, 我们首先定义环和$\sigma$-代数的概念.\par
+
+\begin{definition}
+  设$\mathcal{A}\subset 2^{X}$, 且满足$\forall A,B\in \mathcal{A}$, 都有$A\cup B\in \mathcal{A}$, $A\backslash B\in \mathcal{A}$, 则称$\mathcal{A}$为一个环.\par
+  若$\mathcal{A}$满足$\emptyset\in \mathcal{A}$, $\forall A\in \mathcal{A}$, $A^{c}\in \mathcal{A}$, $A_k \in \mathcal{A}, \bigcup_{k=1}^{+\infty}A_k\in \mathcal{A}$, 则称$\mathcal{A}$为一个$\sigma$-代数.\par
+  $\mathbb{R}^n$中所有包含开集的$\sigma$-代数称为Borel集.\par
+\end{definition}
+
 \newpage
 
 \section{集合的对等}
@@ -527,13 +535,157 @@
   反之, 若$x_0$是$E^{c}$的边界点, 则同理可得$x_0$也是$E$的边界点.\par
 \end{proof}
 
+事实上, 我们还有类似的点的定义, 下面给出常用的一些点的定义:\par
 
+\begin{definition}
+  设$E\subset \mathbb{R}^n$, 则称$x_0$为$E$的聚点, 当且仅当$\forall \delta >0$, $\exists x\in E$, $x\ne x_0$, 使得$x\in O(x_0,\delta)$.\par
+  称$x_0$为$E$的孤立点, 当且仅当$\exists \delta >0$, 使得$O(x_0,\delta)\cap E=\{x_0\}$.\par
+\end{definition}
 
+\begin{remark}
+  事实上聚点的定义还有相关等价形式, 描述的内容都是当邻域范围很小时总能找到一个在这个邻域内不同于这个点的点.\par
+\end{remark}
 
+下面我们给出一些关于上面点的全体的定义, 这实际上是下面定义开集和闭集所需要的.\par
+
+\begin{definition}
+  $E$中边界点全体称为边界, 记为$\partial E$.\par
+  $E$中聚点全体称为导集, 记为$E'$.\par
+  $E\cup E'$称为闭包, 记为$\overline{E}$.\par
+\end{definition}
+
+\begin{theorem}
+  设$A,B\subset \mathbb{R}^n$, 则:\par
+  \begin{itemize}
+    \item $A\subset B \Rightarrow A'\subset B'$.
+    \item $A\subset B \Rightarrow \overline{A}\subset \overline{B}$.
+    \item $\left(A\cup B\right)'=A'\cup B'$.
+    \item $\overline{A\cup B}=\overline{A}\cup \overline{B}$.
+  \end{itemize}
+\end{theorem}
+
+\begin{proof}
+  设$A,B\subset \mathbb{R}^n$, 则$A\subset B \Rightarrow A'\subset B'$是显然的, 因为$A'$是$A$的聚点全体, 而$B'$是$B$的聚点全体, 因此$A'$中的点也一定在$B'$中.\par
+  同理, $A\subset B \Rightarrow \overline{A}\subset \overline{B}$也是显然的.\par
+  对于$\left(A\cup B\right)'=A'\cup B'$, 由于$A\cup B$的聚点是$A$和$B$的聚点的并, 因此$\left(A\cup B\right)'=A'\cup B'$.\par
+  对于$\overline{A\cup B}=\overline{A}\cup \overline{B}$, 由于$\overline{A\cup B}= (A\cup B)\cup (A\cup B)'$, 而$(A\cup B)'= A'\cup B'$, 因此$\overline{A\cup B}=\overline{A}\cup \overline{B}$.\par
+\end{proof}
+
+最后我们再给出一个定义, 用于描述集合的密集程度.\par
+
+\begin{definition}
+  若$B$中任意点的任意邻域中都有$A$中的点, 则称$A$在$B$中是稠密的.\par
+  特别地, 若$A$在$\mathbb{R}^n$中是稠密的, 则称$A$是稠密集.\par
+  若不在任何集合中稠密, 则称$A$是疏朗集.\par
+\end{definition}
+
+\begin{remark}
+  我们通过一个例子来理解稠密性: $\mathbb{Q}$在$\mathbb{R}$中是稠密的, 因为对于任意实数$x$和任意$\delta >0$, 都可以找到一个有理数$q\in \mathbb{Q}$, 使得$q\in O(x,\delta)$.\par
+  类似地, 我们也有$\mathbb{Q}$在$\mathbb{R}\backslash \mathbb{Q}$中是稠密的, $\mathbb{R}\backslash \mathbb{Q}$在$\mathbb{Q}$中也是稠密的.\par
+\end{remark}
+
+\begin{theorem}
+  $A$在$B$中稠密当且仅当$B\subset \overline{A}$.\par
+\end{theorem}
+
+\begin{proof}
+  设$A$在$B$中稠密, 则对于任意点$x\in B$, $\forall \delta >0$, $\exists y\in A$, 使得$y\in O(x,\delta)$.\par
+  于是$\forall x\in B$, $x\in \overline{A}$, 因此$B\subset \overline{A}$.\par
+  反之, 若$B\subset \overline{A}$, 则对于任意点$x\in B$, $\forall \delta >0$, $\exists y\in A$, 使得$y\in O(x,\delta)$.\par
+  因此$A$在$B$中稠密.\par
+\end{proof}
+
+\begin{definition}
+  若集合$E$的每一点都为$E$的孤立点, 则$E$为孤立集.\par
+  若集合$E$满足$E'=\emptyset$, 则$E$为离散集.\par
+\end{definition}
+
+\begin{remark}
+  可以验证, 离散集一定是孤立集, 但反之未必, 例如$\mathbb{Z}$是离散集, 但不是孤立集.\par
+\end{remark}
 
 \newpage
 
 \section{开集、闭集及其构造}
+
+上一节我们具体讨论了利用距离来定义点的类型, 以及一些特殊的集合, 现在我们利用这些点的类型来定义开集和闭集.\par
+
+\begin{definition}
+  若$E$中的全部点均为$E$的内点, 则称$E$为开集.\par
+  若$E$包含$E$的全部聚点, 则称$E$为闭集.\par
+\end{definition}
+
+\begin{remark}
+  $\emptyset$和$\mathbb{R}^n$都是既为开集又为闭集, 可以通过定义来验证.\par
+\end{remark}
+
+\begin{theorem}
+  开集有如下等价定义:\par
+  \begin{itemize}
+    \item $E$是开集当且仅当$E\cap (\partial E)=\emptyset$.
+    \item $E$是开集当且仅当$E^c$是闭集.
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}
+  闭集有如下等价定义:\par
+  \begin{itemize}
+    \item $E$是闭集当且仅当$E'\subset E$.
+    \item $E$是闭集当且仅当$E^c$是开集.
+    \item $E$是闭集当且仅当$E=\overline{E}$.
+    \item $E$是闭集当且仅当$\partial E\subset E$.
+  \end{itemize}
+\end{theorem}
+
+\begin{remark}
+  上面的结果可以根据定义自然得到, 因此这里我们不作证明.\par
+  事实上, 开集和闭集的定义是相对的, 这里我们利用距离来定义开集和闭集, 但我们还可以从拓扑的角度利用连续映射来定义开集和闭集. 在对应的条件下, 我们还可以得到相对开集和相对闭集的定义.\par
+\end{remark}
+
+下面我们讨论开集和闭集作运算后的性质:\par
+
+\begin{theorem}
+  设$A_1,A_2,\cdots A_n \subset \mathbb{R}^n$, $B_1,B_2,\cdots \subset \mathbb{R}^n$, 则:\par
+  \begin{itemize}
+    \item $A_i$均为闭集时, $\bigcup_{i=1}^{n}A_i$是闭集.
+    \item $A_i$均为开集时, $\bigcap_{i=1}^{n}A_i$是开集.
+    \item $B_i$均为闭集时, $\bigcap_{i=1}^{\infty}B_i$是闭集.
+    \item $B_i$均为开集时, $\bigcup_{i=1}^{\infty}B_i$是开集.
+  \end{itemize}
+\end{theorem}
+
+\begin{proof}
+  我们只证明针对闭集的情形, 因为开集可以根据余集得到闭集.\par
+  设$A_i$均为闭集, 则$A_i=\overline{A_i}$, 因此$\bigcup_{i=1}^{n}A_i=\overline{\bigcup_{i=1}^{n}A_i}$. 于是$\bigcup_{i=1}^{n}A_i$是闭集.\par
+  同理, 对于$B_i$均为闭集的情形, 则$\left(\bigcap_{i=1}^{\infty}B_i\right)'\subset \left(\bigcap_{i=1}^{\infty}B_i'\right)\subset \bigcap_{i=1}^{\infty}B_i$, 因此$\bigcap_{i=1}^{\infty}B_i$是闭集.\par
+\end{proof}
+
+\begin{remark}
+  上述结果中$A_i$若为可列个时未必成立, 例如$\bigcup_{k=1}^{+\infty}\left[-1+\frac{1}{k},1-\frac{1}{k}\right]=(-1,1)$和$\bigcup_{k=1}^{+\infty}\left(-1-\frac{1}{k},1+\frac{1}{k}\right)=[-1,1]$.\par
+\end{remark}
+
+我们发现, 开集和闭集都拥有许多优良的性质, 因此我们给这类集合一个新的定义, 这里具体的性质在可测集中有所体现.\par
+
+\begin{definition}
+  若$E$可表示为一列闭集的并, 则称$E$为$F_{\sigma}$集.\par
+  若$E$可表示为一列开集的交, 则称$E$为$G_{\delta}$集.\par
+\end{definition}
+
+\begin{corollary}
+  $F_{\sigma}^c$集是$G_{\delta}$集, $G_{\delta}^c$集是$F_{\sigma}$集.\par
+  $F_{\sigma}$集和$G_{\delta}$集都是Borel集.\par
+\end{corollary}
+
+\begin{proof}
+  由开集和闭集的性质可得$F_{\sigma}^c$集是$G_{\delta}$集, $G_{\delta}^c$集是$F_{\sigma}$集.\par
+  Borel集事实上是由开集和闭集通过有限次的并、交、补运算得到的集合, 因此$F_{\sigma}$集和$G_{\delta}$集都是Borel集. (可以通过验证定义得到)\par
+\end{proof}
+
+下面我们考虑在一维实空间中成立的有限覆盖定理, 这里我们有更具体和一般的表述.\par
+
+\begin{theorem}
+  有界闭集$E\subset \mathbb{R}^n$的任意开覆盖存在有限子覆盖.\par
+\end{theorem}
 
 \newpage
 
