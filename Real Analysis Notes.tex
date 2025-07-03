@@ -1206,17 +1206,111 @@
 上面所有的讨论都是围绕可测集展开的, 下面我们考虑这样的定义方式是否会导致一些不可测集的出现. 然而在实际问题中, 我们发现尽管不可测集总是存在的, 但其总是不如可测集出现的频繁, 更进一步, 我们还需要讨论不可测集和可测集的数量的比较.\par
 
 \begin{theorem}
-  (Vitali集) 存在不可测集.\par
+  (Vitali集) $\mathbb{R}$上存在不可测集.\par
 \end{theorem}
 
 \begin{proof}
   首先考虑$\mathbb{R}$上的开区间$E=(0,1)$, 我们下面构造$A\subset E$, 使得$A$不可测.\par
-
+  对于$x,y \in E$, 若$x-y \in \mathbb{Q}$, 则称$x$和$y$是等价的.\par
+  下面我们将$E$上所有点进行分类, 所有有同一等价关系的点集中任取一点, 记为$A$, 则$A$是不可测的.\par
+  事实上, 根据可测集的推论可知, 不可测集的外测度一定大于0, 即$\exists x\in \left(A-A\right)\cap \mathbb{Q}, x\ne 0$.\par
+  于是$\exists y,z \in A, y-z=x, y\ne z$, 与$A$的构成矛盾.\par
+  因此$A$是不可测集.\par
+  类似地, 在$\mathbb{R}$上也可以构造类似的可测集.\par
 \end{proof}
+
+\begin{remark}
+  事实上这种可测集的构造是很常见的, 而且这种构造方法可以推广到$\mathbb{R}^n$上, 例如在$\mathbb{R}^2$上, 我们可以考虑所有点的笛卡尔积, 然后将其划分为等价类, 每个等价类中取一个点, 形成一个不可测集.\par
+  这种不可测集的构造方法被称为Vitali集, 它的存在说明Lebesgue测度并不能解决全部的不可积函数问题.\par
+\end{remark}
+
+下面我们进一步讨论不可测集的性质, 以及在Lebesgue测度下不可测体现的集合的具体性质.\par
+
+\begin{proposition}
+  若$V$不可测, 则$\exists \varepsilon >0, A\supset V, B\supset V^c$, 使得$m(A\cap B)=\varepsilon$.\par
+\end{proposition}
+
+\begin{proof}
+  由Vitali集的构造知, $\exists A\supset V, B\supset V^c$, 使得$A$和$B$都是可测集.\par
+  由于$V$不可测, 则$m(A\cap B)=m(A)+m(B)-m(A\cup B)>0$. 因此存在$\varepsilon >0$, 使得$m(A\cap B)=\varepsilon$.\par
+\end{proof}
+
+\begin{remark}
+  上面的结果说明不可测集的不良性质可以表述为不可测集本身和其余集中的点无法通过一种方法分割, 这也和Carathéodory条件的想法是类似的.\par
+\end{remark}
+
+\begin{proposition}
+  $\mathbb{R}^n$上不可测集全体的基数为$2^{\aleph_0}$.\par
+\end{proposition}
+
+\begin{proof}
+  由Cantor定理知, $\mathbb{R}^n$的基数为$2^{\aleph_0}$.\par
+  而不可测集的构造方法是通过将$\mathbb{R}^n$上的点划分为等价类, 每个等价类中取一个点, 形成一个不可测集.\par
+  由于$\mathbb{R}^n$上的点的个数是$2^{\aleph_0}$, 因此不可测集的个数也是$2^{\aleph_0}$.\par
+\end{proof}
+
+\begin{remark}
+  上面的结果说明不可测集和可测集的个数是相同的.\par
+\end{remark}
 
 \newpage
 
 \section{乘积测度}
+
+在讨论了可测集和不可测集的性质后, 我们进一步考虑乘积测度的问题. 乘积测度本身具有非常广泛的应用, 能够解决有限维空间中作笛卡尔积后形成的集合的测度问题.\par
+
+\begin{theorem}
+  设$A\subset \mathbb{R}^p, B\subset \mathbb{R}^q$是可测集, 则$A\times B$是可测集, 且$m(A\times B)=m(A)m(B)$.\par
+\end{theorem}
+
+\begin{proof}
+  我们首先考虑$A,B$均为区间的情形, 此时有$A=\left(\right.a_1,b_1\left.\right]\times \cdots \times \left(\right.a_p,b_p\left.\right]$, $B=\left(\right.a_{p+1},b_{p+1}\left.\right]\times \cdots \times \left(\right.a_{p+q},b_{p+q}\left.\right]$.\par
+  于是$A\times B=\left(\right.a_1,b_1\left.\right]\times \cdots \times \left(\right.a_p,b_p\left.\right]\times \left(\right.a_{p+1},b_{p+1}\left.\right]\times \cdots \times \left(\right.a_{p+q},b_{p+q}\left.\right]$.\par
+  由区间的测度可知, $m(A\times B)=|\left(a_1,b_1\right]| \cdots |\left(a_p,b_p \right]| \cdot |\left(a_{p+1},b_{p+1}\right]| \cdots |\left(a_{p+q},b_{p+q}\right]| = \prod_{i=1}^{p+q}(b_i-a_i)$.\par
+  下面考虑$A$和$B$均为开集, 此时有$A=\bigcup_{i=1}^{\infty}I_i$, $B=\bigcup_{j=1}^{\infty}J_j$, 其中$I_i$和$J_j$均为开区间.\par
+  于是$A\times B=\bigcup_{i=1}^{\infty}\bigcup_{j=1}^{\infty}(I_i\times J_j)$.\par
+  由于开区间的乘积仍然是开集, 因此$A\times B$是开集.\par
+  由开集的测度可知, $m(A\times B)=\sum_{i=1}^{\infty}\sum_{j=1}^{\infty}m(I_i\times J_j)$.\par
+  由于$A$和$B$均为可测集, 因此$A\times B$也是可测集.\par
+  由$I_i\times J_j$不交可知, $m(A\times B)=\sum_{i=1}^{\infty}\sum_{j=1}^{\infty}m(I_i)m(J_j)$.\par
+  因此$A\times B$也是可测集.\par
+  进一步, 若$A$和$B$均为有界$G_{\delta}$集, 则$A\times B$也是有界$G_{\delta}$集.\par
+  此时$A=\bigcap_{k=1}^{\infty}A_k$, $B=\bigcap_{l=1}^{\infty}B_l$, 其中$G_k$和$H_l$均为单减开集列.\par
+  考虑$\bigcap_{k=1}^{\infty}A_k \times \bigcap_{l=1}^{\infty}B_l = \bigcup_{k=1,l=1}^{\infty}(A_k \times B_l)$.\par
+  由$A, B$有界, $A_k, B_l$也是有界的, 考虑$m(A\times B)=m\left(\bigcap_{k=1,l=1}^{\infty}(A_k\times B_l)\right)\leqslant m\left(\bigcap_{k=1}^{\infty}(A_k\times B_k)\right)=\lim_{k \to \infty}m(A_k \times B_k)$.\par
+  考虑$A_k, B_l$均有界, 于是$\lim_{k \to \infty}m(A_k \times B_k)=\lim_{k \to \infty}m(A_k)\times \lim_{k \to \infty}m(B_k)=m(A)\times m(B)$.\par
+  另一方面, 我们有$m(A\times B)\leqslant m(\inf (A_k\times B_l))=m(A)\times m(B)$.\par
+  于是$m(A\times B)=m(A)\times m(B)$.\par
+  最后考虑$A$和$B$均为有界可测集, 此时$\exists H_A\supset A, H_B\supset B, m(H_A\backslash A)=0, m(H_B\backslash B)=0$, 其中$H_A$和$H_B$均为$G_{\delta}$集.\par
+  下面我们有$H_A\times H_B = (A\times B)\cup ((H_A\backslash A)\times B) \cup (A\times (H_B\backslash B)) \cup ((H_A\backslash A)\times (H_B\backslash B))$.\par
+  记$F=H_A\backslash A, E=H_B\backslash B$, 则$F$和$E$均为可测集.\par
+  由上可知$m(H_A\times H_B)=m(H_A)\times m(H_B)=m(A)\times m(B)$, $m(H_A\times H_B)=m(A)\times m(B)$.\par
+  因此$m(A\times B)=m(H_A\times H_B)-m(F\times B)-m(A\times E)-m(F\times E)$.\par
+  由于$F$和$E$均为可测集, 且$m(F\times B)=m(F)m(B)$, $m(A\times E)=m(A)m(E)$, $m(F\times E)=m(F)m(E)$.\par
+  于是$m(A\times B)=m(H_A\times H_B)-m(F)m(B)-m(A)m(E)-m(F)m(E)$.\par
+  由于$m(H_A\backslash A)=0, m(H_B\backslash B)=0$,
+  因此$m(F)=m(H_A\backslash A)=0, m(E)=m(H_B\backslash B)=0$.\par
+  于是$m(A\times B)=m(H_A\times H_B)-0-0-0=m(H_A\times H_B)=m(A)m(B)$. 即$m(A\times B)=m(A)m(B)$.\par
+  最后考虑一般的情形, 此时考虑$\mathbb{R}^{p+q}=\bigcup_{k=1}^{\infty}\left((-k,k)\times (-k,k)\right)$.\par
+  由于$A$和$B$均为可测集, 于是$(A\times B)\cap \mathbb{R}^{p+q}=(A\times B)\cap (\bigcup_{k=1}^{\infty} I_k)=\bigcup_{k=1}^{\infty} (A\cap I_{A_k})\times \bigcup_{k=1}^{\infty} (B\cap I_{B_k})$.\par
+  其中$I_k=(-k,k)\times (-k,k)$, $I_{A_k}=A\cap I_k$, $I_{B_k}=B\cap I_k$.\par
+  于是$\lim_{k \to \infty}m((A\times B)\cap I_k)=\lim_{k \to \infty}m(A\cap I_{A_k})\times \lim_{k \to \infty}m(B\cap I_{B_k})=m(A)\times m(B)$.\par
+\end{proof}
+
+乘积测度的结果有许多明显的推论, 我们这里仅讨论最显然的一个例子.\par
+
+\begin{corollary}
+  设$A=\prod_{i=1}^{n}A_i$, 若$\exists A_i, m(A_i)=0$, 则$m(A)=0$.\par
+\end{corollary}
+
+\begin{proof}
+  由乘积测度的结果知, $m(A)=\prod_{i=1}^{n}m(A_i)$.\par
+  若$\exists A_i, m(A_i)=0$, 则$\prod_{i=1}^{n}m(A_i)=0$, 因此$m(A)=0$.\par
+\end{proof}
+
+\begin{remark}
+  上面的推论仅对有限维空间成立, 在无限维空间中, 乘积测度的性质会有所不同.\par
+\end{remark}
 
 \btocgroup
 \UseTocStyle{chapter}{emph}{toc}

@@ -44,8 +44,8 @@ The notes are organized into the following chapters:
 | 2.1 | Outer Measure | ✅ |
 | 2.2 | Measurable Set and Measure | ✅ |
 | 2.3 | Measurable Set Class | ✅ |
-| 2.4 | Non-measurable Set | ❇️ |
-| 2.5 | Product Measure | ❎ |
+| 2.4 | Non-measurable Set | ✅ |
+| 2.5 | Product Measure | ✅ |
 | 3.1 | Measurable Function: Definition and Properties | ✅ |
 | 3.2 | Measurable Function: Convergence | ✅ |
 | 3.3 | Measurable Function: Continuous | ✅ |
