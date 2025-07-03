@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  3 JUL 2025 15:17
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.11)  3 JUL 2025 21:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1748,6 +1748,10 @@ File: ./figure/logo.jpg Graphic file (type bmp)
 [2
 
 ] (./Real Analysis Notes.toc)
+\tf@toc=\write8
+\openout8 = `"Real Analysis Notes.toc"'.
+
+
 
 [1
 
@@ -1870,14 +1874,21 @@ Underfull \vbox (badness 7759) has occurred while \output is active []
 [38]
 
 [39]
+Overfull \hbox (12.92946pt too wide) in paragraph at lines 2093--2093
+[]\TU/FangSong(0)/m/n/10.53937 另 一 方 面 考 虑 $\OML/lmm/m/it/10.53937 m[]\OT1/lmr/m/n/10.53937 (\OML/lmm/m/it/10.53937 x[] \OMS/lmsy/m/n/10.53937 ^^@ \OML/lmm/m/it/10.53937 x[]\OT1/lmr/m/n/10.53937 ) \U/msa/m/n/10.53937 6 [][] \OML/lmm/m/it/10.53937 f\OT1/lmr/m/n/10.53937 (\OML/lmm/m/it/10.53937 x\OT1/lmr/m/n/10.53937 )d\OML/lmm/m/it/10.53937 x \U/msa/m/n/10.53937 6 \OML/lmm/m/it/10.53937 M[]\OT1/lmr/m/n/10.53937 (\OML/lmm/m/it/10.53937 x[] \OMS/lmsy/m/n/10.53937 ^^@ \OML/lmm/m/it/10.53937 x[]\OT1/lmr/m/n/10.53937 )$\TU/lmr/m/n/10.53937 , \TU/FangSong(0)/m/n/10.53937 于 是 有 $[] \OML/lmm/m/it/10.53937 m[]\OT1/lmr/m/n/10.53937 (\OML/lmm/m/it/10.53937 x[] \OMS/lmsy/m/n/10.53937 ^^@ \OML/lmm/m/it/10.53937 x[]\OT1/lmr/m/n/10.53937 ) \U/msa/m/n/10.53937 6 [][] \OML/lmm/m/it/10.53937 f\OT1/lmr/m/n/10.53937 (\OML/lmm/m/it/10.53937 x\OT1/lmr/m/n/10.53937 )d\OML/lmm/m/it/10.53937 x \U/msa/m/n/10.53937 6
+ []
+
+
 
 [40]
 
 [41]
+
+[42]
 第五章
 
 
-[42
+[43
 
 ] (./Real Analysis Notes.aux)
  ***********
@@ -1891,12 +1902,12 @@ Package logreq Info: Writing requests to '"Real Analysis Notes".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56481 strings out of 473832
- 1280816 string characters out of 5733158
- 2268681 words of memory out of 5000000
- 78643 multiletter control sequences out of 15000+600000
+ 56498 strings out of 473832
+ 1281094 string characters out of 5733158
+ 2268776 words of memory out of 5000000
+ 78660 multiletter control sequences out of 15000+600000
  574873 words of font info for 122 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  151i,16n,165p,1238b,1461s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Real Analysis Notes.pdf (46 pages).
+Output written on Real Analysis Notes.pdf (47 pages).

@@ -46,11 +46,9 @@
 \CTEX@ifnametrue 
 \contentsline {section}{\numberline {4.2}一般可测函数的积分}{37}{section.4.2}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {4.3}可积函数的连续性}{39}{section.4.3}%
+\contentsline {section}{\numberline {4.3}Lebesgue积分与Riemann积分的关系}{39}{section.4.3}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {4.4}Lebesgue积分与Riemann积分的关系}{40}{section.4.4}%
+\contentsline {section}{\numberline {4.4}重积分与累次积分的关系}{41}{section.4.4}%
 \CTEX@ifnametrue 
-\contentsline {section}{\numberline {4.5}重积分与累次积分的关系}{41}{section.4.5}%
-\CTEX@ifnametrue 
-\contentsline {chapter}{\numberline {第五章}习题集}{42}{chapter.5}%
+\contentsline {chapter}{\numberline {第五章}习题集}{43}{chapter.5}%
 \contentsfinish 

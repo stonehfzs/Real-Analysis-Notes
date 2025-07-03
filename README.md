@@ -51,9 +51,9 @@ The notes are organized into the following chapters:
 | 3.3 | Measurable Function: Continuous | ✅ |
 | 4.1 | Lebesgue Integral: Non-negative Measurable Function | ✅ |
 | 4.2 | Lebesgue Integral: All Measurable Function | ✅ |
-| 4.3 | The Continuous of Lebesgue Integrable Functions | ❎ |
-| 4.4 | Lebesgue Integral and Riemann Integral | ❎ |
-| 4.5 | Multiple Integral and Repeated Integral | ❎ |
+| 4.3 | Lebesgue Integral and Riemann Integral | ✅ |
+| 4.4 | Multiple Integral and Repeated Integral | ✅ |
+| 5 | Tutorials | ❇️ |
 
 Notice that the whole notes is written in Chinese, the content might have some translation mistakes.
 

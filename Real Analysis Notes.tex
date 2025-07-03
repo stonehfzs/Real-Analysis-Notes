@@ -1991,7 +1991,7 @@ $\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_n-f|\geqslant \vare
 
 \begin{remark}
   若$f\in L(E_i), i=1,2,\cdots$, 未必有$f\in L\left(\bigcup_{i=1}^{\infty}E_i\right)$, 也未必有$f$在$\bigcup_{i=1}^{\infty}E_i$上积分存在.\par
-  例如$f(x)=1$, $E_i=[i,i+1]$, $\bigcup_{i=1}^{\infty}E_i=[1,\infty)$, 此时$f$在$[1,\infty)$上不可积.\par
+  例如$f(x)=1$, $E_i=[i,i+1]$, $\bigcup_{i=1}^{\infty}E_i=\left[1\right.\left.,\infty\right)$, 此时$f$在$\left[1\right.\left.,\infty\right)$上不可积.\par
   另可取$f(x)=(-1)^{i}$, $E_i=[i,i+1]$, 此时$f$在$\bigcup_{i=1}^{\infty}E_i$上积分不存在.\par
 \end{remark}
 
@@ -2045,21 +2045,159 @@ $\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_n-f|\geqslant \vare
 
 \newpage
 
-\section{可积函数的连续性}
-
-
-\newpage
-
 \section{Lebesgue积分与Riemann积分的关系}
+
+在讨论完基本的Lebesgue积分性质后, 我们回到最初的问题, 即分析Lebesgue积分为什么在一定程度上可以代替Riemann积分, 以及两者之间的关系. 为了明确Riemann积分的特点, 我们首先给出一个描述振幅函数的引理.\par
+
+\begin{lemma}
+  设$f$是定义在$[a,b]$上的有界函数, 记$\omega(x)$为$f$在$x$处的振幅函数, 则有$\int_{[a,b]}\omega(x)\mathrm{d}x=\overline{\int_{a}^{b}}f(x)\mathrm{d}x-\underline{\int_{a}^{b}}f(x)\mathrm{d}x$.\par
+  其中$\int_{[a,b]}\omega(x)\mathrm{d}x$是$f$在$[a,b]$上的Lebesgue积分, $\overline{\int_{a}^{b}}f(x)\mathrm{d}x$和$\underline{\int_{a}^{b}}f(x)\mathrm{d}x$分别是$f$在$[a,b]$上的上Riemann积分和下Riemann积分.\par
+\end{lemma}
+
+\begin{proof}
+  由$f$是有界函数, $\omega(x)$也是有界函数, 因此是可积的.\par
+  对$[a,b]$作划分$a=x_0<x_1<\cdots<x_n=b$, 令$M_i=\sup \{f(x): x_{i-1}<x<x_{i}\}, m_i=\inf \{f(x): x_{i-1}<x<x_{i}\}$, 则有$\overline{\int_{a}^{b}}f(x)\mathrm{d}x=\lim_{n \to \infty}\sum_{i=1}^{n}M_i\cdot (x_i-x_{i-1})$, $\underline{\int_{a}^{b}}f(x)\mathrm{d}x=\lim_{n \to \infty}\sum_{i=1}^{n}m_i\cdot (x_i-x_{i-1})$.\par
+  于是可以作函数列$\omega_{n}(x)=\begin{cases}
+    M_i-m_i, & x\in (x_{i-1},x_i), i=1,2,\cdots,n-1\\
+    0, & x=x_i, i=1,2,\cdots,n
+  \end{cases}$, 记分点全体为$E$, 则有$m(E)=0$, $\lim_{n \to \infty}\omega_{n}(x)=\omega(x)$ a.e. on $[a,b]$.\par
+  注意到$\omega_{n}(x)$是单增有界函数,于是有$\lim_{n \to \infty}\int_{[a,b]}\omega_{n}(x)\mathrm{d}x=\int_{[a,b]}\omega(x)\mathrm{d}x$.\par
+  事实上我们有$\int_{[a,b]}\omega_{n}(x)\mathrm{d}x=\sum_{i=1}^{n}(M_i-m_i)(x_i-x_{i-1})=\sum_{i=1}^{n}M_i\cdot (x_i-x_{i-1})-\sum_{i=1}^{n}m_i\cdot (x_i-x_{i-1})$.\par
+  于是$\int_{[a,b]}\omega(x)\mathrm{d}x=\lim_{n \to \infty}\int_{[a,b]}\omega_{n}(x)\mathrm{d}x=\lim_{n \to \infty}\left(\overline{\int_{a}^{b}}f(x)\mathrm{d}x-\underline{\int_{a}^{b}}f(x)\mathrm{d}x\right)$.\par
+  即$\int_{[a,b]}\omega(x)\mathrm{d}x=\overline{\int_{a}^{b}}f(x)\mathrm{d}x-\underline{\int_{a}^{b}}f(x)\mathrm{d}x$.\par
+\end{proof}
+
+\begin{theorem}
+  (Riemann可积) 设$f$是区间$[a,b]$上的有界函数, 则$f$在$[a,b]$上Riemann可积的充要条件是$f$在$[a,b]$上几乎处处连续.\par
+\end{theorem}
+
+\begin{proof}
+  由$f$在$[a,b]$上Riemann可积, 可知$f$在$[a,b]$上的Darboux上积分和Darboux下积分相等, 因此由上面的引理知, $\int_{[a,b]}\omega(x)\mathrm{d}x=0$.\par
+  由于$\omega(x)$是$f$在$x$处的振幅函数, 在$[a,b]$上几乎处处为零, 因此$f$在$[a,b]$上几乎处处连续.\par
+  反之, 若$f$在$[a,b]$上几乎处处连续, 则$\omega(x)$几乎处处为零, 因此由上面的引理知, $\int_{[a,b]}\omega(x)\mathrm{d}x=0$.\par
+  于是$f$在$[a,b]$上的Darboux上积分和下积分相等, $f$在$[a,b]$上Riemann可积.\par
+\end{proof}
+
+\begin{remark}
+  上面的结果告诉我们, 一个函数的Riemann可积性是取决于其在一个函数值有界的区间上的连续点全体的测度, 而不是不连续点的函数值.\par
+\end{remark}
+
+\begin{theorem}
+  若$f$是Riemann可积的, 则$f$在$[a,b]$上Lebesgue可积, 且$\int_{[a,b]}f(x)\mathrm{d}x=\int_{a}^{b}f(x)\mathrm{d}x$.\par
+\end{theorem}
+
+\begin{proof}
+  首先我们知道, $f$Riemann可积时一定有$f$在$[a,b]$上几乎处处连续, 于是$f$在$[a,b]$上Lebesgue可积.\par
+  下面来说明两种积分值也是相同的:\par
+  对$[a,b]$作任意划分$a=x_0<x_1<\cdots<x_n=b$, 令$M_i=\sup \{f(x): x_{i-1}<x<x_{i}\}, m_i=\inf \{f(x): x_{i-1}<x<x_{i}\}$, 则有$\int_{[a,b]}f(x)\mathrm{d}x=\sum_{i=1}^{n}\int_{[x_{i-1},x_i]}f(x)\mathrm{d}x$.\par
+  另一方面考虑$m_i(x_{i-1}-x_{i})\leqslant \int_{[x_{i-1},x_i]}f(x)\mathrm{d}x\leqslant M_i(x_{i-1}-x_{i})$, 于是有$\sum_{i=1}^{n}m_i(x_{i-1}-x_{i})\leqslant \int_{[a,b]}f(x)\mathrm{d}x\leqslant \sum_{i=1}^{n}M_i(x_{i-1}-x_{i})$.\par
+  上式左右两边取上下确界有$\underline{\int_{a}^{b}}f(x)\mathrm{d}x= \int_{[a,b]}f(x)\mathrm{d}x= \overline{\int_{a}^{b}}f(x)\mathrm{d}x$.\par
+  这说明$f$在$[a,b]$上Lebesgue可积, 且$\int_{[a,b]}f(x)\mathrm{d}x=\int_{a}^{b}f(x)\mathrm{d}x$.\par
+\end{proof}
+
+\begin{remark}
+  上述结论反之不一定成立, 即Lebesgue可积的函数不一定是Riemann可积的.\par
+\end{remark}
+
+下面我们考虑广义积分, 在Riemann积分的意义下, 其本质是累次极限, 但在这里我们有下面的结果, 说明广义的Lebesgue积分是绝对收敛的积分.\par
+
+\begin{theorem}
+  设$\{E_k\}$单增可测, 且$\bigcup_{k=1}^{\infty}E_k=E$, $f$在$E_K$上可积, 若$\lim_{k \to \infty}\int_{E_k}|f(x)|\mathrm{d}x$存在, 则$f$在$E$上可积, 且$\int_{E}f(x)\mathrm{d}x=\lim_{k \to \infty}\int_{E_k}f(x)\mathrm{d}x$.\par
+\end{theorem}
+
+\begin{proof}
+  取$F_k(x)=|f(x)|\chi_{E_k}(x)$, 则$F_k$在$E_k$上可积, 且$\int_{E_k}F_k(x)\mathrm{d}x=\int_{E_k}|f(x)|\mathrm{d}x$, $\forall k\in \mathbb{N}$.\par
+  由Levi, $\lim_{k \to \infty}\int_{E_k}F_k(x)\mathrm{d}x=\int_{E}F(x)\mathrm{d}x$, 其中$F(x)=|f(x)|\chi_{E}(x)$.\par
+  由于$\lim_{k \to \infty}\int_{E_k}|f(x)|\mathrm{d}x$存在, 则$\int_{E}F(x)\mathrm{d}x=\lim_{k \to \infty}\int_{E_k}|f(x)|\mathrm{d}x<+\infty$.\par
+  即$f$在$E$上可积, 且$\int_{E}f(x)\mathrm{d}x=\lim_{k \to \infty}\int_{E_k}f(x)\mathrm{d}x$.\par
+\end{proof}
+
+\begin{remark}
+  事实上我们可以发现, 广义积分和Lebesgue积分都是对Riemann积分的一种推广, 而又有这样的例子说明广义积分存在的函数总可积时这种积分对区域不具备可加性.\par
+\end{remark}
 
 \newpage
 
 \section{重积分与累次积分的关系}
 
+在以往的分析中, 我们已经讨论过重积分和累次积分的关系, 而这里为了给出更完善的结果, 我们进一步讨论在Lebesgue积分意义下的重积分和累次积分的关系.\par
+
+\begin{theorem}
+  在Riemann积分的意义下, 若$f$在$E=\left[a_1,b_1\right]\times \left[a_2,b_2\right]$上Riemann可积, 则$\int_{E}f(x,y)\mathrm{d}x\mathrm{d}y=\int_{a_1}^{b_1}\left(\int_{a_2}^{b_2}f(x,y)\mathrm{d}y\right)\mathrm{d}x=\int_{a_2}^{b_2}\left(\int_{a_1}^{b_1}f(x,y)\mathrm{d}x\right)\mathrm{d}y$.\par
+\end{theorem}
+
+\begin{remark}
+  这个结果是显然的, 我们不再证明, 但同时需要注意到, 这种想法是很难直接迁移到Lebesgue积分上的.\par
+\end{remark}
+
+类似地, 我们首先讨论非负可测函数的结果, 并推广至一般可测函数.\par
+
+\begin{lemma}
+  设$f(x,y)$是定义在$\mathbb{R}^n=\mathbb{R}^p\times \mathbb{R}^q$上的非负可测函数, 若$f$满足:\par
+  \begin{itemize}
+    \item $f(x,y)$是对于几乎处处的$x\in \mathbb{R}^p$都关于$y$非负可测的函数.
+    \item $F_f(x)=\int_{\mathbb{R}^q}f(x,y)\mathrm{d}y$是$\mathbb{R}^p$上关于$x$的可测函数.
+    \item $\int_{\mathbb{R}^p}F_f(x)\mathrm{d}x=\int_{\mathbb{R}^p}\mathrm{d}x\int_{\mathbb{R}^q}f(x,y)\mathrm{d}y=\int_{\mathbb{R}^n}f(x,y)\mathrm{d}x\mathrm{d}y$.
+  \end{itemize}
+  则称$f\in \mathcal{F}$.\par
+  对于$f,g\in \mathcal{F}$, 有:\par
+  \begin{itemize}
+    \item $\forall a \geqslant 0, af\in \mathcal{F}$.
+    \item $f+g\in \mathcal{F}$.
+    \item 若$f(x,y)-g(x,y)\geqslant 0$, 且$g$是在$\mathbb{R}^n$上可积的, 则$f-g\in \mathcal{F}$.
+    \item 若单增函数列$f_k\in \mathcal{F}$, 且$f_k(x,y)\rightarrow f(x,y)$ a.e. on $\mathbb{R}^n$, 则$f\in \mathcal{F}$.
+  \end{itemize}
+\end{lemma}
+
+\begin{proof}
+  根据积分的性质, 第一条和第二条是显然的.\par
+  对于第三条, 若$g\in \mathcal{F}$, 则$F_g(x)$几乎处处有限, 于是根据$(f(x,y)-g(x,y))+g(x,y)=f(x,y)$, 有$f-g\in \mathcal{F}$.\par
+  对于第四条, 往证$f$满足上面三条性质, 事实上第一条是显然的. 由于$f_k \in \mathcal{F}$, 因此$\int_{\mathbb{R}^q}f(x,y)\mathrm{d}y=\lim_{k \to \infty}\int_{\mathbb{R}^q}f_k(x,y)\mathrm{d}y$, 也是非负可测的.\par
+  最后考虑$\int_{\mathbb{R}^n}f(x,y)\mathrm{d}x\mathrm{d}y=\lim_{k \to \infty}\int_{\mathbb{R}^n}f_k(x,y)\mathrm{d}x\mathrm{d}y=\lim_{k \to \infty}\int_{\mathbb{R}^p}\mathrm{d}x\int_{\mathbb{R}^q}f_k(x,y)\mathrm{d}y$.\par
+  由$f_k(x,y)\rightarrow f(x,y)$ a.e. on $\mathbb{R}^n$,\par
+  我们有$\lim_{k \to \infty}\int_{\mathbb{R}^p}\mathrm{d}x\int_{\mathbb{R}^q}f_k(x,y)\mathrm{d}y\int_{\mathbb{R}^p}\mathrm{d}x\int_{\mathbb{R}^q}\lim_{k \to \infty}f_k(x,y)\mathrm{d}y=\int_{\mathbb{R}^p}\mathrm{d}x\int_{\mathbb{R}^q}f(x,y)\mathrm{d}y$.\par
+  于是$f\in \mathcal{F}$.\par
+\end{proof}
+
+\begin{theorem}
+  (Tonelli) 所有的非负可测函数$f$都满足$f\in\mathcal{F}$.\par
+\end{theorem}
+
+\begin{proof}
+  事实上由上面的引理, 我们只需要证明所有的非负可测简单函数都满足$f\in \mathcal{F}$. \par
+  更进一步, 根据上面的线性性质, 我们只需要说明所有在可测集上示性函数都满足$f\in \mathcal{F}$. \par
+  下面我们将仿照乘积测度的证明, 分若干步得到这个结果:\par
+  若$E=I_1\times I_2$, 则显然有$\int_{E}\chi_E(x,y)\mathrm{d}x\mathrm{d}y=\int_{I_1}\mathrm{d}x\int_{I_2}\mathrm{d}y=m(I_1)m(I_2)=|I_1||I_2|=m(E)$.\par
+  另一方面可以很自然验证$\chi_{E}(x,y)$是对于几乎处处的$x\in I_1$, $\chi_{E}(x,y)$关于$y$的非负可测函数.\par
+  若$E$为开集, 则可以找到一列区间的并, 类似也有结果.\par
+  若$E$为有界闭集, 则$E$可以表示为两个有界开集的差, 由上面引理的第三条结果可以得到.\par
+  若$E$为有界可测集, 则可以找到一列有界闭集的并, 由上面引理的第四条结果可以得到.\par
+  若$E$为一般的可测集, 则可以考虑$E=\left(\bigcup_{k=1}^{\infty}F_k\right)\cup \mathbb{Z}$, 其中$F_k$均为有界闭集, 因此$\chi_{E_k}(x,y)\in \mathcal{F}$.\par
+  另外由于$m(\mathbb{Z})=0$, 因此$\chi_{\mathbb{Z}}(x,y)$也是可测的, 于是$\chi_{E}(x,y)=\lim_{k \to \infty}\chi_{\bigcup_{k=1}^{\infty} F_k}(x,y)+\chi_{\mathbb{Z}}(x,y)$, 由上面引理的第四条和第二条结果可以得到.\par
+\end{proof}
+
+\begin{remark}
+  Tonelli定理中要求的三个结果可以对$x$和$y$交换顺序, 这是十分显然的.\par
+\end{remark}
+
+下面类似地, 我们把一般可测函数分为正部和负部, 也可以得到类似的性质.\par
+
+\begin{theorem}
+  (Fubini) 所有的可测函数$f$都满足$f\in\mathcal{F}$.\par
+\end{theorem}
+
+\begin{proof}
+  令$f(x,y)=f^{+}(x,y)-f^{-}(x,y)$, 其中$f^{+}(x,y)=\max\{f(x,y),0\}, f^{-}(x,y)=\max\{-f(x,y),0\}$, 则$f^{+}$和$f^{-}$都是非负可测函数.\par
+  由Tonelli定理, $f^{+}\in \mathcal{F}$, $f^{-}\in \mathcal{F}$, 又有$f=f^{+}-f^{-}$, 因此由上面引理的第三条结果, 有$f\in \mathcal{F}$.\par
+\end{proof}
 
 \newpage
 
 \chapter{习题集}
+
+\begin{remark}
+  这里收集了一些常见的例子和反例, 以帮助理解集合论和测度论中的一些概念. 题目可能没有按照理解Lebesgue测度的顺序安排, 但足够体现实分析的整体特点.\par
+\end{remark}
 
 \begin{example}
   集合可以与其真子集对等.
