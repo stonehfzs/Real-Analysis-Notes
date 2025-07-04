@@ -2267,6 +2267,54 @@ $\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_n-f|\geqslant \vare
   例如$\{\frac{1}{n}\}$是孤立集, 但$0$是其聚点.\par
 \end{proof}
 
+\begin{example}
+  设映射$\varphi : A \to B$, $B \subset \varphi(\varphi^{-1}(B))$不一定成立.
+\end{example}
+
+\begin{proof}
+  例如考虑$A=\{1\}, B=\{1,2\}$, $\varphi(1)=1$, $\varphi^{-1}(B)=\{1\}$, $\varphi(\varphi^{-1}(B))=\{1\}$, 但$B \nsubseteq \{1\}$.\par
+\end{proof}
+
+\begin{example}
+  测度大于零的可测集中必定含有不可测的子集.\par
+\end{example}
+
+\begin{proof}
+  不可测集的必要条件为外测度大于0, 因此根据Vitali的构造方法, 一定有测度大于零的可测集含有不可测的子集.\par
+\end{proof}
+
+\begin{example}
+  几乎处处收敛的可测函数列不一定是依测度收敛的函数列.
+\end{example}
+
+\begin{proof}
+  由Lebesgue定理, 在测度非无限的情形时成立, 例如$f_n(x)=\chi_{[n,n+1]}(x)$, 则$f_n(x)\rightarrow 0$ a.e. on $\mathbb{R}$, 但$\int_{\mathbb{R}}f_n(x)\mathrm{d}x=1$, 因此不依测度收敛.\par
+\end{proof}
+
+\begin{example}
+  设集合$A,B$不相交, 则$m^{*}(A \cup B) \leqslant m^{*}(A) + m^{*}(B)$.
+\end{example}
+
+\begin{proof}
+  当$A,B$满足两个集合的距离严格大于0时才有$m^{*}(A \cup B) = m^{*}(A) + m^{*}(B)$, 对于一般情形由次可加性有$m^{*}(A \cup B) \leqslant m^{*}(A) + m^{*}(B)$.\par
+\end{proof}
+
+\begin{example}
+  两个非空闭集如果不相交, 则两个集合之间的距离可以等于0.
+\end{example}
+
+\begin{proof}
+  事实上当两个集合是紧的时候才有上面的结果成立.\par
+\end{proof}
+
+\begin{example}
+  集合的边界点要么是该集合的孤立点, 要么是该集合的聚点.
+\end{example}
+
+\begin{proof}
+  根据定义可知, 边界点和聚点的全体构成这个集合.
+\end{proof}
+
 \backmatter
 
 
