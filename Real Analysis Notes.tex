@@ -2315,6 +2315,63 @@ $\forall \varepsilon >0, \lim_{n \to \infty}m\left(E\left[|f_n-f|\geqslant \vare
   根据定义可知, 边界点和聚点的全体构成这个集合.
 \end{proof}
 
+\begin{example}
+  若点$p$同时是集合$E$, $F$的聚点, 则$p$不一定是$E \cap F$的聚点.
+\end{example}
+
+\begin{proof}
+  例如$E=\{1/n: n=1,2,\cdots\}, F=\{-1/n: n=1,2,\cdots\}$, 则$0$是$E$和$F$的聚点, 但$E \cap F = \emptyset$, 因此$0$不是$E \cap F$的聚点.\par
+\end{proof}
+
+\begin{example}
+  设集合$A, B$对等, $C \subset A$, $D \subset B$ 满足$C \sim D$, 则$A \backslash C$与$B \backslash D$可能不对等.
+\end{example}
+
+\begin{proof}
+  例如$A=\{1,2,3\}, B=\{4,5,6\}, C=\{1,2\}, D=\{4,5\}$, 则$C \sim D$, 但$A \backslash C = \{3\}, B \backslash D = \{6\}$.\par
+  因此$A \backslash C$与$B \backslash D$不对等.\par
+\end{proof}
+
+\begin{example}
+  设$\varphi$是集合之间的映射, 则$\varphi(A\cap B) = \varphi(A) \cap \varphi(B)$, $\varphi^{-1}(A \cap B) \subset \varphi^{-1}(A) \cap \varphi^{-1}(B)$.
+\end{example}
+
+\begin{proof}
+  由映射的定义, $\varphi(A\cap B) = \{y: \exists x\in A\cap B, y=\varphi(x)\} = \{y: \exists x\in A, y=\varphi(x)\} \cap \{y: \exists x\in B, y=\varphi(x)\} = \varphi(A) \cap \varphi(B)$.\par
+  对于第二个结论, 由$\varphi^{-1}(A \cap B) = \{x: y\in A\cap B, x=\varphi^{-1}(y)\} = \{x: y\in A, x=\varphi^{-1}(y)\} \cap \{x: y\in B, x=\varphi^{-1}(y)\} = \varphi^{-1}(A) \cap \varphi^{-1}(B)$.\par
+\end{proof}
+
+\begin{example}
+  若$f$是可测集$E$上处处有限的函数, 若$\forall a\in \mathbb{R}$, $E[f = a]$均可测, 则$f$不一定是$E$上的可测函数.
+\end{example}
+
+\begin{proof}
+  反例可取$f=\begin{cases}
+    x, x\in A\\
+    -x, x\notin A
+  \end{cases}$, 其中$A$为可测集$E$上的一个不可测子集.\par
+\end{proof}
+
+\begin{example}
+  设$\{f_n\}_{n=1}^{\infty}$是$E$上的一列实函数, 令$f(x) = \inf \{f_n(x), n = 1, 2, \cdots\}$, 则对所有的$a\in \mathbb{R}$有$E[f > a] \subset \bigcap_{n=1}^{\infty}E[f_n > a]$, 但$\{f_n\}_{n=1}^{\infty}$可测时$f$也可测.
+\end{example}
+
+\begin{proof}
+  注意到$f>a$时一定有$f_n>a$, 但反之不一定成立.\par
+  对于第二部分, 事实上$f_n$的可测性和$f$的可测性是等价的.\par
+\end{proof}
+
+\begin{example}
+  设集列$\{A_k\}$满足$A_k=\begin{cases}
+    \left[1,2-\frac{1}{k+1}\right), k =1,3,5,\cdots\\
+    \left[0,1+\frac{2}{k}\right), k=2,4,6,\cdots
+  \end{cases}$, 则集列$\{A_k\}$的下限集是$\{1\}$, 上限集是$\left[0\right.,\left. 2\right)$.
+\end{example}
+
+\begin{proof}
+  $\{A_k\}$满足$\limsup = \bigcap_{N=1}^{\infty} \bigcup_{n=N}^{\infty}A_n= \bigcap_{N=1}^{\infty} \left[0,2\right)=\left[0,2\right)$和$\liminf = \bigcup_{N=1}^{\infty} \bigcap_{n=N}^{\infty}A_n= \bigcup_{N=1}^{\infty} \{1\}=\{1\}$.\par
+\end{proof}
+
 \backmatter
 
 
